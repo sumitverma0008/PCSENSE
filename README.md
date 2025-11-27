@@ -59,8 +59,8 @@ PCSensei is a modern web application that helps users build custom PCs and choos
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/pcsensei.git
-cd pcsensei
+git clone https://github.com/sumitverma0008/PCSENSE.git
+cd PCSENSE
 ```
 
 2. **Start the web server**
@@ -438,7 +438,7 @@ function logout()
 
 Contributions are welcome! Please follow these steps:
 
-1. **Fork the repository**
+1. **Fork the repository**: https://github.com/sumitverma0008/PCSENSE
 2. **Create a feature branch**: `git checkout -b feature/AmazingFeature`
 3. **Commit changes**: `git commit -m 'Add AmazingFeature'`
 4. **Push to branch**: `git push origin feature/AmazingFeature`
@@ -471,8 +471,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For issues, questions, or suggestions:
 
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/pcsensei/issues)
-- **Email**: your.email@example.com
+- **GitHub Issues**: [Create an issue](https://github.com/sumitverma0008/PCSENSE/issues)
+- **Repository**: [View on GitHub](https://github.com/sumitverma0008/PCSENSE)
 - **Documentation**: See `README-PRICE-MONITOR.md` for price monitoring details
 
 ---
