@@ -935,6 +935,456 @@
       "spec": "i9-14900K Desktop, RTX 4090 16GB, 128GB",
       "brand": "NVIDIA",
       "gpuTier": "ultra"
+    },
+    {
+      "id": "l101",
+      "name": "HP Chromebook 14a",
+      "price": 18500,
+      "type": "basic",
+      "spec": "Celeron N4500, 4GB RAM, 64GB eMMC",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l102",
+      "name": "Lenovo IdeaPad 1",
+      "price": 24000,
+      "type": "basic",
+      "spec": "AMD 3020e, 4GB RAM, 128GB SSD",
+      "brand": "AMD",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l103",
+      "name": "Dell Inspiron 3505",
+      "price": 33000,
+      "type": "office",
+      "spec": "Ryzen 5 3450U, 8GB RAM, 256GB SSD",
+      "brand": "AMD",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l104",
+      "name": "ASUS X515EA",
+      "price": 38500,
+      "type": "office",
+      "spec": "i3-1115G4, 8GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l105",
+      "name": "Acer Aspire Lite",
+      "price": 29900,
+      "type": "basic",
+      "spec": "Ryzen 3 5300U, 8GB RAM, 256GB SSD",
+      "brand": "AMD",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l106",
+      "name": "HP 15 dy2795wm",
+      "price": 36500,
+      "type": "office",
+      "spec": "i5-1135G7, 12GB RAM, 256GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l107",
+      "name": "Lenovo Slim Plus",
+      "price": 41000,
+      "type": "office",
+      "spec": "Ryzen 5 7530U, 16GB RAM, 512GB SSD",
+      "brand": "AMD",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l108",
+      "name": "Dell Inspiron 15 5530",
+      "price": 48000,
+      "type": "office",
+      "spec": "i5-1335U, 16GB RAM, 512GB SSD, FHD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l109",
+      "name": "ASUS Vivobook 16X",
+      "price": 52000,
+      "type": "creative",
+      "spec": "i5-12500H, Iris Xe, 16GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l110",
+      "name": "Acer Swift Go 14",
+      "price": 58000,
+      "type": "creative",
+      "spec": "Core Ultra 5 125H, 16GB RAM, 512GB SSD, OLED",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l111",
+      "name": "HP Pavilion Plus 14",
+      "price": 62000,
+      "type": "creative",
+      "spec": "i7-1360P, 16GB RAM, 512GB SSD, 2.8K OLED",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l112",
+      "name": "Lenovo IdeaPad Pro 5i",
+      "price": 72000,
+      "type": "creative",
+      "spec": "i7-13700H, RTX 2050, 16GB RAM, 2.5K 120Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "entry"
+    },
+    {
+      "id": "l113",
+      "name": "ASUS Zenbook 14X OLED",
+      "price": 98000,
+      "type": "creative",
+      "spec": "i9-13900H, 32GB RAM, 1TB SSD, 2.8K Touch",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l114",
+      "name": "MSI Prestige 14 Evo",
+      "price": 85000,
+      "type": "creative",
+      "spec": "i7-1360P, Iris Xe, 32GB RAM, 1TB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l115",
+      "name": "Dell XPS 14",
+      "price": 175000,
+      "type": "creative",
+      "spec": "Core Ultra 7 155H, RTX 4050, 32GB RAM",
+      "brand": "NVIDIA",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l116",
+      "name": "LG Gram 15",
+      "price": 92000,
+      "type": "creative",
+      "spec": "i7-1360P, 16GB RAM, 512GB SSD, Ultra-light",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l117",
+      "name": "Samsung Galaxy Book3 Pro 360",
+      "price": 135000,
+      "type": "creative",
+      "spec": "i7-1360P, 16GB RAM, 1TB SSD, 3K AMOLED Touch",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l118",
+      "name": "MSI Katana GF66",
+      "price": 68000,
+      "type": "gaming",
+      "spec": "i5-12450H, RTX 3050, 16GB RAM, 144Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "entry"
+    },
+    {
+      "id": "l119",
+      "name": "Acer Nitro 7",
+      "price": 89000,
+      "type": "gaming",
+      "spec": "i7-12650H, RTX 4050, 16GB RAM, 165Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l120",
+      "name": "Lenovo Legion Slim 5",
+      "price": 115000,
+      "type": "gaming",
+      "spec": "Ryzen 7 7840HS, RTX 4060, 16GB RAM, 165Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l121",
+      "name": "ASUS TUF Dash F15",
+      "price": 95000,
+      "type": "gaming",
+      "spec": "i7-13620H, RTX 4060, 16GB RAM, 144Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l122",
+      "name": "HP Omen 17",
+      "price": 165000,
+      "type": "gaming",
+      "spec": "i9-13900HX, RTX 4080, 32GB RAM, 240Hz QHD",
+      "brand": "NVIDIA",
+      "gpuTier": "high"
+    },
+    {
+      "id": "l123",
+      "name": "MSI Vector GP78",
+      "price": 185000,
+      "type": "gaming",
+      "spec": "i9-13980HX, RTX 4080, 32GB RAM, 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high"
+    },
+    {
+      "id": "l124",
+      "name": "Gigabyte AORUS 15X",
+      "price": 195000,
+      "type": "gaming",
+      "spec": "i9-13900HX, RTX 4090, 32GB RAM, 360Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra"
+    },
+    {
+      "id": "l125",
+      "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+      "price": 145000,
+      "type": "office",
+      "spec": "i7-1365U, 32GB RAM, 1TB SSD, 2.8K OLED",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l126",
+      "name": "Dell Latitude 9440",
+      "price": 165000,
+      "type": "office",
+      "spec": "i7-1365U, 32GB RAM, 1TB SSD, QHD+",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l127",
+      "name": "HP EliteBook 840 G10",
+      "price": 128000,
+      "type": "office",
+      "spec": "i7-1355U, 32GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l128",
+      "name": "ASUS ExpertBook B9",
+      "price": 115000,
+      "type": "office",
+      "spec": "i7-1355U, 16GB RAM, 1TB SSD, Ultra-light",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l129",
+      "name": "Microsoft Surface Laptop 6",
+      "price": 135000,
+      "type": "creative",
+      "spec": "Core Ultra 7, 16GB RAM, 512GB SSD, Touch",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l130",
+      "name": "MacBook Pro 13 M2",
+      "price": 125000,
+      "type": "creative",
+      "spec": "M2 Chip (10-Core GPU), 16GB RAM, 512GB SSD",
+      "brand": "Apple",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l131",
+      "name": "Razer Book 13",
+      "price": 145000,
+      "type": "creative",
+      "spec": "i7-1165G7, 16GB RAM, 512GB SSD, 4K Touch",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l132",
+      "name": "Framework Laptop 16",
+      "price": 195000,
+      "type": "gaming",
+      "spec": "Ryzen 9 7940HS, RX 7700S, 32GB RAM, Modular",
+      "brand": "AMD",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l133",
+      "name": "System76 Oryx Pro",
+      "price": 215000,
+      "type": "creative",
+      "spec": "i9-13900HX, RTX 4070, 64GB RAM, Linux",
+      "brand": "NVIDIA",
+      "gpuTier": "high"
+    },
+    {
+      "id": "l134",
+      "name": "ASUS ProArt P16",
+      "price": 285000,
+      "type": "creative",
+      "spec": "Ryzen AI 9 HX 370, RTX 4060, 32GB RAM, 4K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l135",
+      "name": "MSI CreatorPro M16",
+      "price": 245000,
+      "type": "creative",
+      "spec": "i9-13900H, RTX A3000, 64GB RAM, 4K",
+      "brand": "NVIDIA",
+      "gpuTier": "high"
+    },
+    {
+      "id": "l136",
+      "name": "Gigabyte AERO 17 Creator",
+      "price": 325000,
+      "type": "creative",
+      "spec": "i9-13900HX, RTX 4090, 64GB RAM, 4K MiniLED",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra"
+    },
+    {
+      "id": "l137",
+      "name": "Dell Precision 7680",
+      "price": 385000,
+      "type": "creative",
+      "spec": "i9-13950HX, RTX 5000 Ada, 64GB RAM",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra"
+    },
+    {
+      "id": "l138",
+      "name": "Lenovo ThinkPad P16 Gen 2",
+      "price": 395000,
+      "type": "creative",
+      "spec": "i9-13950HX, RTX 5000 Ada, 128GB RAM",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra"
+    },
+    {
+      "id": "l139",
+      "name": "HP ZBook Fury G10",
+      "price": 425000,
+      "type": "creative",
+      "spec": "i9-13950HX, RTX 5000 Ada, 128GB RAM, DreamColor",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra"
+    },
+    {
+      "id": "l140",
+      "name": "Honor MagicBook X16",
+      "price": 46000,
+      "type": "office",
+      "spec": "i5-12450H, 16GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l141",
+      "name": "Xiaomi Redmi Book Pro 14",
+      "price": 54000,
+      "type": "office",
+      "spec": "i5-13500H, 16GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l142",
+      "name": "Realme Book Prime",
+      "price": 49000,
+      "type": "office",
+      "spec": "i5-11320H, 16GB RAM, 512GB SSD, 2K",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l143",
+      "name": "Avita Pura",
+      "price": 28000,
+      "type": "basic",
+      "spec": "Ryzen 3 3250U, 8GB RAM, 256GB SSD",
+      "brand": "AMD",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l144",
+      "name": "Vaio FE14",
+      "price": 42000,
+      "type": "office",
+      "spec": "i5-1235U, 8GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l145",
+      "name": "Chuwi CoreBook X",
+      "price": 32000,
+      "type": "basic",
+      "spec": "i5-8259U, 16GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l146",
+      "name": "BMAX Y13 Pro",
+      "price": 26000,
+      "type": "basic",
+      "spec": "Celeron N4120, 8GB RAM, 256GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l147",
+      "name": "Teclast F15 Plus 3",
+      "price": 29000,
+      "type": "basic",
+      "spec": "i3-1115G4, 12GB RAM, 512GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l148",
+      "name": "Jumper EZbook X4 Pro",
+      "price": 24000,
+      "type": "basic",
+      "spec": "Gemini Lake N4120, 8GB RAM, 256GB SSD",
+      "brand": "Intel",
+      "gpuTier": "integrated"
+    },
+    {
+      "id": "l149",
+      "name": "Asus ROG Flow Z13",
+      "price": 185000,
+      "type": "gaming",
+      "spec": "i9-13900H, RTX 4060, 32GB RAM, Tablet Gaming",
+      "brand": "NVIDIA",
+      "gpuTier": "mid"
+    },
+    {
+      "id": "l150",
+      "name": "GPD Win Max 2",
+      "price": 95000,
+      "type": "gaming",
+      "spec": "Ryzen 7 7840U, Radeon 780M, 32GB RAM, Handheld",
+      "brand": "AMD",
+      "gpuTier": "integrated"
     }
   ],
   "cpus": [
@@ -2580,6 +3030,356 @@
       "name": "NVIDIA RTX 6000 Ada",
       "price": 422243,
       "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g101",
+      "name": "NVIDIA GTX 1630 GDDR6",
+      "price": 10500,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g102",
+      "name": "AMD Radeon RX 5300",
+      "price": 9800,
+      "brand": "AMD",
+      "tier": "entry"
+    },
+    {
+      "id": "g103",
+      "name": "NVIDIA GTX 1650 Super GDDR6",
+      "price": 15200,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g104",
+      "name": "AMD Radeon RX 6500M",
+      "price": 12000,
+      "brand": "AMD",
+      "tier": "entry"
+    },
+    {
+      "id": "g105",
+      "name": "NVIDIA GTX 1660 GDDR6",
+      "price": 17500,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g106",
+      "name": "AMD Radeon RX 7600M",
+      "price": 28000,
+      "brand": "AMD",
+      "tier": "mid"
+    },
+    {
+      "id": "g107",
+      "name": "NVIDIA RTX 3050 Ti Mobile",
+      "price": 24000,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g108",
+      "name": "AMD Radeon RX 6700M",
+      "price": 35000,
+      "brand": "AMD",
+      "tier": "mid"
+    },
+    {
+      "id": "g109",
+      "name": "NVIDIA RTX 3060 Mobile",
+      "price": 32000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g110",
+      "name": "AMD Radeon RX 6800M",
+      "price": 48000,
+      "brand": "AMD",
+      "tier": "high"
+    },
+    {
+      "id": "g111",
+      "name": "NVIDIA RTX 3070 Mobile",
+      "price": 52000,
+      "brand": "NVIDIA",
+      "tier": "high"
+    },
+    {
+      "id": "g112",
+      "name": "AMD Radeon RX 6850M XT",
+      "price": 58000,
+      "brand": "AMD",
+      "tier": "high"
+    },
+    {
+      "id": "g113",
+      "name": "NVIDIA RTX 3080 Mobile",
+      "price": 78000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g114",
+      "name": "AMD Radeon RX 6900M",
+      "price": 85000,
+      "brand": "AMD",
+      "tier": "ultra"
+    },
+    {
+      "id": "g115",
+      "name": "NVIDIA RTX 4050 Mobile",
+      "price": 28500,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g116",
+      "name": "NVIDIA RTX 4060 Mobile",
+      "price": 38000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g117",
+      "name": "NVIDIA RTX 4070 Mobile",
+      "price": 58000,
+      "brand": "NVIDIA",
+      "tier": "high"
+    },
+    {
+      "id": "g118",
+      "name": "NVIDIA RTX 4080 Mobile",
+      "price": 95000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g119",
+      "name": "NVIDIA RTX 4090 Mobile",
+      "price": 158000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g120",
+      "name": "Intel Arc A350M",
+      "price": 15000,
+      "brand": "Intel",
+      "tier": "entry"
+    },
+    {
+      "id": "g121",
+      "name": "Intel Arc A370M",
+      "price": 18000,
+      "brand": "Intel",
+      "tier": "entry"
+    },
+    {
+      "id": "g122",
+      "name": "Intel Arc A550M",
+      "price": 22000,
+      "brand": "Intel",
+      "tier": "mid"
+    },
+    {
+      "id": "g123",
+      "name": "Intel Arc A730M",
+      "price": 32000,
+      "brand": "Intel",
+      "tier": "mid"
+    },
+    {
+      "id": "g124",
+      "name": "Intel Arc A770M",
+      "price": 42000,
+      "brand": "Intel",
+      "tier": "high"
+    },
+    {
+      "id": "g125",
+      "name": "AMD Radeon RX 7900 GRE Golden Rabbit",
+      "price": 72000,
+      "brand": "AMD",
+      "tier": "high"
+    },
+    {
+      "id": "g126",
+      "name": "NVIDIA GTX 980",
+      "price": 18000,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g127",
+      "name": "NVIDIA GTX 980 Ti",
+      "price": 24000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g128",
+      "name": "AMD Radeon R9 390X",
+      "price": 15000,
+      "brand": "AMD",
+      "tier": "entry"
+    },
+    {
+      "id": "g129",
+      "name": "AMD Radeon RX 480",
+      "price": 12000,
+      "brand": "AMD",
+      "tier": "entry"
+    },
+    {
+      "id": "g130",
+      "name": "NVIDIA GTX 970",
+      "price": 15000,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g131",
+      "name": "AMD Radeon RX 570 8GB",
+      "price": 11000,
+      "brand": "AMD",
+      "tier": "entry"
+    },
+    {
+      "id": "g132",
+      "name": "NVIDIA GTX 1060 6GB",
+      "price": 14000,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g133",
+      "name": "NVIDIA GTX 1060 3GB",
+      "price": 11500,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g134",
+      "name": "AMD Radeon RX 5600 XT",
+      "price": 19000,
+      "brand": "AMD",
+      "tier": "mid"
+    },
+    {
+      "id": "g135",
+      "name": "NVIDIA RTX 2060 KO",
+      "price": 25000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g136",
+      "name": "AMD Radeon Pro W5700",
+      "price": 95000,
+      "brand": "AMD",
+      "tier": "high"
+    },
+    {
+      "id": "g137",
+      "name": "NVIDIA Quadro P5000",
+      "price": 125000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g138",
+      "name": "AMD Radeon Pro VII",
+      "price": 185000,
+      "brand": "AMD",
+      "tier": "ultra"
+    },
+    {
+      "id": "g139",
+      "name": "NVIDIA RTX A4500",
+      "price": 145000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g140",
+      "name": "AMD Radeon Pro W6600",
+      "price": 65000,
+      "brand": "AMD",
+      "tier": "high"
+    },
+    {
+      "id": "g141",
+      "name": "NVIDIA T1000",
+      "price": 38000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g142",
+      "name": "NVIDIA T600",
+      "price": 28000,
+      "brand": "NVIDIA",
+      "tier": "entry"
+    },
+    {
+      "id": "g143",
+      "name": "AMD Radeon Pro W5500",
+      "price": 48000,
+      "brand": "AMD",
+      "tier": "mid"
+    },
+    {
+      "id": "g144",
+      "name": "NVIDIA RTX 4000 SFF Ada",
+      "price": 98000,
+      "brand": "NVIDIA",
+      "tier": "high"
+    },
+    {
+      "id": "g145",
+      "name": "AMD Radeon Pro W7700",
+      "price": 185000,
+      "brand": "AMD",
+      "tier": "ultra"
+    },
+    {
+      "id": "g146",
+      "name": "NVIDIA RTX 5000 Ada Generation",
+      "price": 285000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g147",
+      "name": "AMD Radeon Pro W7800",
+      "price": 215000,
+      "brand": "AMD",
+      "tier": "ultra"
+    },
+    {
+      "id": "g148",
+      "name": "NVIDIA L40",
+      "price": 650000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g149",
+      "name": "NVIDIA L4",
+      "price": 185000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g150",
+      "name": "AMD Instinct MI250",
+      "price": 1200000,
+      "brand": "AMD",
       "tier": "ultra"
     }
   ],
