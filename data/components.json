@@ -3381,6 +3381,90 @@
       "price": 1200000,
       "brand": "AMD",
       "tier": "ultra"
+    },
+    {
+      "id": "g151",
+      "name": "NVIDIA RTX 5060",
+      "price": 32000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g152",
+      "name": "NVIDIA RTX 5060 Ti",
+      "price": 42000,
+      "brand": "NVIDIA",
+      "tier": "mid"
+    },
+    {
+      "id": "g153",
+      "name": "NVIDIA RTX 5070",
+      "price": 58000,
+      "brand": "NVIDIA",
+      "tier": "high"
+    },
+    {
+      "id": "g154",
+      "name": "NVIDIA RTX 5070 Ti",
+      "price": 72000,
+      "brand": "NVIDIA",
+      "tier": "high"
+    },
+    {
+      "id": "g155",
+      "name": "NVIDIA RTX 5070 Super",
+      "price": 68000,
+      "brand": "NVIDIA",
+      "tier": "high"
+    },
+    {
+      "id": "g156",
+      "name": "NVIDIA RTX 5070 Ti Super",
+      "price": 85000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g157",
+      "name": "NVIDIA RTX 5080",
+      "price": 115000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g158",
+      "name": "NVIDIA RTX 5080 Super",
+      "price": 135000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g159",
+      "name": "NVIDIA RTX 5080 Ti",
+      "price": 145000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g160",
+      "name": "NVIDIA RTX 5090",
+      "price": 225000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g161",
+      "name": "NVIDIA RTX 5090 Ti",
+      "price": 285000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
+    },
+    {
+      "id": "g162",
+      "name": "NVIDIA RTX 5090 D",
+      "price": 235000,
+      "brand": "NVIDIA",
+      "tier": "ultra"
     }
   ],
   "mobos": [
