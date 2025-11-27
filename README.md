@@ -150,25 +150,30 @@ PCSensei/
 
 ### Running Price Monitor
 
-**One-time check (Manual update):**
+**Option 1: Via Admin Panel (Recommended)**
+
+1. Start the API server:
+```bash
+node api-server.js
+```
+Or double-click: `start-api-server.bat`
+
+2. Open Admin Panel: `http://localhost:8000/admin.html`
+3. Click the **"Update Prices"** button in the header
+
+**Option 2: Manual Command Line**
+
+One-time check:
 ```bash
 node price-monitor.js --once
 ```
+Or double-click: `check-prices-once.bat`
 
-Or on Windows, double-click:
-```
-check-prices-once.bat
-```
-
-**Continuous monitoring (Production):**
+Continuous monitoring:
 ```bash
 node price-monitor.js
 ```
-
-Or on Windows:
-```
-start-monitor.bat
-```
+Or double-click: `start-monitor.bat`
 
 ### How It Works
 
