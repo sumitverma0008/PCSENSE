@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCSensei Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .admin-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 30px;
+            width: 100%;
+            max-width: 1400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        button:not(:disabled):hover {
+            filter: brightness(1.1);
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .success {
+            background: #efe;
+            color: #3c3;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .header h2 {
+            color: #667eea;
+            font-size: 28px;
+        }
+
+        .logout-btn {
+            width: auto;
+            padding: 10px 20px;
+            background: #ff4757;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background: #ff3838;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            width: auto;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(to right, #f0f4ff, #fef9ff);
+            transform: scale(1.01);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+        }
+
+        tbody tr:active {
+            transform: scale(0.99);
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .edit-btn, .delete-btn {
+            padding: 6px 12px;
+            font-size: 12px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .edit-btn {
+            background: #3742fa;
+        }
+
+        .delete-btn {
+            background: #ff4757;
+        }
+
+        .add-btn {
+            margin-bottom: 20px;
+            background: #2ed573;
+        }
+
+        .add-btn:hover {
+            background: #26de81;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            color: #667eea;
+            font-size: 24px;
+        }
+
+        .close-modal {
+            background: none;
+            color: #999;
+            font-size: 28px;
+            width: auto;
+            padding: 0;
+            cursor: pointer;
+            border: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab {
+                min-width: 100px;
+            }
+
+            .table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table {
+                min-width: 800px;
+            }
+
+            .bulk-actions {
+                flex-direction: column;
+            }
+
+            .bulk-actions button {
+                width: 100%;
+            }
+
+            .filter-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group select {
+                width: 100%;
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+            }
+
+            .admin-container {
+                padding: 15px;
+            }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .search-bar input {
+            padding-left: 40px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group select {
+            width: auto;
+            min-width: 150px;
+        }
+
+        .export-btn, .import-btn {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 14px;
+            background: #2ed573;
+            margin-right: 10px;
+        }
+
+        .import-btn {
+            background: #ffa502;
+        }
+
+        .bulk-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .bulk-btn {
+            width: auto;
+            padding: 8px 16px;
+            font-size: 13px;
+            background: #5f27cd;
+        }
+
+        .item-details {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .price-range {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .price-range h4 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            width: auto;
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .pagination span {
+            color: #666;
+        }
+
+        .checkbox-col {
+            width: 40px;
+            text-align: center;
+        }
+
+        .row-number {
+            font-weight: 600;
+            color: #667eea;
+            background: #f0f4ff;
+            padding: 4px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            min-width: 30px;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        .badge-new {
+            background: #2ed573;
+            color: white;
+        }
+
+        .badge-updated {
+            background: #ffa502;
+            color: white;
+        }
+
+        .activity-log {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .activity-log h4 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .activity-item {
+            padding: 8px;
+            border-left: 3px solid #667eea;
+            margin-bottom: 8px;
+            background: white;
+            font-size: 13px;
+        }
+
+        .activity-time {
+            color: #999;
+            font-size: 11px;
+        }
+
+        .price-cell {
+            font-weight: 600;
+            color: #2ed573;
+            white-space: nowrap;
+        }
+
+        .currency {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-right: 2px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #667eea;
+            color: white;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container" id="loginContainer">
+        <div class="logo">
+            <h1>🔐 PCSensei</h1>
+            <p>Admin Panel</p>
+        </div>
+        
+        <div class="error" id="loginError"></div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required autocomplete="username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required autocomplete="current-password">
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Admin Panel Container -->
+    <div class="admin-container" id="adminContainer">
+        <div class="header">
+            <div>
+                <h2>📊 Admin Dashboard</h2>
+                <div id="lastPriceUpdate" style="font-size: 12px; color: #999; margin-top: 5px;">
+                    <i class="fa-solid fa-clock"></i> Checking for price updates...
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="success" id="successMsg"></div>
+        <div class="error" id="errorMsg"></div>
+
+        <!-- Stats -->
+        <div class="stats" id="statsContainer"></div>
+
+        <!-- Activity Log -->
+        <div class="activity-log">
+            <h4>📝 Recent Activity</h4>
+            <div id="activityLog"></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('laptops')">Laptops</button>
+            <button class="tab" onclick="switchTab('cpus')">CPUs</button>
+            <button class="tab" onclick="switchTab('gpus')">GPUs</button>
+            <button class="tab" onclick="switchTab('mobos')">Motherboards</button>
+            <button class="tab" onclick="switchTab('ram')">RAM</button>
+            <button class="tab" onclick="switchTab('storage')">Storage</button>
+            <button class="tab" onclick="switchTab('psu')">PSU</button>
+            <button class="tab" onclick="switchTab('case')">Cases</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="bulk-actions">
+            <button class="export-btn" onclick="exportData()" title="Download database backup">💾 Export All Data</button>
+            <button class="import-btn" onclick="document.getElementById('importFile').click()" title="Import JSON database">📤 Import Data</button>
+            <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+            <button class="bulk-btn" onclick="bulkDelete()" title="Delete all selected items">🗑️ Delete Selected</button>
+            <button class="bulk-btn" onclick="selectAll()" title="Select all items in current category">☑️ Select All</button>
+            <button class="bulk-btn" onclick="deselectAll()" title="Clear selection">☐ Deselect All</button>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search items..." oninput="filterTable()">
+        </div>
+
+        <div class="filter-group">
+            <label>Sort by:</label>
+            <select id="sortBy" onchange="filterTable()">
+                <option value="">Default</option>
+                <option value="id">ID</option>
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+                <option value="brand">Brand</option>
+            </select>
+            <select id="sortOrder" onchange="filterTable()">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <label>Items per page:</label>
+            <select id="itemsPerPage" onchange="filterTable()">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100" selected>100</option>
+                <option value="all">All</option>
+            </select>
+        </div>
+
+        <!-- Price Range Info -->
+        <div class="price-range" id="priceRange"></div>
+
+        <!-- Tab Contents -->
+        <div id="tabsContent"></div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- Modal for Add/Edit -->
+    <div class="modal" id="itemModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Item</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <form id="itemForm"></form>
+        </div>
+    </div>
+
+    <script>
+        let db = null;
+        let currentCategory = 'laptops';
+        let editingItem = null;
+        let activityLog = [];
+        let currentPage = 1;
+        let itemsPerPage = 100;
+        let filteredItems = [];
+        let selectedItems = new Set();
+        let sessionToken = null;
+        let lastActivity = Date.now();
+        const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+        const MAX_LOGIN_ATTEMPTS = 3;
+        let loginAttempts = 0;
+        let loginBlockedUntil = 0;
+
+        // Security utilities
+        const Security = {
+            // Sanitize HTML to prevent XSS
+            sanitizeHTML(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            },
+            
+            // Validate input
+            validateInput(value, type = 'text') {
+                if (value === null || value === undefined) return false;
+                
+                switch(type) {
+                    case 'number':
+                        return !isNaN(parseFloat(value)) && isFinite(value);
+                    case 'price':
+                        return parseFloat(value) >= 0;
+                    case 'id':
+                        return /^[a-zA-Z0-9_-]+$/.test(value);
+                    case 'text':
+                        return value.length > 0 && value.length < 1000;
+                    default:
+                        return true;
+                }
+            },
+            
+            // Generate session token
+            generateToken() {
+                return Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                    .map(b => b.toString(16).padStart(2, '0'))
+                    .join('');
+            },
+            
+            // Hash password (simple client-side - in production use proper backend)
+            async hashPassword(password) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password + 'pcsensei-salt-2025');
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            },
+            
+            // Check session validity
+            isSessionValid() {
+                if (!sessionToken) return false;
+                if (Date.now() - lastActivity > SESSION_TIMEOUT) {
+                    this.clearSession();
+                    return false;
+                }
+                lastActivity = Date.now();
+                return true;
+            },
+            
+            // Clear session
+            clearSession() {
+                sessionToken = null;
+                sessionStorage.removeItem('adminLoggedIn');
+                sessionStorage.removeItem('sessionToken');
+                sessionStorage.removeItem('loginTime');
+            }
+        };
+
+        // Monitor user activity
+        ['mousedown', 'keydown', 'scroll', 'touchstart'].forEach(event => {
+            document.addEventListener(event, () => {
+                if (sessionToken) {
+                    lastActivity = Date.now();
+                }
+            }, true);
+        });
+
+        // Check session periodically
+        setInterval(() => {
+            if (sessionToken && !Security.isSessionValid()) {
+                alert('Session expired. Please login again.');
+                logout();
+            }
+        }, 60000); // Check every minute
+
+        // Default credentials (in production, use backend authentication)
+        const ADMIN_CREDENTIALS = {
+            username: 'admin',
+            password: 'admin123'
+        };
+
+        // Login handler with rate limiting and security
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Check if login is blocked
+            if (Date.now() < loginBlockedUntil) {
+                const remainingTime = Math.ceil((loginBlockedUntil - Date.now()) / 1000);
+                showError('loginError', `Too many failed attempts. Try again in ${remainingTime} seconds.`);
+                return;
+            }
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            
+            // Input validation
+            if (!Security.validateInput(username, 'text') || !Security.validateInput(password, 'text')) {
+                showError('loginError', 'Invalid input');
+                return;
+            }
+            
+            // Hash password for comparison
+            const hashedPassword = await Security.hashPassword(password);
+            const storedHash = await Security.hashPassword(ADMIN_CREDENTIALS.password);
+            
+            if (username === ADMIN_CREDENTIALS.username && hashedPassword === storedHash) {
+                // Generate secure session
+                sessionToken = Security.generateToken();
+                lastActivity = Date.now();
+                loginAttempts = 0;
+                
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                sessionStorage.setItem('sessionToken', sessionToken);
+                sessionStorage.setItem('loginTime', Date.now().toString());
+                
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('adminContainer').style.display = 'block';
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+                
+                await loadDatabase();
+                updateActivityLog('Logged in', 'System', username);
+                renderStats();
+                renderTable(currentCategory);
+            } else {
+                loginAttempts++;
+                if (loginAttempts >= MAX_LOGIN_ATTEMPTS) {
+                    loginBlockedUntil = Date.now() + 60000; // Block for 1 minute
+                    showError('loginError', 'Too many failed attempts. Access blocked for 1 minute.');
+                } else {
+                    showError('loginError', `Invalid credentials. ${MAX_LOGIN_ATTEMPTS - loginAttempts} attempts remaining.`);
+                }
+            }
+        });
+
+        // Check if already logged in with session validation
+        if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+            const storedToken = sessionStorage.getItem('sessionToken');
+            const loginTime = parseInt(sessionStorage.getItem('loginTime') || '0');
+            
+            // Validate session
+            if (storedToken && (Date.now() - loginTime) < SESSION_TIMEOUT) {
+                sessionToken = storedToken;
+                lastActivity = Date.now();
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('adminContainer').style.display = 'block';
+                loadDatabase().then(() => {
+                    renderStats();
+                    renderTable(currentCategory);
+                });
+            } else {
+                // Session expired
+                Security.clearSession();
+                showError('loginError', 'Session expired. Please login again.');
+            }
+        }
+
+        function logout() {
+            if (sessionToken) {
+                updateActivityLog('Logged out', 'System', 'Admin');
+            }
+            Security.clearSession();
+            sessionToken = null;
+            location.reload();
+        }
+
+        // Check for price updates
+        async function checkPriceUpdates() {
+            try {
+                const response = await fetch('logs/price-summary.txt');
+                if (response.ok) {
+                    const text = await response.text();
+                    const lines = text.split('\n');
+                    const generatedLine = lines.find(l => l.startsWith('Generated:'));
+                    
+                    if (generatedLine) {
+                        const timestamp = generatedLine.replace('Generated:', '').trim();
+                        document.getElementById('lastPriceUpdate').innerHTML = 
+                            `<i class="fa-solid fa-sync" style="color: #2ed573;"></i> Last price update: <strong>${timestamp}</strong>`;
+                    }
+                } else {
+                    document.getElementById('lastPriceUpdate').innerHTML = 
+                        `<i class="fa-solid fa-info-circle"></i> No price updates yet. Run <code>check-prices-once.bat</code> to update.`;
+                }
+            } catch (error) {
+                document.getElementById('lastPriceUpdate').innerHTML = 
+                    `<i class="fa-solid fa-robot"></i> AI Price Monitor: <a href="#" onclick="showMonitorHelp()" style="color: #667eea;">Setup Instructions</a>`;
+            }
+        }
+
+        function showMonitorHelp() {
+            alert('To enable automatic price updates:\n\n' +
+                  '1. Open Command Prompt in project folder\n' +
+                  '2. Run: node price-monitor.js --once\n' +
+                  '3. Or double-click: check-prices-once.bat\n\n' +
+                  'For continuous monitoring:\n' +
+                  '- Run: start-monitor.bat\n' +
+                  '- Prices will update every 24 hours automatically');
+            return false;
+        }
+
+        // Check on load and every 5 minutes
+        if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+            setTimeout(checkPriceUpdates, 1000);
+            setInterval(checkPriceUpdates, 5 * 60 * 1000);
+        }
+
+        async function loadDatabase() {
+            if (!Security.isSessionValid()) {
+                logout();
+                return;
+            }
+            
+            try {
+                const response = await fetch('data/components.json', {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load database');
+                }
+                
+                const data = await response.json();
+                
+                // Validate database structure
+                const requiredKeys = ['laptops', 'cpus', 'gpus', 'mobos', 'ram', 'storage', 'psu', 'case'];
+                const hasAllKeys = requiredKeys.every(key => Array.isArray(data[key]));
+                
+                if (!hasAllKeys) {
+                    throw new Error('Invalid database structure');
+                }
+                
+                db = data;
+            } catch (error) {
+                showError('errorMsg', 'Failed to load database: ' + error.message);
+            }
+        }
+
+        function renderStats() {
+            const totalItems = Object.values(db).reduce((sum, arr) => sum + arr.length, 0);
+            const stats = [
+                { label: 'Total Items', count: totalItems, icon: '📦' },
+                { label: 'Laptops', count: db.laptops.length, icon: '💻' },
+                { label: 'CPUs', count: db.cpus.length, icon: '⚙️' },
+                { label: 'GPUs', count: db.gpus.length, icon: '🎮' },
+                { label: 'Motherboards', count: db.mobos.length, icon: '🔌' },
+                { label: 'RAM', count: db.ram.length, icon: '🧠' },
+                { label: 'Storage', count: db.storage.length, icon: '💾' },
+                { label: 'PSU', count: db.psu.length, icon: '⚡' },
+                { label: 'Cases', count: db.case.length, icon: '🗄️' }
+            ];
+
+            document.getElementById('statsContainer').innerHTML = stats.map((stat, index) => `
+                <div class="stat-card" style="animation: slideIn 0.5s ease ${index * 0.1}s both;">
+                    <div style="font-size: 32px; margin-bottom: 10px;">${stat.icon}</div>
+                    <h3 style="animation: countUp 1s ease ${index * 0.1}s both;">${stat.count}</h3>
+                    <p>${stat.label}</p>
+                </div>
+            `).join('');
+        }
+
+        function updateActivityLog(action, category, itemName = '') {
+            const time = new Date().toLocaleTimeString();
+            activityLog.unshift({
+                time,
+                action,
+                category,
+                itemName
+            });
+            
+            if (activityLog.length > 10) activityLog = activityLog.slice(0, 10);
+            
+            document.getElementById('activityLog').innerHTML = activityLog.map(log => `
+                <div class="activity-item">
+                    <strong>${log.action}</strong> in ${log.category} ${log.itemName ? `- ${log.itemName}` : ''}
+                    <div class="activity-time">${log.time}</div>
+                </div>
+            `).join('') || '<p style="color: #999;">No recent activity</p>';
+        }
+
+        function updatePriceRange(items) {
+            if (!items.length || !items[0].price) {
+                document.getElementById('priceRange').style.display = 'none';
+                return;
+            }
+            
+            const prices = items.map(i => i.price);
+            const min = Math.min(...prices);
+            const max = Math.max(...prices);
+            const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+            
+            document.getElementById('priceRange').style.display = 'block';
+            document.getElementById('priceRange').innerHTML = `
+                <h4>💰 Price Statistics (${currentCategory})</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #999; margin-bottom: 5px;">Minimum</div>
+                        <div style="font-size: 18px; font-weight: 600; color: #2ed573;"><span style="font-size: 14px;">₹</span>${min.toLocaleString('en-IN')}</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #999; margin-bottom: 5px;">Average</div>
+                        <div style="font-size: 18px; font-weight: 600; color: #667eea;"><span style="font-size: 14px;">₹</span>${Math.round(avg).toLocaleString('en-IN')}</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: 8px;">
+                        <div style="font-size: 12px; color: #999; margin-bottom: 5px;">Maximum</div>
+                        <div style="font-size: 18px; font-weight: 600; color: #ff4757;"><span style="font-size: 14px;">₹</span>${max.toLocaleString('en-IN')}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function switchTab(category) {
+            currentCategory = category;
+            selectedItems.clear();
+            currentPage = 1;
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('searchInput').value = '';
+            filterTable();
+        }
+
+        function filterTable() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const sortBy = document.getElementById('sortBy').value;
+            const sortOrder = document.getElementById('sortOrder').value;
+            itemsPerPage = document.getElementById('itemsPerPage').value === 'all' ? 
+                db[currentCategory].length : parseInt(document.getElementById('itemsPerPage').value);
+            
+            filteredItems = db[currentCategory].filter(item => {
+                return Object.values(item).some(val => 
+                    String(val).toLowerCase().includes(searchTerm)
+                );
+            });
+
+            if (sortBy) {
+                filteredItems.sort((a, b) => {
+                    let aVal = a[sortBy];
+                    let bVal = b[sortBy];
+                    
+                    if (typeof aVal === 'string') {
+                        aVal = aVal.toLowerCase();
+                        bVal = bVal.toLowerCase();
+                    }
+                    
+                    if (sortOrder === 'asc') {
+                        return aVal > bVal ? 1 : -1;
+                    } else {
+                        return aVal < bVal ? 1 : -1;
+                    }
+                });
+            }
+
+            updatePriceRange(filteredItems);
+            renderTable(currentCategory);
+        }
+
+        function renderTable(category) {
+            const items = filteredItems.length > 0 ? filteredItems : db[category];
+            const headers = items.length > 0 ? Object.keys(items[0]) : [];
+            
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = items.slice(start, end);
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+            
+            const html = `
+                <button class="add-btn" onclick="openAddModal('${category}')">+ Add New ${category.slice(0, -1)}</button>
+                <div style="color: #666; margin-bottom: 10px;">
+                    Showing ${start + 1}-${Math.min(end, items.length)} of ${items.length} items
+                    ${selectedItems.size > 0 ? `(${selectedItems.size} selected)` : ''}
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="checkbox-col"><input type="checkbox" onchange="toggleAllOnPage(this)"></th>
+                                <th>#</th>
+                                ${headers.map(h => `<th>${h.toUpperCase()}</th>`).join('')}
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${paginatedItems.map((item, idx) => {
+                                const actualIndex = db[category].indexOf(item);
+                                const itemKey = `${category}-${actualIndex}`;
+                                return `
+                                <tr>
+                                    <td class="checkbox-col">
+                                        <input type="checkbox" 
+                                            ${selectedItems.has(itemKey) ? 'checked' : ''} 
+                                            onchange="toggleSelect('${itemKey}')">
+                                    </td>
+                                    <td><span class="row-number">${start + idx + 1}</span></td>
+                                    ${headers.map(h => {
+                                        let val = item[h] !== undefined ? item[h] : '';
+                                        let cellClass = '';
+                                        
+                                        if (h === 'price' && typeof val === 'number') {
+                                            cellClass = 'price-cell';
+                                            val = `<span class="currency">₹</span>${val.toLocaleString('en-IN')}`;
+                                        } else if (h === 'brand' && val) {
+                                            val = `<span class="brand-badge">${val}</span>`;
+                                        } else if (h === 'id') {
+                                            val = `<code style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 12px;">${val}</code>`;
+                                        } else if (typeof val === 'boolean') {
+                                            val = val ? '<span style="color: #2ed573; font-weight: 600;">✓ Yes</span>' : '<span style="color: #ff4757;">✗ No</span>';
+                                        }
+                                        
+                                        return `<td class="${cellClass}">${val}</td>`;
+                                    }).join('')}
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="edit-btn" onclick="openEditModal('${category}', ${actualIndex})" title="Edit item">✏️ Edit</button>
+                                            <button class="delete-btn" onclick="deleteItem('${category}', ${actualIndex})" title="Delete item">🗑️ Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            `}).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            
+            document.getElementById('tabsContent').innerHTML = html;
+            renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+            if (totalPages <= 1) {
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            const maxVisible = 5;
+            let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+            let end = Math.min(totalPages, start + maxVisible - 1);
+            
+            if (end - start < maxVisible - 1) {
+                start = Math.max(1, end - maxVisible + 1);
+            }
+
+            let html = `
+                <button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(1)">⏮️ First</button>
+                <button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">◀️ Prev</button>
+            `;
+
+            for (let i = start; i <= end; i++) {
+                html += `<button ${i === currentPage ? 'style="background: #667eea; color: white;"' : ''} onclick="changePage(${i})">${i}</button>`;
+            }
+
+            html += `
+                <button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Next ▶️</button>
+                <button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${totalPages})">Last ⏭️</button>
+                <span>Page ${currentPage} of ${totalPages}</span>
+            `;
+
+            document.getElementById('pagination').innerHTML = html;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderTable(currentCategory);
+        }
+
+        function toggleSelect(itemKey) {
+            if (selectedItems.has(itemKey)) {
+                selectedItems.delete(itemKey);
+            } else {
+                selectedItems.add(itemKey);
+            }
+            renderTable(currentCategory);
+        }
+
+        function toggleAllOnPage(checkbox) {
+            const items = filteredItems.length > 0 ? filteredItems : db[currentCategory];
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = items.slice(start, end);
+            
+            paginatedItems.forEach(item => {
+                const actualIndex = db[currentCategory].indexOf(item);
+                const itemKey = `${currentCategory}-${actualIndex}`;
+                if (checkbox.checked) {
+                    selectedItems.add(itemKey);
+                } else {
+                    selectedItems.delete(itemKey);
+                }
+            });
+            
+            renderTable(currentCategory);
+        }
+
+        function selectAll() {
+            db[currentCategory].forEach((item, index) => {
+                selectedItems.add(`${currentCategory}-${index}`);
+            });
+            renderTable(currentCategory);
+        }
+
+        function deselectAll() {
+            selectedItems.clear();
+            renderTable(currentCategory);
+        }
+
+        function bulkDelete() {
+            if (selectedItems.size === 0) {
+                alert('No items selected');
+                return;
+            }
+
+            if (!confirm(`Delete ${selectedItems.size} selected items?`)) return;
+
+            const itemsToDelete = Array.from(selectedItems)
+                .filter(key => key.startsWith(currentCategory))
+                .map(key => parseInt(key.split('-')[1]))
+                .sort((a, b) => b - a);
+
+            itemsToDelete.forEach(index => {
+                db[currentCategory].splice(index, 1);
+            });
+
+            selectedItems.clear();
+            updateActivityLog('Bulk deleted', currentCategory, `${itemsToDelete.length} items`);
+            saveDatabase();
+            showSuccess(`${itemsToDelete.length} items deleted successfully`);
+            renderStats();
+            filterTable();
+        }
+
+        function openAddModal(category) {
+            editingItem = null;
+            document.getElementById('modalTitle').textContent = `Add New ${category.slice(0, -1)}`;
+            renderForm(category);
+            document.getElementById('itemModal').classList.add('active');
+        }
+
+        function openEditModal(category, index) {
+            editingItem = { category, index };
+            document.getElementById('modalTitle').textContent = `Edit ${category.slice(0, -1)}`;
+            renderForm(category, db[category][index]);
+            document.getElementById('itemModal').classList.add('active');
+        }
+
+        function renderForm(category, item = null) {
+            const template = db[category][0];
+            const fields = Object.keys(template);
+            
+            const formHtml = fields.map(field => {
+                const value = item ? item[field] : '';
+                const type = typeof template[field] === 'number' ? 'number' : 'text';
+                
+                if (typeof template[field] === 'boolean') {
+                    return `
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="${field}" ${value ? 'checked' : ''}> ${field}
+                            </label>
+                        </div>
+                    `;
+                }
+                
+                return `
+                    <div class="form-group">
+                        <label for="${field}">${field.toUpperCase()}</label>
+                        <input type="${type}" id="${field}" name="${field}" value="${value}" required>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('itemForm').innerHTML = `
+                ${formHtml}
+                <button type="submit">${editingItem ? 'Update' : 'Add'} Item</button>
+            `;
+            
+            document.getElementById('itemForm').onsubmit = (e) => {
+                e.preventDefault();
+                saveItem(category);
+            };
+        }
+
+        function saveItem(category) {
+            if (!Security.isSessionValid()) {
+                logout();
+                return;
+            }
+            
+            const formData = new FormData(document.getElementById('itemForm'));
+            const newItem = {};
+            const template = db[category][0];
+            
+            try {
+                for (let [key, value] of formData.entries()) {
+                    if (typeof template[key] === 'number') {
+                        const numValue = parseFloat(value);
+                        if (!Security.validateInput(numValue, 'number')) {
+                            throw new Error(`Invalid number for ${key}`);
+                        }
+                        if (key === 'price' && !Security.validateInput(numValue, 'price')) {
+                            throw new Error('Price must be positive');
+                        }
+                        newItem[key] = numValue;
+                    } else if (typeof template[key] === 'boolean') {
+                        newItem[key] = formData.get(key) !== null;
+                    } else {
+                        // Sanitize text input
+                        const sanitized = Security.sanitizeHTML(value.trim());
+                        if (key === 'id' && !Security.validateInput(sanitized, 'id')) {
+                            throw new Error('ID must contain only letters, numbers, hyphens, and underscores');
+                        }
+                        if (!Security.validateInput(sanitized, 'text')) {
+                            throw new Error(`Invalid input for ${key}`);
+                        }
+                        newItem[key] = sanitized;
+                    }
+                }
+                
+                const itemName = Security.sanitizeHTML(newItem.name || newItem.id || 'Item');
+                
+                if (editingItem) {
+                    db[editingItem.category][editingItem.index] = newItem;
+                    updateActivityLog('Updated', category, itemName);
+                    showSuccess('Item updated successfully');
+                } else {
+                    db[category].push(newItem);
+                    updateActivityLog('Added', category, itemName);
+                    showSuccess('Item added successfully');
+                }
+                
+                saveDatabase();
+                closeModal();
+                renderStats();
+                filterTable();
+            } catch (error) {
+                showError('errorMsg', 'Validation error: ' + error.message);
+            }
+        }
+
+        function deleteItem(category, index) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                const itemName = db[category][index].name || db[category][index].id || 'Item';
+                db[category].splice(index, 1);
+                updateActivityLog('Deleted', category, itemName);
+                saveDatabase();
+                showSuccess('Item deleted successfully');
+                renderStats();
+                filterTable();
+            }
+        }
+
+        function exportData() {
+            const dataStr = JSON.stringify(db, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `components-backup-${new Date().toISOString().slice(0,10)}.json`;
+            link.click();
+            updateActivityLog('Exported', 'All Categories', 'Full database backup');
+            showSuccess('Database exported successfully');
+        }
+
+        function importData(event) {
+            if (!Security.isSessionValid()) {
+                logout();
+                return;
+            }
+            
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            // Validate file size (max 10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                showError('errorMsg', 'File too large. Maximum size is 10MB.');
+                return;
+            }
+            
+            // Validate file type
+            if (!file.name.endsWith('.json')) {
+                showError('errorMsg', 'Only JSON files are allowed');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const importedDb = JSON.parse(e.target.result);
+                    
+                    // Validate structure
+                    const requiredKeys = ['laptops', 'cpus', 'gpus', 'mobos', 'ram', 'storage', 'psu', 'case'];
+                    const hasAllKeys = requiredKeys.every(key => Array.isArray(importedDb[key]));
+                    
+                    if (!hasAllKeys) {
+                        throw new Error('Invalid database structure');
+                    }
+                    
+                    // Validate data integrity
+                    let totalItems = 0;
+                    for (let key of requiredKeys) {
+                        totalItems += importedDb[key].length;
+                        if (importedDb[key].length > 1000) {
+                            throw new Error(`Too many items in ${key} category`);
+                        }
+                    }
+                    
+                    if (confirm(`Import ${totalItems} items? This will replace all current data.`)) {
+                        db = importedDb;
+                        updateActivityLog('Imported', 'All Categories', `${totalItems} items`);
+                        saveDatabase();
+                        showSuccess('Database imported successfully');
+                        renderStats();
+                        filterTable();
+                    }
+                } catch (error) {
+                    showError('errorMsg', 'Import failed: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function saveDatabase() {
+            // Save to localStorage (in production, save to backend)
+            localStorage.setItem('componentsDB', JSON.stringify(db));
+            
+            // Create download link
+            const dataStr = JSON.stringify(db, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'components.json';
+            link.click();
+        }
+
+        function closeModal() {
+            document.getElementById('itemModal').classList.remove('active');
+        }
+
+        function showError(id, message) {
+            const el = document.getElementById(id);
+            el.textContent = message;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 5000);
+        }
+
+        function showSuccess(message) {
+            const el = document.getElementById('successMsg');
+            el.textContent = message;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 3000);
+        }
+    </script>
+</body>
+</html>

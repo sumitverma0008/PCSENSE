@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>PCSensei | Intelligent PC & Laptop Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            accent: '#3b82f6',
+                            glass: 'rgba(15, 23, 42, 0.8)'
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .chat-msg {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        /* Enhanced hover effects */
+        button, a {
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        /* Currency styling */
+        .price-value {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Improved responsive design */
+        @media (max-width: 640px) {
+            #ai-chat-panel {
+                width: calc(100vw - 32px);
+                right: 16px;
+                left: 16px;
+            }
+            
+            .glass-panel {
+                backdrop-filter: blur(8px);
+            }
+            
+            h2, h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .max-w-7xl {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-blue-200">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-panel shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="goHome()">
+                    <div class="w-10 h-10 bg-brand-dark rounded-lg flex items-center justify-center text-blue-400">
+                        <i class="fa-solid fa-cube text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">PCSensei</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" onclick="goHome()" class="text-slate-600 hover:text-blue-600 transition font-medium">Home</a>
+                    <a href="#builder" onclick="startWizard()" class="text-slate-600 hover:text-blue-600 transition font-medium">Builder</a>
+                    <div class="h-6 w-px bg-slate-300"></div>
+                    <button onclick="toggleLiveSupport()" class="flex items-center gap-2 text-green-600 font-bold hover:text-green-700 transition">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        Talk to Expert
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-16 min-h-screen relative">
+        
+        <!-- View: Landing Page -->
+        <div id="view-landing" class="block">
+            <div class="relative bg-slate-900 h-[600px] overflow-hidden">
+                <div class="absolute inset-0">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-20">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                </div>
+                
+                <div class="relative max-w-7xl mx-auto px-4 pt-32 text-center text-white">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium mb-6">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI-Powered Recommendations
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                        Build Your Dream PC.<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Or Find the Perfect Laptop.</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                        Tell us your budget (starting at ₹15,000) and goals. We predict performance and find compatible parts instantly.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="startWizard()" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold text-lg transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
+                            Start Consultation <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="toggleAI()" class="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-bold text-lg transition backdrop-blur-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-robot"></i> Ask AI Assistant
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="py-20 max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Performance Prediction</h3>
+                        <p class="text-slate-500">See estimated FPS for games or software performance for Workstations/Dev.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Budget Friendly</h3>
+                        <p class="text-slate-500">Support for builds starting from ₹15,000 up to ultra-high-end workstations (5L+).</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-headset"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Expert Support</h3>
+                        <p class="text-slate-500">Stuck? Chat with our AI instantly or request a live session with a human hardware expert.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View: Wizard -->
+        <div id="view-wizard" class="hidden min-h-[80vh] bg-slate-100 py-12">
+            <div class="max-w-3xl mx-auto px-4">
+                <div class="mb-8 flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-slate-800">Configuration Wizard</h2>
+                    <div class="text-sm text-slate-500">Step <span id="wiz-step-num">1</span> of 4</div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-200 h-2 rounded-full mb-8">
+                    <div id="wiz-progress" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 25%"></div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8 animate-slide-up relative overflow-hidden">
+                    
+                    <!-- Step 1: Form Factor -->
+                    <div id="step-1" class="wizard-step">
+                        <h3 class="text-xl font-bold mb-6">What type of computer do you need?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <button onclick="setFormFactor('desktop')" class="p-8 border-2 border-slate-100 hover:border-blue-500 rounded-2xl text-center hover:bg-blue-50 transition group">
+                                <i class="fa-solid fa-desktop text-5xl text-slate-300 group-hover:text-blue-600 mb-4 transition"></i>
+                                <div class="font-bold text-xl text-slate-800">Desktop PC</div>
+                                <p class="text-sm text-slate-500 mt-2">Best performance & upgradability.</p>
+                            </button>
+                            <button onclick="setFormFactor('laptop')" class="p-8 border-2 border-slate-100 hover:border-blue-500 rounded-2xl text-center hover:bg-blue-50 transition group">
+                                <i class="fa-solid fa-laptop text-5xl text-slate-300 group-hover:text-blue-600 mb-4 transition"></i>
+                                <div class="font-bold text-xl text-slate-800">Laptop</div>
+                                <p class="text-sm text-slate-500 mt-2">Portability & convenience.</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Usage -->
+                    <div id="step-2" class="wizard-step hidden">
+                        <h3 class="text-xl font-bold mb-6">What is your primary use case?</h3>
+                        <div class="grid gap-4">
+                            <button onclick="setUsage('gaming')" class="w-full p-4 border-2 border-slate-100 hover:border-blue-500 rounded-xl text-left hover:bg-blue-50 transition group flex items-center gap-4">
+                                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-600"><i class="fa-solid fa-gamepad"></i></div>
+                                <div>
+                                    <div class="font-bold text-slate-800">Gaming & Streaming</div>
+                                    <div class="text-sm text-slate-500">High FPS, AAA Titles, 1440p/4K</div>
+                                </div>
+                            </button>
+                            <button onclick="setUsage('productivity')" class="w-full p-4 border-2 border-slate-100 hover:border-blue-500 rounded-xl text-left hover:bg-blue-50 transition group flex items-center gap-4">
+                                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-600"><i class="fa-solid fa-briefcase"></i></div>
+                                <div>
+                                    <div class="font-bold text-slate-800">Workstation / Office</div>
+                                    <div class="text-sm text-slate-500">Video Editing, 3D, Office Apps, Student work</div>
+                                </div>
+                            </button>
+                            <button onclick="setUsage('coding')" class="w-full p-4 border-2 border-slate-100 hover:border-blue-500 rounded-xl text-left hover:bg-blue-50 transition group flex items-center gap-4">
+                                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-600"><i class="fa-solid fa-code"></i></div>
+                                <div>
+                                    <div class="font-bold text-slate-800">Programming & Dev</div>
+                                    <div class="text-sm text-slate-500">Virtual Machines, Docker, Compiling</div>
+                                </div>
+                            </button>
+                            <div class="pt-4">
+                                <button onclick="navWizard(1)" class="text-slate-500 hover:text-slate-800">Back</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Budget -->
+                    <div id="step-3" class="wizard-step hidden">
+                        <h3 class="text-xl font-bold mb-6">What is your maximum budget? (INR)</h3>
+                        <div class="space-y-6">
+                            <input type="range" min="15000" max="500000" step="5000" value="50000" id="budget-range" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600" oninput="updateBudgetDisplay(this.value)">
+                            <div class="text-center">
+                                <div class="price-value">
+                                    <span class="text-4xl font-bold text-blue-600"><span style="font-size: 0.7em; opacity: 0.8;">₹</span><span id="budget-val">50,000</span></span>
+                                </div>
+                                <p class="text-slate-400 mt-2 text-sm flex items-center justify-center gap-2"><i class="fa-solid fa-info-circle"></i> We'll find the best <span id="budget-type-text">PC</span> within this limit.</p>
+                            </div>
+                            <div class="flex justify-between pt-6">
+                                <button onclick="navWizard(2)" class="text-slate-500 hover:text-slate-800">Back</button>
+                                <button onclick="navWizard(4)" class="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Brand & Aesthetics -->
+                    <div id="step-4" class="wizard-step hidden">
+                        <h3 class="text-xl font-bold mb-4">Final Preferences</h3>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-slate-700 mb-2">CPU Preference</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button onclick="setPref('cpu', 'Intel')" id="btn-cpu-intel" class="pref-btn border rounded-lg p-3 text-center hover:bg-slate-50">Intel</button>
+                                <button onclick="setPref('cpu', 'AMD')" id="btn-cpu-amd" class="pref-btn border rounded-lg p-3 text-center hover:bg-slate-50">AMD</button>
+                                <button onclick="setPref('cpu', 'Any')" id="btn-cpu-any" class="pref-btn bg-blue-50 border-blue-500 border rounded-lg p-3 text-center text-blue-700 font-bold">Any</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-slate-700 mb-2">GPU Preference</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button onclick="setPref('gpu', 'NVIDIA')" id="btn-gpu-nvidia" class="pref-btn border rounded-lg p-3 text-center hover:bg-slate-50">NVIDIA</button>
+                                <button onclick="setPref('gpu', 'AMD')" id="btn-gpu-amd" class="pref-btn border rounded-lg p-3 text-center hover:bg-slate-50">AMD</button>
+                                <button onclick="setPref('gpu', 'Any')" id="btn-gpu-any" class="pref-btn bg-blue-50 border-blue-500 border rounded-lg p-3 text-center text-blue-700 font-bold">Any</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between pt-4">
+                            <button onclick="navWizard(3)" class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2 px-4 py-2 hover:bg-slate-100 rounded-lg"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                            <button onclick="generateBuild()" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 font-bold shadow-lg shadow-blue-500/30 transition-all hover:shadow-xl flex items-center gap-2">
+                                <i class="fa-solid fa-magic"></i> See Recommendation
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- View: Results -->
+        <div id="view-results" class="hidden min-h-screen bg-slate-50 pb-20">
+            <div class="bg-slate-900 text-white py-12 px-4">
+                <div class="max-w-7xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-2">Your Recommendation</h2>
+                    <p class="text-slate-400">Optimized for <span id="res-usage" class="text-white font-bold capitalize">Gaming</span> • Budget: <span id="res-budget"></span></p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 -mt-8">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-slate-200">
+                    
+                    <!-- Build Summary Header -->
+                    <div class="bg-blue-50 p-6 border-b border-blue-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle"></i> Best Match Found
+                            </div>
+                            <span class="text-sm text-slate-500">Generated by PCSensei Engine</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-slate-500">Estimated Price</div>
+                            <div class="text-3xl font-bold text-slate-900" id="total-price">₹0</div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Performance Section -->
+                    <div id="performance-section" class="p-6 bg-slate-50 border-b border-slate-200">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <span id="perf-icon"></span>
+                            <span id="perf-title">Performance Estimates</span>
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="benchmark-cards">
+                            <!-- Injected via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Parts List Container -->
+                    <div class="p-0" id="parts-container">
+                        <!-- Parts injected via JS -->
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="p-6 bg-slate-50 border-t border-slate-200 flex flex-wrap justify-end gap-4">
+                        <button onclick="startWizard()" class="px-6 py-2 border border-slate-300 rounded-lg hover:bg-white text-slate-600 transition-all hover:shadow-md flex items-center gap-2"><i class="fa-solid fa-edit"></i> Edit Preferences</button>
+                        <button onclick="window.print()" class="px-6 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all hover:shadow-lg flex items-center gap-2"><i class="fa-solid fa-print"></i> Save Details</button>
+                    </div>
+                </div>
+                
+                <!-- AI Explanation -->
+                <div class="mt-8 bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex gap-4">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex-shrink-0 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2">Why this choice?</h4>
+                        <p class="text-slate-600 leading-relaxed" id="build-reasoning">
+                            Loading reasoning...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Floating UI: AI Chat -->
+    <div id="ai-chat-panel" class="fixed bottom-24 right-6 w-96 h-[500px] glass-panel rounded-2xl shadow-2xl transform translate-y-[120%] transition-transform duration-300 z-40 flex flex-col">
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-t-2xl flex justify-between items-center text-white shadow-lg">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <span class="font-bold block">PCSensei AI</span>
+                    <span class="text-xs opacity-80">Online • Ready to help</span>
+                </div>
+            </div>
+            <button onclick="toggleAI()" class="hover:bg-white hover:bg-opacity-20 p-2 rounded-lg transition-all"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
+            <!-- Msgs -->
+            <div class="flex gap-2">
+                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-xs"><i class="fa-solid fa-robot"></i></div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-slate-700 max-w-[80%] border border-slate-100">
+                    Hello! I can help you verify compatibility or suggest alternatives. Ask me anything!
+                </div>
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-slate-200 rounded-b-2xl">
+            <div class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Ask about laptop specs..." class="flex-1 bg-slate-100 border-0 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 text-sm" onkeypress="handleChat(event)">
+                <button onclick="sendMessage()" class="bg-purple-600 text-white w-10 h-10 rounded-lg hover:bg-purple-700"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating UI: Live Support -->
+    <div id="live-support-panel" class="fixed top-20 right-6 w-80 bg-white rounded-xl shadow-2xl border border-slate-200 z-50 hidden animate-slide-up">
+        <div class="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-xl">
+            <h3 class="font-bold text-slate-800"><i class="fa-solid fa-headset mr-2 text-green-500"></i>Live Expert</h3>
+            <button onclick="toggleLiveSupport()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <div class="p-6 text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20"></span>
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+            <h4 class="font-bold text-slate-800 mb-1">Connecting...</h4>
+            <p class="text-sm text-slate-500 mb-6">An expert agent is reviewing your current configuration.</p>
+            <div class="bg-slate-100 rounded-lg p-3 text-xs text-left text-slate-500 mb-4">
+                <p><strong>Position in queue:</strong> 1</p>
+                <p><strong>Est. wait time:</strong> < 1 min</p>
+            </div>
+            <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded-lg transition">Cancel Request</button>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <button onclick="toggleAI()" class="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white shadow-lg hover:shadow-xl hover:scale-105 transition flex items-center justify-center text-2xl z-30">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+
+    <script>
+        // --- SECURITY UTILITIES ---
+        const Security = {
+            sanitizeHTML(str) {
+                if (typeof str !== 'string') return str;
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            },
+            
+            sanitizeNumber(value, min = 0, max = Infinity) {
+                const num = parseFloat(value);
+                if (isNaN(num)) return min;
+                return Math.max(min, Math.min(max, num));
+            },
+            
+            validateBudget(budget) {
+                return this.sanitizeNumber(budget, 15000, 500000);
+            },
+            
+            sanitizeObject(obj) {
+                if (typeof obj !== 'object' || obj === null) return {};
+                const sanitized = {};
+                for (let key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        if (typeof obj[key] === 'string') {
+                            sanitized[key] = this.sanitizeHTML(obj[key]);
+                        } else if (typeof obj[key] === 'number') {
+                            sanitized[key] = this.sanitizeNumber(obj[key]);
+                        } else {
+                            sanitized[key] = obj[key];
+                        }
+                    }
+                }
+                return sanitized;
+            },
+            
+            rateLimit: {
+                lastRequest: 0,
+                minDelay: 1000,
+                
+                check() {
+                    const now = Date.now();
+                    if (now - this.lastRequest < this.minDelay) {
+                        return false;
+                    }
+                    this.lastRequest = now;
+                    return true;
+                }
+            }
+        };
+
+        // --- 1. DATABASE LOADER ---
+        let db = null;
+        let dbLoaded = false;
+
+        async function loadDb() {
+            if (dbLoaded && db) return db;
+            
+            try {
+                const response = await fetch('data/components.json', {
+                    headers: { 'Cache-Control': 'no-cache' }
+                });
+                if (!response.ok) throw new Error('Failed to load components database');
+                
+                const data = await response.json();
+                
+                // Validate database structure
+                const requiredKeys = ['laptops', 'cpus', 'gpus', 'mobos', 'ram', 'storage', 'psu', 'case'];
+                const isValid = requiredKeys.every(key => Array.isArray(data[key]));
+                
+                if (!isValid) {
+                    throw new Error('Invalid database structure');
+                }
+                
+                // Sanitize all data
+                db = {};
+                for (let key of requiredKeys) {
+                    db[key] = data[key].map(item => Security.sanitizeObject(item));
+                }
+                
+                dbLoaded = true;
+                return db;
+            } catch (error) {
+                console.error('Database load error:', error);
+                alert('Failed to load component database. Please refresh the page.');
+                throw error;
+            }
+        }
+
+        // --- 2. METRICS ---
+        const PERFORMANCE_METRICS = {
+            gaming: {
+                label: "Estimated Gaming Performance",
+                icon: '<i class="fa-solid fa-gamepad text-purple-600"></i>',
+                metrics: {
+                    integrated: [
+                        { name: "GTA V", value: "30-40 FPS (720p)", color: "text-green-600" },
+                        { name: "Valorant", value: "60+ FPS (Low)", color: "text-blue-600" },
+                        { name: "Cyberpunk", value: "Unplayable", color: "text-red-600" },
+                        { name: "Live Streaming", value: "Not Supported", color: "text-red-600" }
+                    ],
+                    entry: [
+                        { name: "GTA V", value: "60+ FPS (1080p)", color: "text-green-600" },
+                        { name: "Valorant", value: "144+ FPS (High)", color: "text-blue-600" },
+                        { name: "Cyberpunk", value: "30-45 FPS (Low)", color: "text-orange-600" },
+                        { name: "Live Streaming", value: "720p 30FPS (Basic)", color: "text-orange-600" }
+                    ],
+                    mid: [
+                        { name: "GTA V", value: "100+ FPS (Ultra)", color: "text-green-600" },
+                        { name: "Valorant", value: "240+ FPS (High)", color: "text-blue-600" },
+                        { name: "Cyberpunk", value: "60+ FPS (High)", color: "text-green-600" },
+                        { name: "Live Streaming", value: "1080p 60FPS (Smooth)", color: "text-green-600" }
+                    ],
+                    high: [
+                        { name: "GTA V", value: "140+ FPS (1440p)", color: "text-green-600" },
+                        { name: "Valorant", value: "300+ FPS (High)", color: "text-blue-600" },
+                        { name: "Cyberpunk", value: "80+ FPS (1440p)", color: "text-green-600" },
+                        { name: "Live Streaming", value: "1080p/1440p (Pro)", color: "text-blue-600" }
+                    ],
+                    ultra: [
+                        { name: "GTA V", value: "165+ FPS (4K)", color: "text-green-600" },
+                        { name: "Valorant", value: "500+ FPS (High)", color: "text-blue-600" },
+                        { name: "Cyberpunk", value: "100+ FPS (4K)", color: "text-green-600" },
+                        { name: "Live Streaming", value: "4K / Multi-Stream", color: "text-purple-600" }
+                    ]
+                }
+            },
+            productivity: {
+                label: "Workstation Software Capability",
+                icon: '<i class="fa-solid fa-pen-ruler text-blue-600"></i>',
+                metrics: {
+                    integrated: [
+                        { name: "Video Editing", value: "1080p Basic", color: "text-orange-600" },
+                        { name: "Graphic Design", value: "Canva/Basic", color: "text-blue-600" },
+                        { name: "3D Rendering", value: "Not Recommended", color: "text-red-600" },
+                        { name: "Multitasking", value: "Basic", color: "text-orange-600" }
+                    ],
+                    entry: [
+                        { name: "Video Editing", value: "1080p Smooth", color: "text-green-600" },
+                        { name: "Graphic Design", value: "Photoshop (Fast)", color: "text-blue-600" },
+                        { name: "3D Rendering", value: "Blender (Basic)", color: "text-orange-600" },
+                        { name: "Multitasking", value: "Standard", color: "text-blue-600" }
+                    ],
+                    mid: [
+                        { name: "Video Editing", value: "4K Editing", color: "text-green-600" },
+                        { name: "Graphic Design", value: "Complex Vector", color: "text-blue-600" },
+                        { name: "3D Rendering", value: "Blender Cycles", color: "text-green-600" },
+                        { name: "Multitasking", value: "Heavy", color: "text-green-600" }
+                    ],
+                    high: [
+                        { name: "Video Editing", value: "6K/RAW Editing", color: "text-green-600" },
+                        { name: "Graphic Design", value: "Professional", color: "text-blue-600" },
+                        { name: "3D Rendering", value: "Fast Rendering", color: "text-green-600" },
+                        { name: "Multitasking", value: "Extreme", color: "text-purple-600" }
+                    ],
+                    ultra: [
+                        { name: "Video Editing", value: "8K Cinema", color: "text-green-600" },
+                        { name: "Graphic Design", value: "Industry Std", color: "text-blue-600" },
+                        { name: "3D Rendering", value: "Studio Grade", color: "text-green-600" },
+                        { name: "Multitasking", value: "Limitless", color: "text-purple-600" }
+                    ]
+                }
+            },
+            coding: {
+                label: "Development Environment",
+                icon: '<i class="fa-solid fa-code text-green-600"></i>',
+                metrics: {
+                    integrated: [
+                        { name: "Web Dev", value: "HTML/JS (Fast)", color: "text-green-600" },
+                        { name: "Virtualization", value: "Not Recommended", color: "text-red-600" },
+                        { name: "IDE Speed", value: "VS Code (Good)", color: "text-blue-600" },
+                        { name: "Local Server", value: "Simple", color: "text-orange-600" }
+                    ],
+                    entry: [
+                        { name: "Web Dev", value: "Full Stack", color: "text-green-600" },
+                        { name: "Virtualization", value: "1 Light VM", color: "text-orange-600" },
+                        { name: "IDE Speed", value: "Standard", color: "text-blue-600" },
+                        { name: "Local Server", value: "Standard", color: "text-blue-600" }
+                    ],
+                    mid: [
+                        { name: "Web Dev", value: "Heavy Backend", color: "text-green-600" },
+                        { name: "Virtualization", value: "Docker / 2 VMs", color: "text-green-600" },
+                        { name: "Mobile Dev", value: "Android Studio", color: "text-blue-600" },
+                        { name: "Local Server", value: "Docker Containers", color: "text-green-600" }
+                    ],
+                    high: [
+                        { name: "Web Dev", value: "Enterprise", color: "text-green-600" },
+                        { name: "Virtualization", value: "Multiple VMs", color: "text-green-600" },
+                        { name: "Compilation", value: "Fast Compile", color: "text-blue-600" },
+                        { name: "Local Server", value: "K8s Cluster", color: "text-purple-600" }
+                    ],
+                    ultra: [
+                        { name: "Web Dev", value: "Server Load", color: "text-green-600" },
+                        { name: "Virtualization", value: "Data Center Sim", color: "text-green-600" },
+                        { name: "Compilation", value: "Instant", color: "text-blue-600" },
+                        { name: "Local Server", value: "Data Center", color: "text-purple-600" }
+                    ]
+                }
+            }
+        };
+
+        // --- 3. STATE & UI LOGIC ---
+        let state = { formFactor: 'desktop', usage: 'gaming', budget: 50000, prefs: { cpu: 'Any', gpu: 'Any' }, currentBuild: null };
+
+        function goHome() {
+            document.getElementById('view-landing').classList.remove('hidden');
+            document.getElementById('view-wizard').classList.add('hidden');
+            document.getElementById('view-results').classList.add('hidden');
+        }
+
+        function startWizard() {
+            document.getElementById('view-landing').classList.add('hidden');
+            document.getElementById('view-results').classList.add('hidden');
+            document.getElementById('view-wizard').classList.remove('hidden');
+            navWizard(1);
+        }
+
+        function navWizard(step) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            document.getElementById('wiz-step-num').innerText = step;
+            document.getElementById('wiz-progress').style.width = (step / 4 * 100) + '%';
+        }
+
+        function setFormFactor(ff) {
+            state.formFactor = ff;
+            document.getElementById('budget-type-text').innerText = ff === 'laptop' ? 'Laptop' : 'PC';
+            navWizard(2);
+        }
+
+        function setUsage(u) {
+            state.usage = u;
+            navWizard(3);
+        }
+
+        function updateBudget(val) {
+            const sanitized = Security.validateBudget(val);
+            state.budget = parseInt(sanitized);
+            document.getElementById('budget-val').innerText = state.budget.toLocaleString('en-IN');
+        }
+
+        function setPref(type, val) {
+            // Validate inputs
+            const validTypes = ['cpu', 'gpu'];
+            const validValues = ['Intel', 'AMD', 'NVIDIA', 'Any'];
+            
+            if (!validTypes.includes(type) || !validValues.includes(val)) {
+                console.error('Invalid preference');
+                return;
+            }
+            
+            state.prefs[type] = val;
+            document.querySelectorAll(`#step-4 button[id^='btn-${type}']`).forEach(b => {
+                b.classList.remove('bg-blue-50', 'border-blue-500', 'text-blue-700', 'font-bold');
+                b.classList.add('border-gray-200');
+            });
+            const btn = document.getElementById(`btn-${type.toLowerCase()}-${val.toLowerCase()}`);
+            if (btn) {
+                btn.classList.add('bg-blue-50', 'border-blue-500', 'text-blue-700', 'font-bold');
+                btn.classList.remove('border-gray-200');
+            }
+        }
+
+        // --- 4. GENERATE BUILD ---
+        async function generateBuild() {
+            // Rate limiting
+            if (!Security.rateLimit.check()) {
+                alert('Please wait a moment before generating another build.');
+                return;
+            }
+            
+            await loadDb();
+            
+            if (!db) {
+                alert('Database not loaded. Please try again.');
+                return;
+            }
+            
+            const { budget, prefs, usage, formFactor } = state;
+            
+            if (formFactor === 'laptop') {
+                let potentialLaptops = db.laptops.filter(l => l.price <= budget * 1.1);
+                if (potentialLaptops.length === 0) potentialLaptops = [db.laptops[0]];
+
+                let usageMatches = potentialLaptops.filter(l => {
+                    if (usage === 'gaming' && l.type === 'gaming') return true;
+                    if (usage === 'productivity' && (l.type === 'office' || l.type === 'creative')) return true;
+                    if (usage === 'coding') return true;
+                    if (usage === 'gaming' && budget < 50000) return true;
+                    return false;
+                });
+
+                usageMatches.sort((a,b) => b.price - a.price);
+                let topPicks = usageMatches.slice(0, 3);
+                if (topPicks.length === 0) {
+                     potentialLaptops.sort((a,b) => b.price - a.price);
+                     topPicks = potentialLaptops.slice(0, 3);
+                }
+
+                state.currentBuild = { type: 'laptop', data: topPicks };
+                const best = topPicks[0];
+                document.getElementById('build-reasoning').innerText = `We found ${topPicks.length} great options. The top pick is the ${best.name} which perfectly fits your ${state.usage} needs. Compare specs below!`;
+                renderResults();
+                return;
+            }
+
+            // DESKTOP LOGIC
+            let cpu, gpu, mobo, ram, storage, psu, userCase;
+            let buildReason = "";
+
+            if (budget <= 20000) {
+                cpu = db.cpus.find(c => c.name.includes('Athlon')) || db.cpus[0];
+                gpu = db.gpus.find(g => g.price === 0); 
+                mobo = db.mobos.find(m => m.socket === 'AM4' && m.price < 4000) || db.mobos[0];
+                ram = db.ram.find(r => r.price < 1500) || db.ram[0]; 
+                storage = db.storage[0]; 
+                psu = db.psu[0];
+                userCase = db.case[0];
+                buildReason = "For this ultra-budget entry point, we used an AMD Athlon APU. It handles web browsing, movies, and office work perfectly for a very low cost.";
+            }
+            else if (budget < 45000) {
+                cpu = db.cpus.find(c => c.name.includes('5600G')) || db.cpus[0];
+                gpu = db.gpus.find(g => g.price === 0); 
+                mobo = db.mobos.filter(m => m.socket === cpu.socket).sort((a,b) => a.price - b.price)[0];
+                ram = db.ram.find(r => r.name.includes('8GB')) || db.ram[1]; 
+                storage = db.storage[0];
+                psu = db.psu[0];
+                userCase = db.case[0];
+                buildReason = "Given the tight budget, we selected a Processor with high-performance Integrated Graphics (APU). This allows you to game and work without buying an expensive graphics card right now.";
+            } 
+            else {
+                // STANDARD LOGIC
+                let gpuBudget = usage === 'gaming' ? budget * 0.45 : budget * 0.25;
+                let cpuBudget = usage === 'productivity' ? budget * 0.30 : budget * 0.20;
+
+                if (budget > 200000) {
+                    gpuBudget = budget * 0.50;
+                    cpuBudget = budget * 0.20;
+                }
+                if (budget > 400000) gpuBudget = 200000;
+
+                // Initial Selections
+                let cpuList = db.cpus.filter(c => c.price <= cpuBudget * 1.5 && !c.integrated && !c.name.includes('Athlon')); 
+                if(cpuList.length === 0) cpuList = db.cpus.filter(c => !c.integrated && !c.name.includes('Athlon'));
+                if(prefs.cpu !== 'Any') {
+                    let filtered = cpuList.filter(c => c.brand === prefs.cpu);
+                    if(filtered.length > 0) cpuList = filtered;
+                }
+                cpu = cpuList.sort((a,b) => b.price - a.price)[0] || db.cpus[2];
+
+                let gpuList = db.gpus.filter(g => g.price <= gpuBudget * 1.3 && g.price > 0);
+                if(prefs.gpu !== 'Any') {
+                    let filtered = gpuList.filter(g => g.brand === prefs.gpu);
+                    if(filtered.length > 0) gpuList = filtered;
+                }
+                gpu = gpuList.sort((a,b) => b.price - a.price)[0] || db.gpus[1];
+
+                let validMobos = db.mobos.filter(m => m.socket === cpu.socket);
+                validMobos.sort((a,b) => a.price - b.price); // Sort by price ascending
+                
+                if (budget > 300000) {
+                    // High-end: pick top-tier boards
+                    let highEnd = validMobos.filter(m => m.price > 25000);
+                    mobo = highEnd[Math.floor(highEnd.length * 0.7)] || validMobos[validMobos.length - 1];
+                } else if (budget > 150000) {
+                    // Mid-range: 15k-30k boards
+                    let midRange = validMobos.filter(m => m.price >= 15000 && m.price <= 30000);
+                    mobo = midRange[Math.floor(midRange.length / 2)] || validMobos[Math.floor(validMobos.length / 2)];
+                } else if (budget > 80000) {
+                    // Budget: 8k-18k boards
+                    let budgetRange = validMobos.filter(m => m.price >= 8000 && m.price <= 18000);
+                    mobo = budgetRange[Math.floor(budgetRange.length / 3)] || validMobos[Math.floor(validMobos.length / 3)];
+                } else {
+                    // Very low budget: cheapest compatible boards
+                    let lowBudget = validMobos.filter(m => m.price < 10000);
+                    mobo = lowBudget[Math.floor(lowBudget.length / 2)] || validMobos[0];
+                }
+
+                let validRam = db.ram.filter(r => r.type === mobo.type);
+                if (validRam.length === 0) validRam = [db.ram[1]]; 
+                
+                if (budget > 400000) ram = validRam[validRam.length - 1];
+                else if (budget > 200000) ram = validRam.find(r => r.name.includes('64GB')) || validRam[validRam.length-1];
+                else if (budget > 100000) ram = validRam.find(r => r.name.includes('32GB')) || validRam[0];
+                else ram = validRam[0];
+                if (ram.price < 1500) ram = validRam[1] || validRam[0];
+
+                if (budget > 400000) storage = db.storage[6];
+                else if (budget > 250000) storage = db.storage[5];
+                else if (budget > 150000) storage = db.storage[3];
+                else if (budget > 80000) storage = db.storage[2];
+                else storage = db.storage[1];
+
+                if (budget > 400000) psu = db.psu[8];
+                else if (budget > 300000) psu = db.psu[7];
+                else if (budget > 200000) psu = db.psu[5];
+                else if (budget > 100000) psu = db.psu[4];
+                else psu = db.psu[3];
+
+                if (budget > 350000) userCase = db.case[7];
+                else if (budget > 200000) userCase = db.case[6];
+                else if (budget > 100000) userCase = db.case[4];
+                else userCase = db.case[2];
+
+                // --- CRITICAL BUDGET CHECK & DOWNGRADE LOGIC ---
+                let totalCost = cpu.price + gpu.price + mobo.price + ram.price + storage.price + psu.price + userCase.price;
+                
+                // If Over Budget, Downgrade GPU first (most expensive part usually)
+                while (totalCost > budget) {
+                    // Try downgrading GPU
+                    let currentGpuIndex = db.gpus.findIndex(g => g.id === gpu.id);
+                    if (currentGpuIndex > 1) { // Don't go below entry discrete
+                        let nextGpu = db.gpus[currentGpuIndex - 1];
+                        if (nextGpu.price < gpu.price) {
+                            gpu = nextGpu;
+                            totalCost = cpu.price + gpu.price + mobo.price + ram.price + storage.price + psu.price + userCase.price;
+                            continue;
+                        }
+                    }
+                    
+                    // If GPU can't go lower or still over budget, try CPU
+                    let currentCpuIndex = db.cpus.findIndex(c => c.id === cpu.id);
+                    if (currentCpuIndex > 2) {
+                         let nextCpu = db.cpus[currentCpuIndex - 1];
+                         // Ensure socket compatibility matches mobo or re-pick mobo
+                         if (nextCpu.socket === mobo.socket && nextCpu.price < cpu.price) {
+                             cpu = nextCpu;
+                             totalCost = cpu.price + gpu.price + mobo.price + ram.price + storage.price + psu.price + userCase.price;
+                             continue;
+                         }
+                    }
+
+                    // Last Resort: Downgrade RAM/Storage/Case to basic
+                    if (ram.price > 2000) ram = validRam[0];
+                    if (storage.price > 3000) storage = db.storage[0];
+                    if (userCase.price > 2000) userCase = db.case[0];
+                    
+                    // Re-calc and break to avoid infinite loop if impossible
+                    totalCost = cpu.price + gpu.price + mobo.price + ram.price + storage.price + psu.price + userCase.price;
+                    break; 
+                }
+
+                buildReason = "Based on your budget, we prioritized balanced performance with a discrete Graphics Card for optimal gaming and productivity.";
+                if(budget > 400000) buildReason = "Welcome to the 1%. This configuration uses the absolute pinnacle of consumer hardware, including the RTX 4090 and flagship CPU.";
+                else if(budget > 200000) buildReason = "This is an enthusiast-class build. We've paired a top-tier GPU with a high-end motherboard and fast DDR5 RAM to ensure zero bottlenecks at 4K resolution.";
+            }
+
+            state.currentBuild = { type: 'desktop', data: { cpu, gpu, mobo, ram, storage, psu, userCase } };
+            document.getElementById('build-reasoning').innerText = buildReason;
+            renderResults();
+        }
+
+        // --- 5. RENDER FUNCTIONS ---
+        function renderResults() {
+            const container = document.getElementById('parts-container');
+            const res = state.currentBuild;
+
+            document.getElementById('view-wizard').classList.add('hidden');
+            document.getElementById('view-results').classList.remove('hidden');
+            document.getElementById('res-usage').innerText = state.usage;
+            document.getElementById('res-budget').innerHTML = '<span style="font-size: 0.9em; opacity: 0.9;">₹</span>' + state.budget.toLocaleString('en-IN');
+
+            renderBenchmarks(res);
+
+            if (res.type === 'laptop') {
+                const laptops = res.data;
+                document.getElementById('total-price').innerText = "Multiple Options";
+                
+                let html = '<div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">';
+                laptops.forEach((laptop, index) => {
+                    const borderClass = index === 0 ? 'border-blue-500 ring-2 ring-blue-500/20' : 'border-slate-200';
+                    const badge = index === 0 ? '<div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">Top Pick</div>' : '';
+
+                    html += `
+                    <div class="bg-white rounded-xl border ${borderClass} shadow-sm p-6 relative flex flex-col h-full hover:shadow-md transition">
+                        ${badge}
+                        <div class="text-center mb-4">
+                            <i class="fa-solid fa-laptop text-4xl text-slate-400 mb-4"></i>
+                            <h3 class="font-bold text-slate-800 text-lg leading-tight mb-1">${laptop.name}</h3>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">${laptop.type} Class</span>
+                        </div>
+                        <div class="flex-1 space-y-3 mb-6">
+                             <div class="bg-slate-50 p-3 rounded-lg text-sm text-slate-600">
+                                <span class="block text-xs font-bold text-slate-400 uppercase">Specs</span>
+                                ${laptop.spec}
+                             </div>
+                             <div class="bg-slate-50 p-3 rounded-lg text-sm text-slate-600">
+                                <span class="block text-xs font-bold text-slate-400 uppercase">Est. Price</span>
+                                <span style="font-size: 0.8em; opacity: 0.8;">₹</span>${laptop.price.toLocaleString('en-IN')}
+                             </div>
+                        </div>
+                        <a href="#" class="w-full block text-center bg-slate-900 text-white py-2 rounded-lg font-bold text-sm hover:bg-slate-800 transition">Check Price</a>
+                    </div>`;
+                });
+                html += '</div>';
+                container.innerHTML = html;
+            } else {
+                const b = res.data;
+                const total = Object.values(b).reduce((acc, part) => acc + part.price, 0);
+                document.getElementById('total-price').innerHTML = '<span style="font-size: 0.7em; opacity: 0.8;">₹</span>' + total.toLocaleString('en-IN');
+
+                const parts = [
+                    { type: 'CPU', icon: 'fa-microchip', data: b.cpu },
+                    { type: 'GPU', icon: 'fa-display', data: b.gpu },
+                    { type: 'Motherboard', icon: 'fa-chess-board', data: b.mobo },
+                    { type: 'Memory', icon: 'fa-memory', data: b.ram },
+                    { type: 'Storage', icon: 'fa-hard-drive', data: b.storage },
+                    { type: 'Power Supply', icon: 'fa-plug', data: b.psu },
+                    { type: 'Case', icon: 'fa-box', data: b.userCase },
+                ];
+
+                let html = '';
+                parts.forEach(p => {
+                    html += `
+                    <div class="flex items-center gap-4 p-4 border-b border-slate-100 last:border-0 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center text-blue-600 text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid ${p.icon}"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">${p.type}</div>
+                            <div class="font-bold text-slate-800 text-lg">${p.data.name}</div>
+                            ${p.type === 'Motherboard' ? `<div class="text-xs text-green-600 mt-1"><i class="fa-solid fa-check-circle"></i> Socket Match: ${p.data.socket}</div>` : ''}
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-lg ${p.data.price === 0 ? 'text-green-600' : 'text-slate-800'}">
+                                ${p.data.price === 0 ? '<span class="flex items-center gap-1"><i class="fa-solid fa-gift"></i> Included</span>' : '<span class="text-green-600" style="font-size: 14px;">₹</span>' + p.data.price.toLocaleString('en-IN')}
+                            </div>
+                            ${p.data.price > 0 ? '<a href="#" class="inline-flex items-center gap-1 text-xs text-blue-500 font-normal hover:underline mt-1"><i class="fa-solid fa-shopping-cart"></i> Buy Now</a>' : ''}
+                        </div>
+                    </div>`;
+                });
+                container.innerHTML = html;
+            }
+        }
+
+        function renderBenchmarks(res) {
+            let tier = 'integrated';
+            if (res.type === 'laptop') {
+                tier = res.data[0].gpuTier || 'integrated';
+            } else {
+                tier = res.data.gpu.tier || 'integrated';
+            }
+
+            const usageType = state.usage; 
+            const categoryData = PERFORMANCE_METRICS[usageType] || PERFORMANCE_METRICS.gaming;
+            const metricsList = categoryData.metrics[tier] || categoryData.metrics.integrated;
+
+            document.getElementById('perf-icon').innerHTML = categoryData.icon;
+            document.getElementById('perf-title').innerHTML = categoryData.label + ' <i class="fa-solid fa-chart-line ml-2 text-sm"></i>';
+
+            const container = document.getElementById('benchmark-cards');
+            container.innerHTML = '';
+
+            metricsList.forEach(metric => {
+                container.innerHTML += `
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                        <div class="font-bold text-slate-800 mb-1">${metric.name}</div>
+                        <div class="text-2xl font-black ${metric.color}">${metric.value}</div>
+                    </div>`;
+            });
+        }
+
+        // --- 6. CHAT FUNCTIONS ---
+        function toggleAI() {
+            document.getElementById('ai-chat-panel').classList.toggle('translate-y-[120%]');
+        }
+
+        function toggleLiveSupport() {
+            document.getElementById('live-support-panel').classList.toggle('hidden');
+        }
+
+        function handleChat(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const txt = input.value.trim().toLowerCase();
+            if(!txt) return;
+
+            addChatMsg(input.value, 'user');
+            input.value = '';
+
+            setTimeout(() => {
+                let response = "I'm not sure about that. Try asking about 'budget' or 'compatibility'.";
+                if(txt.includes('budget')) response = "For a balanced build, we recommend allocating 40% of your budget to the GPU.";
+                if(txt.includes('laptop')) response = "Laptops offer great portability. For gaming, look for at least an RTX 3050.";
+                if(txt.includes('cheap') || txt.includes('15000')) response = "At ₹15,000, we recommend a Chromebook or a refurbished ThinkPad for basic tasks.";
+                if(txt.includes('fps') || txt.includes('game') || txt.includes('perform')) response = "Check the Performance Estimates section in your results! It updates based on your usage choice.";
+                if(txt.includes('hello') || txt.includes('hi')) response = "Hi there! Ready to find your perfect computer?";
+                addChatMsg(response, 'ai');
+            }, 800);
+        }
+
+        function addChatMsg(text, sender) {
+            const history = document.getElementById('chat-history');
+            const div = document.createElement('div');
+            div.className = `flex gap-2 chat-msg ${sender === 'user' ? 'flex-row-reverse' : ''}`;
+            const icon = sender === 'ai' ? '<div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-xs"><i class="fa-solid fa-robot"></i></div>' : '<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs"><i class="fa-solid fa-user"></i></div>';
+            const bubble = `<div class="${sender === 'ai' ? 'bg-white border-slate-100' : 'bg-blue-600 text-white'} p-3 rounded-2xl ${sender === 'ai' ? 'rounded-tl-none' : 'rounded-tr-none'} shadow-sm text-sm max-w-[80%] border">${text}</div>`;
+            div.innerHTML = icon + bubble;
+            history.appendChild(div);
+            history.scrollTop = history.scrollHeight;
+        }
+    </script>
+</body>
+</html>
