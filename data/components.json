@@ -3,97 +3,177 @@
     {
       "id": "l1",
       "name": "Acer Chromebook / Asus E410",
-      "price": 16192,
+      "price": 16469,
       "type": "basic",
       "spec": "Celeron N4020, 4GB RAM, 64GB eMMC, ChromeOS/Win11",
       "brand": "Any",
-      "gpuTier": "integrated"
+      "gpuTier": "integrated",
+      "screen": "14-inch HD (1366x768)",
+      "refresh": "60Hz",
+      "weight": "1.3kg",
+      "battery": "10 hours",
+      "ports": "2x USB 3.2, 1x USB-C, HDMI, Audio Jack",
+      "wifi": "WiFi 5",
+      "storage": "64GB eMMC",
+      "ram": "4GB LPDDR4"
     },
     {
       "id": "l2",
       "name": "Infinix INBook X1 / ASUS Vivobook Go",
-      "price": 29242,
+      "price": 30039,
       "type": "office",
       "spec": "i3-11th Gen / Ryzen 3, 8GB RAM, 256GB SSD",
       "brand": "Intel",
-      "gpuTier": "integrated"
+      "gpuTier": "integrated",
+      "screen": "15.6-inch FHD (1920x1080) IPS",
+      "refresh": "60Hz",
+      "weight": "1.65kg",
+      "battery": "8-10 hours",
+      "ports": "2x USB 3.2, 1x USB-C, HDMI, MicroSD, Audio Jack",
+      "wifi": "WiFi 5",
+      "storage": "256GB NVMe SSD",
+      "ram": "8GB DDR4"
     },
     {
       "id": "l3",
       "name": "HP Laptop 15s / Dell Inspiron",
-      "price": 42912,
+      "price": 44670,
       "type": "office",
       "spec": "Ryzen 5 5500U / i5-1235U, 8GB/16GB, 512GB SSD",
       "brand": "Any",
-      "gpuTier": "integrated"
+      "gpuTier": "integrated",
+      "screen": "15.6-inch FHD (1920x1080) IPS Anti-Glare",
+      "refresh": "60Hz",
+      "weight": "1.69kg",
+      "battery": "9-11 hours",
+      "ports": "2x USB 3.2, 1x USB-C, HDMI 1.4, SD Card, Audio Jack",
+      "wifi": "WiFi 6",
+      "storage": "512GB PCIe NVMe SSD",
+      "ram": "16GB DDR4-3200MHz"
     },
     {
       "id": "l3b",
       "name": "Lenovo IdeaPad Slim 3",
-      "price": 35778,
+      "price": 36742,
       "type": "office",
       "spec": "i3-1215U, 8GB RAM, 512GB SSD, FHD",
       "brand": "Any",
-      "gpuTier": "integrated"
+      "gpuTier": "integrated",
+      "screen": "15.6-inch FHD (1920x1080) TN",
+      "refresh": "60Hz",
+      "weight": "1.63kg",
+      "battery": "8 hours",
+      "ports": "2x USB 3.2, 1x USB-C, HDMI, Audio Jack",
+      "wifi": "WiFi 6",
+      "storage": "512GB PCIe SSD",
+      "ram": "8GB DDR4-3200MHz"
     },
     {
       "id": "l4",
       "name": "Acer Aspire 7 / Lenovo Ideapad Gaming",
-      "price": 53823,
+      "price": 53619,
       "type": "gaming",
       "spec": "i5-12450H, RTX 2050/3050 4GB, 144Hz Screen",
       "brand": "NVIDIA",
-      "gpuTier": "entry"
+      "gpuTier": "entry",
+      "screen": "15.6-inch FHD (1920x1080) IPS",
+      "refresh": "144Hz",
+      "weight": "2.15kg",
+      "battery": "5-6 hours gaming, 8 hours normal",
+      "ports": "3x USB 3.2, 1x USB-C, HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6",
+      "storage": "512GB NVMe SSD",
+      "ram": "8GB DDR4-3200MHz (Upgradeable to 32GB)"
     },
     {
       "id": "l4b",
       "name": "HP Victus Gaming",
-      "price": 60283,
+      "price": 61751,
       "type": "gaming",
       "spec": "Ryzen 5 5600H, RX 6500M, 16GB RAM",
       "brand": "AMD",
-      "gpuTier": "entry"
+      "gpuTier": "entry",
+      "screen": "15.6-inch FHD (1920x1080) IPS",
+      "refresh": "144Hz",
+      "weight": "2.29kg",
+      "battery": "6-7 hours normal use",
+      "ports": "3x USB 3.2, 1x USB-C, HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6",
+      "storage": "512GB PCIe Gen4 SSD",
+      "ram": "16GB DDR4-3200MHz (Dual Channel)"
     },
     {
       "id": "l5",
       "name": "ASUS TUF F15 / Acer Nitro V",
-      "price": 74664,
+      "price": 76557,
       "type": "gaming",
       "spec": "i7-12700H, RTX 4050 6GB, 16GB RAM",
       "brand": "NVIDIA",
-      "gpuTier": "mid"
+      "gpuTier": "mid",
+      "screen": "15.6-inch FHD (1920x1080) IPS Anti-Glare",
+      "refresh": "144Hz",
+      "weight": "2.2kg",
+      "battery": "6-8 hours normal, 4-5 hours gaming",
+      "ports": "3x USB 3.2, 1x USB-C (DP 1.4), HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6E",
+      "storage": "512GB PCIe Gen4 NVMe SSD",
+      "ram": "16GB DDR5-4800MHz (Expandable to 32GB)"
     },
     {
       "id": "l5b",
       "name": "Dell G15 Gaming",
-      "price": 85379,
+      "price": 87887,
       "type": "gaming",
       "spec": "Ryzen 7 7840HS, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
-      "gpuTier": "mid"
+      "gpuTier": "mid",
+      "screen": "15.6-inch QHD (2560x1440) IPS",
+      "refresh": "165Hz",
+      "weight": "2.65kg",
+      "battery": "6-7 hours normal, 4 hours gaming",
+      "ports": "3x USB 3.2, 1x USB-C (Thunderbolt 4), HDMI 2.1, Ethernet, SD Card, Audio Jack",
+      "wifi": "WiFi 6E",
+      "storage": "1TB PCIe Gen4 NVMe SSD",
+      "ram": "16GB DDR5-4800MHz (Dual Channel)"
     },
     {
       "id": "l6",
       "name": "MacBook Air M1 / M2",
-      "price": 72425,
+      "price": 73936,
       "type": "creative",
       "spec": "Apple M1/M2 Chip, Retina Display, All-Day Battery",
       "brand": "Any",
-      "gpuTier": "integrated"
+      "gpuTier": "integrated",
+      "screen": "13.6-inch Liquid Retina (2560x1664) 500 nits",
+      "refresh": "60Hz",
+      "weight": "1.24kg",
+      "battery": "15-18 hours",
+      "ports": "2x Thunderbolt 4 / USB 4, MagSafe 3, Audio Jack",
+      "wifi": "WiFi 6",
+      "storage": "256GB / 512GB SSD",
+      "ram": "8GB / 16GB Unified Memory"
     },
     {
       "id": "l6b",
       "name": "ASUS Zenbook 14 OLED",
-      "price": 92585,
+      "price": 92223,
       "type": "creative",
       "spec": "Core Ultra 7, 16GB RAM, 1TB SSD, 3K OLED",
       "brand": "Intel",
-      "gpuTier": "integrated"
+      "gpuTier": "integrated",
+      "screen": "14-inch 3K OLED (2880x1800) 400 nits, 100% DCI-P3",
+      "refresh": "90Hz",
+      "weight": "1.39kg",
+      "battery": "12-14 hours",
+      "ports": "2x Thunderbolt 4, 1x USB 3.2, HDMI 2.1, Audio Jack, MicroSD",
+      "wifi": "WiFi 6E",
+      "storage": "1TB PCIe Gen4 NVMe SSD",
+      "ram": "16GB LPDDR5X-6400MHz"
     },
     {
       "id": "l7",
       "name": "Lenovo Legion Pro 5i",
-      "price": 147388,
+      "price": 153188,
       "type": "gaming",
       "spec": "i9-13900HX, RTX 4070 8GB, 32GB RAM, 240Hz",
       "brand": "NVIDIA",
@@ -102,7 +182,7 @@
     {
       "id": "l8",
       "name": "Dell XPS 15 / MacBook Pro 14",
-      "price": 189501,
+      "price": 197178,
       "type": "creative",
       "spec": "i9 / M3 Pro, 32GB RAM, 4K OLED / XDR Display",
       "brand": "Any",
@@ -111,7 +191,7 @@
     {
       "id": "l9",
       "name": "MSI Titan GT77 / Razer Blade 18",
-      "price": 352350,
+      "price": 357935,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM, 4K 144Hz",
       "brand": "NVIDIA",
@@ -120,7 +200,7 @@
     {
       "id": "l10",
       "name": "MacBook Pro 16 M3 Max",
-      "price": 392828,
+      "price": 398315,
       "type": "creative",
       "spec": "M3 Max (40-Core GPU), 48GB RAM, 1TB SSD",
       "brand": "Apple",
@@ -129,7 +209,7 @@
     {
       "id": "l11",
       "name": "HP 14s Budget Laptop",
-      "price": 22090,
+      "price": 22055,
       "type": "basic",
       "spec": "Celeron N4500, 4GB RAM, 256GB SSD",
       "brand": "Intel",
@@ -138,7 +218,7 @@
     {
       "id": "l12",
       "name": "Lenovo V15 Business",
-      "price": 27012,
+      "price": 28233,
       "type": "office",
       "spec": "Ryzen 3 7320U, 8GB RAM, 256GB SSD",
       "brand": "AMD",
@@ -147,7 +227,7 @@
     {
       "id": "l13",
       "name": "Dell Vostro 3520",
-      "price": 38373,
+      "price": 39162,
       "type": "office",
       "spec": "i5-1235U, 8GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -156,7 +236,7 @@
     {
       "id": "l14",
       "name": "ASUS Vivobook 15",
-      "price": 45897,
+      "price": 47860,
       "type": "office",
       "spec": "Ryzen 5 7530U, 16GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -165,7 +245,7 @@
     {
       "id": "l15",
       "name": "MSI Modern 14",
-      "price": 49607,
+      "price": 50412,
       "type": "office",
       "spec": "i5-1335U, 16GB RAM, 512GB SSD, FHD",
       "brand": "Intel",
@@ -174,7 +254,7 @@
     {
       "id": "l16",
       "name": "Lenovo IdeaPad Gaming 3",
-      "price": 57935,
+      "price": 59562,
       "type": "gaming",
       "spec": "Ryzen 5 6600H, GTX 1650, 8GB RAM",
       "brand": "NVIDIA",
@@ -183,7 +263,7 @@
     {
       "id": "l17",
       "name": "HP Pavilion Gaming",
-      "price": 64591,
+      "price": 65499,
       "type": "gaming",
       "spec": "i5-12500H, RTX 3050 Ti, 16GB RAM",
       "brand": "NVIDIA",
@@ -192,7 +272,7 @@
     {
       "id": "l18",
       "name": "ASUS TUF A15",
-      "price": 70009,
+      "price": 70475,
       "type": "gaming",
       "spec": "Ryzen 7 6800H, RTX 3060 6GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -201,7 +281,7 @@
     {
       "id": "l19",
       "name": "Acer Predator Helios Neo",
-      "price": 83740,
+      "price": 83136,
       "type": "gaming",
       "spec": "i7-13650HX, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -210,7 +290,7 @@
     {
       "id": "l20",
       "name": "MSI Katana 15",
-      "price": 79988,
+      "price": 82469,
       "type": "gaming",
       "spec": "i7-13620H, RTX 4050 6GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -219,7 +299,7 @@
     {
       "id": "l21",
       "name": "Lenovo Legion 5 Pro",
-      "price": 127303,
+      "price": 129898,
       "type": "gaming",
       "spec": "Ryzen 7 7745HX, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -228,7 +308,7 @@
     {
       "id": "l22",
       "name": "ASUS ROG Strix G16",
-      "price": 144349,
+      "price": 149369,
       "type": "gaming",
       "spec": "i9-13980HX, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -237,7 +317,7 @@
     {
       "id": "l23",
       "name": "HP Omen 16",
-      "price": 137578,
+      "price": 138325,
       "type": "gaming",
       "spec": "i7-13700HX, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -246,7 +326,7 @@
     {
       "id": "l24",
       "name": "Acer Nitro 5",
-      "price": 65505,
+      "price": 66625,
       "type": "gaming",
       "spec": "i5-12500H, RTX 3050 4GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -255,7 +335,7 @@
     {
       "id": "l25",
       "name": "Dell Inspiron 14 Plus",
-      "price": 73398,
+      "price": 76049,
       "type": "creative",
       "spec": "i7-1360P, Iris Xe, 16GB RAM, 2.2K Display",
       "brand": "Intel",
@@ -264,7 +344,7 @@
     {
       "id": "l26",
       "name": "HP Envy 13",
-      "price": 86471,
+      "price": 87210,
       "type": "creative",
       "spec": "i7-1355U, 16GB RAM, 512GB SSD, OLED",
       "brand": "Intel",
@@ -273,7 +353,7 @@
     {
       "id": "l27",
       "name": "MacBook Air M3",
-      "price": 122492,
+      "price": 126598,
       "type": "creative",
       "spec": "Apple M3, 16GB RAM, 512GB SSD",
       "brand": "Apple",
@@ -282,7 +362,7 @@
     {
       "id": "l28",
       "name": "ASUS Zenbook S 13",
-      "price": 98960,
+      "price": 100791,
       "type": "creative",
       "spec": "Core Ultra 7 155H, 32GB RAM, 1TB SSD",
       "brand": "Intel",
@@ -291,7 +371,7 @@
     {
       "id": "l29",
       "name": "LG Gram 17",
-      "price": 146389,
+      "price": 154809,
       "type": "creative",
       "spec": "i7-1360P, 32GB RAM, 1TB SSD, 17\" WQXGA",
       "brand": "Intel",
@@ -300,7 +380,7 @@
     {
       "id": "l30",
       "name": "Microsoft Surface Laptop 5",
-      "price": 113639,
+      "price": 117908,
       "type": "creative",
       "spec": "i7-1255U, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -309,7 +389,7 @@
     {
       "id": "l31",
       "name": "Razer Blade 14",
-      "price": 225644,
+      "price": 230249,
       "type": "gaming",
       "spec": "Ryzen 9 7940HS, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -318,7 +398,7 @@
     {
       "id": "l32",
       "name": "Alienware m18",
-      "price": 400993,
+      "price": 418322,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -327,7 +407,7 @@
     {
       "id": "l33",
       "name": "MSI GE78 Raider",
-      "price": 435473,
+      "price": 433399,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM, Mini LED",
       "brand": "NVIDIA",
@@ -336,7 +416,7 @@
     {
       "id": "l34",
       "name": "ASUS ROG Zephyrus M16",
-      "price": 198010,
+      "price": 201168,
       "type": "gaming",
       "spec": "Core Ultra 9, RTX 4080 12GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -345,7 +425,7 @@
     {
       "id": "l35",
       "name": "Gigabyte AORUS 17X",
-      "price": 316400,
+      "price": 324084,
       "type": "gaming",
       "spec": "i9-13980HX, RTX 4090 16GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -354,7 +434,7 @@
     {
       "id": "l36",
       "name": "Lenovo ThinkPad E14",
-      "price": 52949,
+      "price": 53749,
       "type": "office",
       "spec": "Ryzen 5 7530U, 16GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -363,7 +443,7 @@
     {
       "id": "l37",
       "name": "Dell Latitude 3520",
-      "price": 58915,
+      "price": 58611,
       "type": "office",
       "spec": "i5-1135G7, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -372,7 +452,7 @@
     {
       "id": "l38",
       "name": "HP ProBook 450 G9",
-      "price": 71350,
+      "price": 74492,
       "type": "office",
       "spec": "i7-1255U, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -381,7 +461,7 @@
     {
       "id": "l39",
       "name": "Lenovo ThinkPad T14",
-      "price": 95121,
+      "price": 96015,
       "type": "office",
       "spec": "i7-1365U, 32GB RAM, 1TB SSD",
       "brand": "Intel",
@@ -390,7 +470,7 @@
     {
       "id": "l40",
       "name": "Dell XPS 13 Plus",
-      "price": 170543,
+      "price": 173211,
       "type": "creative",
       "spec": "i7-1360P, 32GB RAM, 1TB SSD, 3.5K OLED",
       "brand": "Intel",
@@ -399,7 +479,7 @@
     {
       "id": "l41",
       "name": "Framework Laptop 13",
-      "price": 129671,
+      "price": 133033,
       "type": "office",
       "spec": "i7-1370P, 32GB RAM, 1TB SSD, Modular",
       "brand": "Intel",
@@ -408,7 +488,7 @@
     {
       "id": "l42",
       "name": "Samsung Galaxy Book3 Ultra",
-      "price": 219138,
+      "price": 218201,
       "type": "creative",
       "spec": "i9-13900H, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -417,7 +497,7 @@
     {
       "id": "l43",
       "name": "MSI Creator Z17",
-      "price": 298734,
+      "price": 309063,
       "type": "creative",
       "spec": "i9-13980HX, RTX 4080 12GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -426,7 +506,7 @@
     {
       "id": "l44",
       "name": "ASUS ProArt Studiobook",
-      "price": 330803,
+      "price": 342663,
       "type": "creative",
       "spec": "i9-13980HX, RTX 4090 16GB, 64GB RAM, 4K",
       "brand": "NVIDIA",
@@ -435,7 +515,7 @@
     {
       "id": "l45",
       "name": "HP ZBook Studio G10",
-      "price": 395453,
+      "price": 401986,
       "type": "creative",
       "spec": "i9-13950HX, RTX 4000 Ada, 64GB RAM",
       "brand": "NVIDIA",
@@ -444,7 +524,7 @@
     {
       "id": "l46",
       "name": "Lenovo ThinkPad P1 Gen 6",
-      "price": 378989,
+      "price": 394353,
       "type": "creative",
       "spec": "i9-13900H, RTX 4090 16GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -453,7 +533,7 @@
     {
       "id": "l47",
       "name": "Dell Precision 5680",
-      "price": 406969,
+      "price": 415953,
       "type": "creative",
       "spec": "i9-13950HX, RTX 5000 Ada, 64GB RAM",
       "brand": "NVIDIA",
@@ -462,7 +542,7 @@
     {
       "id": "l48",
       "name": "Acer Swift 3",
-      "price": 49439,
+      "price": 51445,
       "type": "office",
       "spec": "Ryzen 5 7530U, 16GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -471,7 +551,7 @@
     {
       "id": "l49",
       "name": "ASUS Vivobook Pro 15",
-      "price": 74037,
+      "price": 73878,
       "type": "creative",
       "spec": "i7-13700H, RTX 3050 4GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -480,7 +560,7 @@
     {
       "id": "l50",
       "name": "Lenovo Yoga 9i",
-      "price": 145938,
+      "price": 144998,
       "type": "creative",
       "spec": "i7-1360P, Iris Xe, 32GB RAM, 4K OLED Touch",
       "brand": "Intel",
@@ -489,7 +569,7 @@
     {
       "id": "l51",
       "name": "HP Spectre x360",
-      "price": 155982,
+      "price": 161201,
       "type": "creative",
       "spec": "i7-1355U, 32GB RAM, 1TB SSD, 3K2K OLED",
       "brand": "Intel",
@@ -498,7 +578,7 @@
     {
       "id": "l52",
       "name": "Dell Inspiron 16 Plus",
-      "price": 83482,
+      "price": 86190,
       "type": "creative",
       "spec": "i7-13700H, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -507,7 +587,7 @@
     {
       "id": "l53",
       "name": "Acer Swift X",
-      "price": 77050,
+      "price": 80963,
       "type": "creative",
       "spec": "Ryzen 7 7840HS, RTX 4050 6GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -516,7 +596,7 @@
     {
       "id": "l54",
       "name": "MSI Prestige 16",
-      "price": 142578,
+      "price": 142257,
       "type": "creative",
       "spec": "i7-13700H, RTX 4060 8GB, 32GB RAM, 4K",
       "brand": "NVIDIA",
@@ -525,7 +605,7 @@
     {
       "id": "l55",
       "name": "Gigabyte AERO 16",
-      "price": 191926,
+      "price": 193408,
       "type": "creative",
       "spec": "i9-13900H, RTX 4070 8GB, 32GB RAM, 4K OLED",
       "brand": "NVIDIA",
@@ -534,7 +614,7 @@
     {
       "id": "l56",
       "name": "Razer Blade 15",
-      "price": 264673,
+      "price": 273614,
       "type": "gaming",
       "spec": "i9-13950HX, RTX 4080 12GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -543,7 +623,7 @@
     {
       "id": "l57",
       "name": "ASUS ROG Flow X16",
-      "price": 253454,
+      "price": 256644,
       "type": "gaming",
       "spec": "Ryzen 9 7940HS, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -552,7 +632,7 @@
     {
       "id": "l58",
       "name": "Lenovo Legion Slim 7",
-      "price": 187695,
+      "price": 190322,
       "type": "gaming",
       "spec": "Ryzen 9 7940HS, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -561,7 +641,7 @@
     {
       "id": "l59",
       "name": "MSI Stealth 17 Studio",
-      "price": 296792,
+      "price": 310042,
       "type": "creative",
       "spec": "i9-13900H, RTX 4080 12GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -570,7 +650,7 @@
     {
       "id": "l60",
       "name": "ASUS Zenbook Duo",
-      "price": 201751,
+      "price": 212004,
       "type": "creative",
       "spec": "i9-13900H, 32GB RAM, Dual Screen OLED",
       "brand": "Intel",
@@ -579,7 +659,7 @@
     {
       "id": "l61",
       "name": "HP Pavilion 15",
-      "price": 54634,
+      "price": 54631,
       "type": "office",
       "spec": "i5-1335U, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -588,7 +668,7 @@
     {
       "id": "l62",
       "name": "Lenovo IdeaPad 3",
-      "price": 39239,
+      "price": 40006,
       "type": "office",
       "spec": "Ryzen 5 5500U, 8GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -597,7 +677,7 @@
     {
       "id": "l63",
       "name": "Dell Inspiron 15 3000",
-      "price": 33556,
+      "price": 33963,
       "type": "basic",
       "spec": "i3-1215U, 8GB RAM, 256GB SSD",
       "brand": "Intel",
@@ -606,7 +686,7 @@
     {
       "id": "l64",
       "name": "ASUS Vivobook Go 14",
-      "price": 28125,
+      "price": 29269,
       "type": "basic",
       "spec": "Ryzen 3 7320U, 8GB RAM, 256GB SSD",
       "brand": "AMD",
@@ -615,7 +695,7 @@
     {
       "id": "l65",
       "name": "Acer Aspire 5",
-      "price": 45872,
+      "price": 46093,
       "type": "office",
       "spec": "i5-1235U, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -624,7 +704,7 @@
     {
       "id": "l66",
       "name": "HP 15s-fq5000",
-      "price": 43807,
+      "price": 44124,
       "type": "office",
       "spec": "i5-1235U, 8GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -633,7 +713,7 @@
     {
       "id": "l67",
       "name": "Lenovo V14 G3",
-      "price": 37471,
+      "price": 38465,
       "type": "office",
       "spec": "Ryzen 5 5625U, 8GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -642,7 +722,7 @@
     {
       "id": "l68",
       "name": "Dell Vostro 5620",
-      "price": 65169,
+      "price": 67012,
       "type": "office",
       "spec": "i7-1260P, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -651,7 +731,7 @@
     {
       "id": "l69",
       "name": "ASUS TUF Gaming F17",
-      "price": 92281,
+      "price": 94080,
       "type": "gaming",
       "spec": "i7-12700H, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -660,7 +740,7 @@
     {
       "id": "l70",
       "name": "Acer Predator Helios 300",
-      "price": 117355,
+      "price": 122390,
       "type": "gaming",
       "spec": "i7-13700HX, RTX 4070 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -669,7 +749,7 @@
     {
       "id": "l71",
       "name": "MSI Cyborg 15",
-      "price": 73933,
+      "price": 76335,
       "type": "gaming",
       "spec": "i7-12650H, RTX 4050 6GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -678,7 +758,7 @@
     {
       "id": "l72",
       "name": "Lenovo LOQ 15",
-      "price": 69217,
+      "price": 70843,
       "type": "gaming",
       "spec": "i5-12450HX, RTX 4050 6GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -687,7 +767,7 @@
     {
       "id": "l73",
       "name": "HP Victus 16",
-      "price": 98053,
+      "price": 101099,
       "type": "gaming",
       "spec": "i7-13700H, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -696,7 +776,7 @@
     {
       "id": "l74",
       "name": "ASUS ROG Strix SCAR 17",
-      "price": 287210,
+      "price": 288702,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4090 16GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -705,7 +785,7 @@
     {
       "id": "l75",
       "name": "Alienware x17 R2",
-      "price": 356571,
+      "price": 369290,
       "type": "gaming",
       "spec": "i9-13900HX, RTX 4090 16GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -714,7 +794,7 @@
     {
       "id": "l76",
       "name": "Razer Blade Pro 17",
-      "price": 401710,
+      "price": 414791,
       "type": "gaming",
       "spec": "i9-13950HX, RTX 4090 16GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -723,7 +803,7 @@
     {
       "id": "l77",
       "name": "MacBook Pro 14 M3 Pro",
-      "price": 220054,
+      "price": 223857,
       "type": "creative",
       "spec": "M3 Pro (18-Core GPU), 18GB RAM, 1TB SSD",
       "brand": "Apple",
@@ -732,7 +812,7 @@
     {
       "id": "l78",
       "name": "MacBook Pro 14 M3 Max",
-      "price": 321825,
+      "price": 327366,
       "type": "creative",
       "spec": "M3 Max (30-Core GPU), 36GB RAM, 1TB SSD",
       "brand": "Apple",
@@ -741,7 +821,7 @@
     {
       "id": "l79",
       "name": "MacBook Air 15 M3",
-      "price": 150177,
+      "price": 150355,
       "type": "creative",
       "spec": "M3 (10-Core GPU), 16GB RAM, 512GB SSD",
       "brand": "Apple",
@@ -750,7 +830,7 @@
     {
       "id": "l80",
       "name": "Microsoft Surface Pro 9",
-      "price": 125868,
+      "price": 130877,
       "type": "office",
       "spec": "i7-1255U, 16GB RAM, 512GB SSD, Touch",
       "brand": "Intel",
@@ -759,7 +839,7 @@
     {
       "id": "l81",
       "name": "Microsoft Surface Laptop Studio",
-      "price": 244208,
+      "price": 255309,
       "type": "creative",
       "spec": "i7-11370H, RTX 3050 Ti, 32GB RAM",
       "brand": "NVIDIA",
@@ -768,7 +848,7 @@
     {
       "id": "l82",
       "name": "Samsung Galaxy Book3 Pro",
-      "price": 141104,
+      "price": 144621,
       "type": "creative",
       "spec": "i7-1360P, 16GB RAM, 1TB SSD, AMOLED",
       "brand": "Intel",
@@ -777,7 +857,7 @@
     {
       "id": "l83",
       "name": "Samsung Galaxy Book3 360",
-      "price": 100008,
+      "price": 102944,
       "type": "office",
       "spec": "i7-1355U, 16GB RAM, 512GB SSD, AMOLED",
       "brand": "Intel",
@@ -786,7 +866,7 @@
     {
       "id": "l84",
       "name": "LG Gram 16",
-      "price": 125833,
+      "price": 131577,
       "type": "creative",
       "spec": "i7-1360P, 32GB RAM, 1TB SSD, 16\" WQXGA",
       "brand": "Intel",
@@ -795,7 +875,7 @@
     {
       "id": "l85",
       "name": "LG Gram 14",
-      "price": 98872,
+      "price": 100419,
       "type": "office",
       "spec": "i7-1360P, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -804,7 +884,7 @@
     {
       "id": "l86",
       "name": "Huawei MateBook D15",
-      "price": 48680,
+      "price": 48913,
       "type": "office",
       "spec": "i5-1235U, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -813,7 +893,7 @@
     {
       "id": "l87",
       "name": "Huawei MateBook X Pro",
-      "price": 167764,
+      "price": 169531,
       "type": "creative",
       "spec": "i7-1360P, 16GB RAM, 1TB SSD, 3K Touch",
       "brand": "Intel",
@@ -822,7 +902,7 @@
     {
       "id": "l88",
       "name": "Xiaomi RedmiBook Pro 15",
-      "price": 62982,
+      "price": 64935,
       "type": "office",
       "spec": "i5-12450H, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -831,7 +911,7 @@
     {
       "id": "l89",
       "name": "Honor MagicBook 14",
-      "price": 53395,
+      "price": 56125,
       "type": "office",
       "spec": "Ryzen 5 6600H, 16GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -840,7 +920,7 @@
     {
       "id": "l90",
       "name": "Gigabyte G5",
-      "price": 78200,
+      "price": 80507,
       "type": "gaming",
       "spec": "i5-12500H, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -849,7 +929,7 @@
     {
       "id": "l91",
       "name": "Gigabyte A5 K1",
-      "price": 87225,
+      "price": 90902,
       "type": "gaming",
       "spec": "Ryzen 7 7735HS, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -858,7 +938,7 @@
     {
       "id": "l92",
       "name": "MSI Pulse 15",
-      "price": 105765,
+      "price": 108071,
       "type": "gaming",
       "spec": "i7-13700H, RTX 4060 8GB, 16GB RAM",
       "brand": "NVIDIA",
@@ -867,7 +947,7 @@
     {
       "id": "l93",
       "name": "ASUS ROG Zephyrus G14",
-      "price": 172134,
+      "price": 175537,
       "type": "gaming",
       "spec": "Ryzen 9 7940HS, RTX 4060 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -876,7 +956,7 @@
     {
       "id": "l94",
       "name": "ASUS ROG Zephyrus G16",
-      "price": 231404,
+      "price": 238716,
       "type": "gaming",
       "spec": "Core Ultra 9, RTX 4070 8GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -885,7 +965,7 @@
     {
       "id": "l95",
       "name": "Lenovo Legion 7i",
-      "price": 243430,
+      "price": 248997,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4080 12GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -894,7 +974,7 @@
     {
       "id": "l96",
       "name": "Alienware m16 R1",
-      "price": 293032,
+      "price": 296376,
       "type": "gaming",
       "spec": "i9-13900HX, RTX 4080 12GB, 32GB RAM",
       "brand": "NVIDIA",
@@ -903,7 +983,7 @@
     {
       "id": "l97",
       "name": "MSI Raider GE78 HX",
-      "price": 369661,
+      "price": 379021,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM",
       "brand": "NVIDIA",
@@ -912,7 +992,7 @@
     {
       "id": "l98",
       "name": "ASUS ROG Strix SCAR 18",
-      "price": 457681,
+      "price": 467863,
       "type": "gaming",
       "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM, Mini LED",
       "brand": "NVIDIA",
@@ -921,7 +1001,7 @@
     {
       "id": "l99",
       "name": "Origin EVO17-S",
-      "price": 496404,
+      "price": 505586,
       "type": "gaming",
       "spec": "i9-14900KS Desktop, RTX 4090 16GB, 64GB",
       "brand": "NVIDIA",
@@ -930,7 +1010,7 @@
     {
       "id": "l100",
       "name": "Clevo X170KM-G",
-      "price": 548732,
+      "price": 569306,
       "type": "gaming",
       "spec": "i9-14900K Desktop, RTX 4090 16GB, 128GB",
       "brand": "NVIDIA",
@@ -939,7 +1019,7 @@
     {
       "id": "l101",
       "name": "HP Chromebook 14a",
-      "price": 18500,
+      "price": 18953,
       "type": "basic",
       "spec": "Celeron N4500, 4GB RAM, 64GB eMMC",
       "brand": "Intel",
@@ -948,7 +1028,7 @@
     {
       "id": "l102",
       "name": "Lenovo IdeaPad 1",
-      "price": 24000,
+      "price": 24141,
       "type": "basic",
       "spec": "AMD 3020e, 4GB RAM, 128GB SSD",
       "brand": "AMD",
@@ -957,7 +1037,7 @@
     {
       "id": "l103",
       "name": "Dell Inspiron 3505",
-      "price": 33000,
+      "price": 33933,
       "type": "office",
       "spec": "Ryzen 5 3450U, 8GB RAM, 256GB SSD",
       "brand": "AMD",
@@ -966,7 +1046,7 @@
     {
       "id": "l104",
       "name": "ASUS X515EA",
-      "price": 38500,
+      "price": 39615,
       "type": "office",
       "spec": "i3-1115G4, 8GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -975,7 +1055,7 @@
     {
       "id": "l105",
       "name": "Acer Aspire Lite",
-      "price": 29900,
+      "price": 30320,
       "type": "basic",
       "spec": "Ryzen 3 5300U, 8GB RAM, 256GB SSD",
       "brand": "AMD",
@@ -984,7 +1064,7 @@
     {
       "id": "l106",
       "name": "HP 15 dy2795wm",
-      "price": 36500,
+      "price": 37161,
       "type": "office",
       "spec": "i5-1135G7, 12GB RAM, 256GB SSD",
       "brand": "Intel",
@@ -993,7 +1073,7 @@
     {
       "id": "l107",
       "name": "Lenovo Slim Plus",
-      "price": 41000,
+      "price": 42936,
       "type": "office",
       "spec": "Ryzen 5 7530U, 16GB RAM, 512GB SSD",
       "brand": "AMD",
@@ -1002,7 +1082,7 @@
     {
       "id": "l108",
       "name": "Dell Inspiron 15 5530",
-      "price": 48000,
+      "price": 49287,
       "type": "office",
       "spec": "i5-1335U, 16GB RAM, 512GB SSD, FHD",
       "brand": "Intel",
@@ -1011,7 +1091,7 @@
     {
       "id": "l109",
       "name": "ASUS Vivobook 16X",
-      "price": 52000,
+      "price": 54432,
       "type": "creative",
       "spec": "i5-12500H, Iris Xe, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1020,7 +1100,7 @@
     {
       "id": "l110",
       "name": "Acer Swift Go 14",
-      "price": 58000,
+      "price": 59537,
       "type": "creative",
       "spec": "Core Ultra 5 125H, 16GB RAM, 512GB SSD, OLED",
       "brand": "Intel",
@@ -1029,7 +1109,7 @@
     {
       "id": "l111",
       "name": "HP Pavilion Plus 14",
-      "price": 62000,
+      "price": 63978,
       "type": "creative",
       "spec": "i7-1360P, 16GB RAM, 512GB SSD, 2.8K OLED",
       "brand": "Intel",
@@ -1038,7 +1118,7 @@
     {
       "id": "l112",
       "name": "Lenovo IdeaPad Pro 5i",
-      "price": 72000,
+      "price": 73262,
       "type": "creative",
       "spec": "i7-13700H, RTX 2050, 16GB RAM, 2.5K 120Hz",
       "brand": "NVIDIA",
@@ -1047,7 +1127,7 @@
     {
       "id": "l113",
       "name": "ASUS Zenbook 14X OLED",
-      "price": 98000,
+      "price": 103012,
       "type": "creative",
       "spec": "i9-13900H, 32GB RAM, 1TB SSD, 2.8K Touch",
       "brand": "Intel",
@@ -1056,7 +1136,7 @@
     {
       "id": "l114",
       "name": "MSI Prestige 14 Evo",
-      "price": 85000,
+      "price": 87431,
       "type": "creative",
       "spec": "i7-1360P, Iris Xe, 32GB RAM, 1TB SSD",
       "brand": "Intel",
@@ -1065,7 +1145,7 @@
     {
       "id": "l115",
       "name": "Dell XPS 14",
-      "price": 175000,
+      "price": 182627,
       "type": "creative",
       "spec": "Core Ultra 7 155H, RTX 4050, 32GB RAM",
       "brand": "NVIDIA",
@@ -1074,7 +1154,7 @@
     {
       "id": "l116",
       "name": "LG Gram 15",
-      "price": 92000,
+      "price": 96430,
       "type": "creative",
       "spec": "i7-1360P, 16GB RAM, 512GB SSD, Ultra-light",
       "brand": "Intel",
@@ -1083,7 +1163,7 @@
     {
       "id": "l117",
       "name": "Samsung Galaxy Book3 Pro 360",
-      "price": 135000,
+      "price": 137841,
       "type": "creative",
       "spec": "i7-1360P, 16GB RAM, 1TB SSD, 3K AMOLED Touch",
       "brand": "Intel",
@@ -1092,7 +1172,7 @@
     {
       "id": "l118",
       "name": "MSI Katana GF66",
-      "price": 68000,
+      "price": 69025,
       "type": "gaming",
       "spec": "i5-12450H, RTX 3050, 16GB RAM, 144Hz",
       "brand": "NVIDIA",
@@ -1101,7 +1181,7 @@
     {
       "id": "l119",
       "name": "Acer Nitro 7",
-      "price": 89000,
+      "price": 91066,
       "type": "gaming",
       "spec": "i7-12650H, RTX 4050, 16GB RAM, 165Hz",
       "brand": "NVIDIA",
@@ -1110,7 +1190,7 @@
     {
       "id": "l120",
       "name": "Lenovo Legion Slim 5",
-      "price": 115000,
+      "price": 119006,
       "type": "gaming",
       "spec": "Ryzen 7 7840HS, RTX 4060, 16GB RAM, 165Hz",
       "brand": "NVIDIA",
@@ -1119,7 +1199,7 @@
     {
       "id": "l121",
       "name": "ASUS TUF Dash F15",
-      "price": 95000,
+      "price": 98446,
       "type": "gaming",
       "spec": "i7-13620H, RTX 4060, 16GB RAM, 144Hz",
       "brand": "NVIDIA",
@@ -1128,7 +1208,7 @@
     {
       "id": "l122",
       "name": "HP Omen 17",
-      "price": 165000,
+      "price": 164040,
       "type": "gaming",
       "spec": "i9-13900HX, RTX 4080, 32GB RAM, 240Hz QHD",
       "brand": "NVIDIA",
@@ -1137,7 +1217,7 @@
     {
       "id": "l123",
       "name": "MSI Vector GP78",
-      "price": 185000,
+      "price": 187444,
       "type": "gaming",
       "spec": "i9-13980HX, RTX 4080, 32GB RAM, 240Hz",
       "brand": "NVIDIA",
@@ -1146,7 +1226,7 @@
     {
       "id": "l124",
       "name": "Gigabyte AORUS 15X",
-      "price": 195000,
+      "price": 199986,
       "type": "gaming",
       "spec": "i9-13900HX, RTX 4090, 32GB RAM, 360Hz",
       "brand": "NVIDIA",
@@ -1155,7 +1235,7 @@
     {
       "id": "l125",
       "name": "Lenovo ThinkPad X1 Carbon Gen 11",
-      "price": 145000,
+      "price": 149052,
       "type": "office",
       "spec": "i7-1365U, 32GB RAM, 1TB SSD, 2.8K OLED",
       "brand": "Intel",
@@ -1164,7 +1244,7 @@
     {
       "id": "l126",
       "name": "Dell Latitude 9440",
-      "price": 165000,
+      "price": 165876,
       "type": "office",
       "spec": "i7-1365U, 32GB RAM, 1TB SSD, QHD+",
       "brand": "Intel",
@@ -1173,7 +1253,7 @@
     {
       "id": "l127",
       "name": "HP EliteBook 840 G10",
-      "price": 128000,
+      "price": 130452,
       "type": "office",
       "spec": "i7-1355U, 32GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1182,7 +1262,7 @@
     {
       "id": "l128",
       "name": "ASUS ExpertBook B9",
-      "price": 115000,
+      "price": 118666,
       "type": "office",
       "spec": "i7-1355U, 16GB RAM, 1TB SSD, Ultra-light",
       "brand": "Intel",
@@ -1191,7 +1271,7 @@
     {
       "id": "l129",
       "name": "Microsoft Surface Laptop 6",
-      "price": 135000,
+      "price": 136461,
       "type": "creative",
       "spec": "Core Ultra 7, 16GB RAM, 512GB SSD, Touch",
       "brand": "Intel",
@@ -1200,7 +1280,7 @@
     {
       "id": "l130",
       "name": "MacBook Pro 13 M2",
-      "price": 125000,
+      "price": 127756,
       "type": "creative",
       "spec": "M2 Chip (10-Core GPU), 16GB RAM, 512GB SSD",
       "brand": "Apple",
@@ -1209,7 +1289,7 @@
     {
       "id": "l131",
       "name": "Razer Book 13",
-      "price": 145000,
+      "price": 146183,
       "type": "creative",
       "spec": "i7-1165G7, 16GB RAM, 512GB SSD, 4K Touch",
       "brand": "Intel",
@@ -1218,7 +1298,7 @@
     {
       "id": "l132",
       "name": "Framework Laptop 16",
-      "price": 195000,
+      "price": 201078,
       "type": "gaming",
       "spec": "Ryzen 9 7940HS, RX 7700S, 32GB RAM, Modular",
       "brand": "AMD",
@@ -1227,7 +1307,7 @@
     {
       "id": "l133",
       "name": "System76 Oryx Pro",
-      "price": 215000,
+      "price": 215360,
       "type": "creative",
       "spec": "i9-13900HX, RTX 4070, 64GB RAM, Linux",
       "brand": "NVIDIA",
@@ -1236,7 +1316,7 @@
     {
       "id": "l134",
       "name": "ASUS ProArt P16",
-      "price": 285000,
+      "price": 291980,
       "type": "creative",
       "spec": "Ryzen AI 9 HX 370, RTX 4060, 32GB RAM, 4K OLED",
       "brand": "NVIDIA",
@@ -1245,7 +1325,7 @@
     {
       "id": "l135",
       "name": "MSI CreatorPro M16",
-      "price": 245000,
+      "price": 255758,
       "type": "creative",
       "spec": "i9-13900H, RTX A3000, 64GB RAM, 4K",
       "brand": "NVIDIA",
@@ -1254,7 +1334,7 @@
     {
       "id": "l136",
       "name": "Gigabyte AERO 17 Creator",
-      "price": 325000,
+      "price": 326796,
       "type": "creative",
       "spec": "i9-13900HX, RTX 4090, 64GB RAM, 4K MiniLED",
       "brand": "NVIDIA",
@@ -1263,7 +1343,7 @@
     {
       "id": "l137",
       "name": "Dell Precision 7680",
-      "price": 385000,
+      "price": 387938,
       "type": "creative",
       "spec": "i9-13950HX, RTX 5000 Ada, 64GB RAM",
       "brand": "NVIDIA",
@@ -1272,7 +1352,7 @@
     {
       "id": "l138",
       "name": "Lenovo ThinkPad P16 Gen 2",
-      "price": 395000,
+      "price": 415699,
       "type": "creative",
       "spec": "i9-13950HX, RTX 5000 Ada, 128GB RAM",
       "brand": "NVIDIA",
@@ -1281,7 +1361,7 @@
     {
       "id": "l139",
       "name": "HP ZBook Fury G10",
-      "price": 425000,
+      "price": 440398,
       "type": "creative",
       "spec": "i9-13950HX, RTX 5000 Ada, 128GB RAM, DreamColor",
       "brand": "NVIDIA",
@@ -1290,7 +1370,7 @@
     {
       "id": "l140",
       "name": "Honor MagicBook X16",
-      "price": 46000,
+      "price": 46854,
       "type": "office",
       "spec": "i5-12450H, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1299,7 +1379,7 @@
     {
       "id": "l141",
       "name": "Xiaomi Redmi Book Pro 14",
-      "price": 54000,
+      "price": 54929,
       "type": "office",
       "spec": "i5-13500H, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1308,7 +1388,7 @@
     {
       "id": "l142",
       "name": "Realme Book Prime",
-      "price": 49000,
+      "price": 48962,
       "type": "office",
       "spec": "i5-11320H, 16GB RAM, 512GB SSD, 2K",
       "brand": "Intel",
@@ -1317,7 +1397,7 @@
     {
       "id": "l143",
       "name": "Avita Pura",
-      "price": 28000,
+      "price": 28652,
       "type": "basic",
       "spec": "Ryzen 3 3250U, 8GB RAM, 256GB SSD",
       "brand": "AMD",
@@ -1326,7 +1406,7 @@
     {
       "id": "l144",
       "name": "Vaio FE14",
-      "price": 42000,
+      "price": 43181,
       "type": "office",
       "spec": "i5-1235U, 8GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1335,7 +1415,7 @@
     {
       "id": "l145",
       "name": "Chuwi CoreBook X",
-      "price": 32000,
+      "price": 32832,
       "type": "basic",
       "spec": "i5-8259U, 16GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1344,7 +1424,7 @@
     {
       "id": "l146",
       "name": "BMAX Y13 Pro",
-      "price": 26000,
+      "price": 26524,
       "type": "basic",
       "spec": "Celeron N4120, 8GB RAM, 256GB SSD",
       "brand": "Intel",
@@ -1353,7 +1433,7 @@
     {
       "id": "l147",
       "name": "Teclast F15 Plus 3",
-      "price": 29000,
+      "price": 29873,
       "type": "basic",
       "spec": "i3-1115G4, 12GB RAM, 512GB SSD",
       "brand": "Intel",
@@ -1362,7 +1442,7 @@
     {
       "id": "l148",
       "name": "Jumper EZbook X4 Pro",
-      "price": 24000,
+      "price": 24635,
       "type": "basic",
       "spec": "Gemini Lake N4120, 8GB RAM, 256GB SSD",
       "brand": "Intel",
@@ -1371,7 +1451,7 @@
     {
       "id": "l149",
       "name": "Asus ROG Flow Z13",
-      "price": 185000,
+      "price": 192718,
       "type": "gaming",
       "spec": "i9-13900H, RTX 4060, 32GB RAM, Tablet Gaming",
       "brand": "NVIDIA",
@@ -1380,84 +1460,898 @@
     {
       "id": "l150",
       "name": "GPD Win Max 2",
-      "price": 95000,
+      "price": 95717,
       "type": "gaming",
       "spec": "Ryzen 7 7840U, Radeon 780M, 32GB RAM, Handheld",
       "brand": "AMD",
       "gpuTier": "integrated"
+    },
+    {
+      "id": "l151",
+      "name": "Acer Swift 3 OLED",
+      "price": 68245,
+      "type": "office",
+      "spec": "Ryzen 7 7730U, 16GB RAM, 1TB SSD, 2.8K OLED",
+      "brand": "AMD",
+      "gpuTier": "integrated",
+      "screen": "14-inch 2.8K OLED (2880x1800) 90Hz",
+      "refresh": "90Hz",
+      "weight": "1.25kg",
+      "battery": "14 hours",
+      "ports": "2x USB-C, 2x USB 3.2, HDMI 2.1, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l152",
+      "name": "MSI Stealth 14 Studio",
+      "price": 175430,
+      "type": "creative",
+      "spec": "i7-13700H, RTX 4070 8GB, 32GB RAM, QHD+",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "14-inch QHD+ (2560x1600) IPS 165Hz",
+      "refresh": "165Hz",
+      "weight": "1.7kg",
+      "battery": "6 hours creative work",
+      "ports": "2x Thunderbolt 4, 2x USB 3.2, HDMI 2.1, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l153",
+      "name": "Gigabyte AORUS 15",
+      "price": 142850,
+      "type": "gaming",
+      "spec": "i7-12700H, RTX 4060 8GB, 16GB RAM, 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "15.6-inch FHD IPS 240Hz",
+      "refresh": "240Hz",
+      "weight": "2.3kg",
+      "battery": "5 hours",
+      "ports": "3x USB 3.2, 1x USB-C, HDMI 2.1, Mini DP, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l154",
+      "name": "Framework Laptop 13",
+      "price": 89560,
+      "type": "office",
+      "spec": "i7-1370P, 32GB RAM, 1TB SSD, Modular",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "13.5-inch 3:2 (2256x1504) IPS",
+      "refresh": "60Hz",
+      "weight": "1.3kg",
+      "battery": "10 hours",
+      "ports": "4x Expansion Bays (Customizable)",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l155",
+      "name": "Razer Blade 15 Advanced",
+      "price": 267890,
+      "type": "gaming",
+      "spec": "i9-13950HX, RTX 4080 12GB, 32GB RAM, QHD 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "15.6-inch QHD (2560x1440) IPS 240Hz",
+      "refresh": "240Hz",
+      "weight": "2.01kg",
+      "battery": "6-7 hours",
+      "ports": "3x USB-A, 1x Thunderbolt 4, HDMI 2.1, Ethernet, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l156",
+      "name": "LG Gram 17",
+      "price": 155670,
+      "type": "office",
+      "spec": "i7-1360P, 16GB RAM, 1TB SSD, 17-inch Ultralight",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "17-inch WQXGA (2560x1600) IPS",
+      "refresh": "60Hz",
+      "weight": "1.35kg",
+      "battery": "19 hours",
+      "ports": "2x Thunderbolt 4, 2x USB 3.2, HDMI, MicroSD, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l157",
+      "name": "Samsung Galaxy Book3 Ultra",
+      "price": 198450,
+      "type": "creative",
+      "spec": "i9-13900H, RTX 4050 6GB, 32GB RAM, 3K AMOLED",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "16-inch 3K AMOLED (2880x1800) 120Hz",
+      "refresh": "120Hz",
+      "weight": "1.81kg",
+      "battery": "10 hours",
+      "ports": "2x Thunderbolt 4, 1x USB-A, HDMI 2.1, MicroSD, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l158",
+      "name": "Huawei MateBook D16",
+      "price": 52340,
+      "type": "office",
+      "spec": "i5-12450H, 16GB RAM, 512GB SSD, 16-inch",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "16-inch FHD+ (1920x1200) IPS",
+      "refresh": "60Hz",
+      "weight": "1.74kg",
+      "battery": "11 hours",
+      "ports": "1x USB-C, 2x USB 3.2, HDMI, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l159",
+      "name": "Alienware m16 R1",
+      "price": 245670,
+      "type": "gaming",
+      "spec": "i9-13900HX, RTX 4070 12GB, 32GB RAM, QHD+ 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "16-inch QHD+ (2560x1600) IPS 240Hz",
+      "refresh": "240Hz",
+      "weight": "2.98kg",
+      "battery": "6 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, Mini DP, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l160",
+      "name": "Lenovo Yoga 9i",
+      "price": 135780,
+      "type": "creative",
+      "spec": "i7-1360P, 16GB RAM, 1TB SSD, 2-in-1 OLED",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "14-inch 2.8K OLED (2880x1800) Touch 90Hz",
+      "refresh": "90Hz",
+      "weight": "1.41kg",
+      "battery": "12 hours",
+      "ports": "2x Thunderbolt 4, 1x USB-A, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l161",
+      "name": "MSI Creator Z17",
+      "price": 325890,
+      "type": "creative",
+      "spec": "i9-13950HX, RTX 4090 16GB, 64GB RAM, Mini LED",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "17-inch QHD+ Mini LED (2560x1600) 165Hz",
+      "refresh": "165Hz",
+      "weight": "2.5kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, SD Card, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l162",
+      "name": "HP Pavilion Aero 13",
+      "price": 64590,
+      "type": "office",
+      "spec": "Ryzen 7 7730U, 16GB RAM, 512GB SSD, Ultralight",
+      "brand": "AMD",
+      "gpuTier": "integrated",
+      "screen": "13.3-inch WUXGA (1920x1200) IPS",
+      "refresh": "60Hz",
+      "weight": "0.99kg",
+      "battery": "11 hours",
+      "ports": "2x USB-C, 1x USB-A, HDMI, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l163",
+      "name": "Acer Predator Helios 18",
+      "price": 385920,
+      "type": "gaming",
+      "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM, Mini LED",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "18-inch WQXGA Mini LED (2560x1600) 250Hz",
+      "refresh": "250Hz",
+      "weight": "3.25kg",
+      "battery": "5 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, Mini DP, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l164",
+      "name": "Dell XPS 15 9530",
+      "price": 178940,
+      "type": "creative",
+      "spec": "i7-13700H, RTX 4060 8GB, 32GB RAM, 3.5K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "15.6-inch 3.5K OLED (3456x2160) Touch 60Hz",
+      "refresh": "60Hz",
+      "weight": "1.86kg",
+      "battery": "13 hours",
+      "ports": "2x Thunderbolt 4, 1x USB-C, SD Card, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l165",
+      "name": "Asus ProArt Studiobook 16",
+      "price": 298750,
+      "type": "creative",
+      "spec": "i9-13980HX, RTX 4070 12GB, 64GB RAM, 4K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "16-inch 4K OLED (3840x2400) Touch 60Hz, 100% DCI-P3",
+      "refresh": "60Hz",
+      "weight": "2.4kg",
+      "battery": "8 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, SD Card, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l166",
+      "name": "Microsoft Surface Laptop 5",
+      "price": 128450,
+      "type": "office",
+      "spec": "i7-1255U, 16GB RAM, 512GB SSD, PixelSense",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "13.5-inch PixelSense (2256x1504) Touch 60Hz",
+      "refresh": "60Hz",
+      "weight": "1.27kg",
+      "battery": "17 hours",
+      "ports": "1x USB-C, 1x USB-A, Surface Connect, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l167",
+      "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+      "price": 165890,
+      "type": "office",
+      "spec": "i7-1365U, 32GB RAM, 1TB SSD, 14-inch 2.8K",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "14-inch 2.8K OLED (2880x1800) Touch 60Hz",
+      "refresh": "60Hz",
+      "weight": "1.12kg",
+      "battery": "15 hours",
+      "ports": "2x Thunderbolt 4, 2x USB-A, HDMI 2.0, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l168",
+      "name": "Asus ROG Zephyrus Duo 16",
+      "price": 425670,
+      "type": "gaming",
+      "spec": "Ryzen 9 7945HX, RTX 4090 16GB, 64GB RAM, Dual Screen",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "16-inch Mini LED (2560x1600) 240Hz + 14-inch Secondary",
+      "refresh": "240Hz",
+      "weight": "2.56kg",
+      "battery": "6 hours",
+      "ports": "2x USB-A, 2x USB-C, HDMI 2.1, Ethernet, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l169",
+      "name": "Gigabyte Aero 16 OLED",
+      "price": 235780,
+      "type": "creative",
+      "spec": "i9-13900H, RTX 4070 8GB, 32GB RAM, 4K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "16-inch 4K OLED (3840x2400) 60Hz, X-Rite Pantone",
+      "refresh": "60Hz",
+      "weight": "2.1kg",
+      "battery": "8 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l170",
+      "name": "HP Envy x360 15",
+      "price": 92340,
+      "type": "creative",
+      "spec": "Ryzen 7 7730U, 16GB RAM, 1TB SSD, 2-in-1 OLED",
+      "brand": "AMD",
+      "gpuTier": "integrated",
+      "screen": "15.6-inch 2.8K OLED (2880x1620) Touch 90Hz",
+      "refresh": "90Hz",
+      "weight": "1.74kg",
+      "battery": "10 hours",
+      "ports": "2x USB-C, 2x USB-A, HDMI 2.1, SD Card, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l171",
+      "name": "Acer Swift X 14",
+      "price": 86450,
+      "type": "creative",
+      "spec": "Ryzen 7 7840HS, RTX 4050 6GB, 16GB RAM",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "14-inch 2.8K OLED (2880x1800) 90Hz",
+      "refresh": "90Hz",
+      "weight": "1.5kg",
+      "battery": "9 hours",
+      "ports": "2x USB-C, 2x USB-A, HDMI 2.1, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l172",
+      "name": "MSI Raider GE78 HX",
+      "price": 485230,
+      "type": "gaming",
+      "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM, Mini LED",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "17-inch UHD Mini LED (3840x2160) 144Hz",
+      "refresh": "144Hz",
+      "weight": "3.1kg",
+      "battery": "5 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, Mini DP, Ethernet",
+      "wifi": "WiFi 7"
+    },
+    {
+      "id": "l173",
+      "name": "Lenovo Legion Slim 7i",
+      "price": 185670,
+      "type": "gaming",
+      "spec": "i9-13900H, RTX 4070 8GB, 32GB RAM, 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "16-inch WQXGA (2560x1600) IPS 240Hz",
+      "refresh": "240Hz",
+      "weight": "2.0kg",
+      "battery": "7 hours",
+      "ports": "3x USB-C (2x Thunderbolt 4), 1x USB-A, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l174",
+      "name": "Dell Precision 5680",
+      "price": 358920,
+      "type": "creative",
+      "spec": "i9-13950HX, RTX 5000 Ada 16GB, 64GB RAM, Workstation",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "16-inch 4K+ (3840x2400) IPS 60Hz",
+      "refresh": "60Hz",
+      "weight": "2.24kg",
+      "battery": "9 hours",
+      "ports": "3x Thunderbolt 4, 1x USB-A, HDMI 2.1, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l175",
+      "name": "Asus Vivobook S 15 OLED",
+      "price": 73890,
+      "type": "office",
+      "spec": "i7-13700H, 16GB RAM, 1TB SSD, 3K OLED",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "15.6-inch 3K OLED (2880x1620) 120Hz",
+      "refresh": "120Hz",
+      "weight": "1.6kg",
+      "battery": "12 hours",
+      "ports": "2x USB-C, 2x USB-A, HDMI 2.0, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l176",
+      "name": "Razer Blade 14",
+      "price": 229870,
+      "type": "gaming",
+      "spec": "Ryzen 9 7940HS, RTX 4070 8GB, 32GB RAM, QHD 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "14-inch QHD (2560x1440) IPS 240Hz",
+      "refresh": "240Hz",
+      "weight": "1.84kg",
+      "battery": "8 hours",
+      "ports": "2x USB-A, 2x USB-C, HDMI 2.1, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l177",
+      "name": "Gigabyte G5 KF",
+      "price": 94560,
+      "type": "gaming",
+      "spec": "i5-13500H, RTX 4060 8GB, 16GB RAM, 144Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "15.6-inch FHD IPS 144Hz",
+      "refresh": "144Hz",
+      "weight": "2.08kg",
+      "battery": "6 hours",
+      "ports": "3x USB-A, 1x USB-C, HDMI 2.1, Mini DP, Ethernet",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l178",
+      "name": "Samsung Galaxy Book3 Pro 360",
+      "price": 165430,
+      "type": "creative",
+      "spec": "i7-1360P, 16GB RAM, 1TB SSD, 3K AMOLED 2-in-1",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "16-inch 3K AMOLED (2880x1800) Touch 120Hz",
+      "refresh": "120Hz",
+      "weight": "1.66kg",
+      "battery": "13 hours",
+      "ports": "1x Thunderbolt 4, 2x USB-C, Audio Jack, MicroSD",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l179",
+      "name": "Honor MagicBook Pro 16",
+      "price": 78920,
+      "type": "office",
+      "spec": "i7-13700H, 32GB RAM, 1TB SSD, 16-inch 144Hz",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "16-inch 2.5K IPS (2520x1680) 144Hz",
+      "refresh": "144Hz",
+      "weight": "1.86kg",
+      "battery": "10 hours",
+      "ports": "2x USB-C, 2x USB-A, HDMI 2.0, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l180",
+      "name": "MSI Prestige 16 Evo",
+      "price": 142780,
+      "type": "creative",
+      "spec": "i7-13700H, 32GB RAM, 2TB SSD, QHD+",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "16-inch QHD+ (2560x1600) IPS 60Hz",
+      "refresh": "60Hz",
+      "weight": "1.9kg",
+      "battery": "14 hours",
+      "ports": "2x Thunderbolt 4, 2x USB-A, HDMI 2.1, MicroSD",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l181",
+      "name": "Asus TUF Dash F15",
+      "price": 108920,
+      "type": "gaming",
+      "spec": "i7-13620H, RTX 4060 8GB, 16GB RAM, 144Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "15.6-inch FHD IPS 144Hz",
+      "refresh": "144Hz",
+      "weight": "2.0kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 1x Thunderbolt 4, HDMI 2.0, Ethernet",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l182",
+      "name": "HP Omen 17",
+      "price": 198750,
+      "type": "gaming",
+      "spec": "i9-13900HX, RTX 4080 12GB, 32GB RAM, QHD 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "17.3-inch QHD IPS 240Hz",
+      "refresh": "240Hz",
+      "weight": "2.78kg",
+      "battery": "6 hours",
+      "ports": "3x USB-A, 1x Thunderbolt 4, HDMI 2.1, Mini DP, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l183",
+      "name": "Lenovo IdeaPad Gaming 3i",
+      "price": 72450,
+      "type": "gaming",
+      "spec": "i5-13420H, RTX 3050 6GB, 16GB RAM, 120Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "entry",
+      "screen": "15.6-inch FHD IPS 120Hz",
+      "refresh": "120Hz",
+      "weight": "2.25kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 1x USB-C, HDMI 2.0, Ethernet, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l184",
+      "name": "Acer Nitro 17",
+      "price": 128670,
+      "type": "gaming",
+      "spec": "i7-13700HX, RTX 4070 8GB, 16GB RAM, 165Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "17.3-inch QHD IPS 165Hz",
+      "refresh": "165Hz",
+      "weight": "3.1kg",
+      "battery": "5 hours",
+      "ports": "3x USB-A, 2x USB-C, HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l185",
+      "name": "Dell Inspiron 16 Plus",
+      "price": 98540,
+      "type": "creative",
+      "spec": "i7-13700H, RTX 4060 8GB, 16GB RAM, 2.5K",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "16-inch 2.5K IPS (2560x1600) 120Hz",
+      "refresh": "120Hz",
+      "weight": "2.05kg",
+      "battery": "9 hours",
+      "ports": "2x USB-A, 2x USB-C (1x Thunderbolt 4), HDMI 2.0, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l186",
+      "name": "Asus Zenbook Pro 16X OLED",
+      "price": 312450,
+      "type": "creative",
+      "spec": "i9-13905H, RTX 4080 12GB, 64GB RAM, 4K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "16-inch 4K OLED (3840x2400) Touch 60Hz, Pantone Validated",
+      "refresh": "60Hz",
+      "weight": "2.4kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l187",
+      "name": "LG Gram Style 16",
+      "price": 168920,
+      "type": "office",
+      "spec": "i7-1360P, 32GB RAM, 1TB SSD, OLED Ultralight",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "16-inch 3.2K OLED (3200x2000) Touch 60Hz",
+      "refresh": "60Hz",
+      "weight": "1.26kg",
+      "battery": "16 hours",
+      "ports": "2x Thunderbolt 4, 2x USB-A, HDMI, MicroSD",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l188",
+      "name": "MSI Cyborg 15",
+      "price": 82340,
+      "type": "gaming",
+      "spec": "i7-13620H, RTX 4050 6GB, 16GB RAM, 144Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "15.6-inch FHD IPS 144Hz",
+      "refresh": "144Hz",
+      "weight": "1.98kg",
+      "battery": "6 hours",
+      "ports": "3x USB-A, 1x USB-C, HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l189",
+      "name": "HP Victus 16",
+      "price": 104590,
+      "type": "gaming",
+      "spec": "i7-13700HX, RTX 4060 8GB, 16GB RAM, 165Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "16.1-inch FHD IPS 165Hz",
+      "refresh": "165Hz",
+      "weight": "2.3kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 1x USB-C, HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l190",
+      "name": "Lenovo LOQ 15",
+      "price": 89670,
+      "type": "gaming",
+      "spec": "Ryzen 7 7840HS, RTX 4060 8GB, 16GB RAM, 144Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "15.6-inch FHD IPS 144Hz",
+      "refresh": "144Hz",
+      "weight": "2.38kg",
+      "battery": "6 hours",
+      "ports": "3x USB-A, 1x USB-C, HDMI 2.1, Ethernet, Audio Jack",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l191",
+      "name": "Asus ROG Strix Scar 17 SE",
+      "price": 545670,
+      "type": "gaming",
+      "spec": "i9-14900HX, RTX 4090 16GB, 64GB RAM, Mini LED 240Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "17.3-inch QHD Mini LED (2560x1440) 240Hz",
+      "refresh": "240Hz",
+      "weight": "3.0kg",
+      "battery": "5 hours",
+      "ports": "4x USB-A, 2x USB-C, HDMI 2.1, Ethernet, Audio Jack, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l192",
+      "name": "Gigabyte Aero 14 OLED",
+      "price": 182450,
+      "type": "creative",
+      "spec": "i7-13700H, RTX 4060 8GB, 32GB RAM, 2.8K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "14-inch 2.8K OLED (2880x1800) 90Hz, X-Rite",
+      "refresh": "90Hz",
+      "weight": "1.6kg",
+      "battery": "10 hours",
+      "ports": "2x USB-A, 2x Thunderbolt 4, HDMI 2.1, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l193",
+      "name": "Microsoft Surface Laptop Studio 2",
+      "price": 285790,
+      "type": "creative",
+      "spec": "i7-13700H, RTX 4060 8GB, 32GB RAM, PixelSense Flow",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "14.4-inch PixelSense Flow (2400x1600) Touch 120Hz",
+      "refresh": "120Hz",
+      "weight": "1.99kg",
+      "battery": "19 hours",
+      "ports": "2x Thunderbolt 4, 1x USB-A, Surface Connect, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l194",
+      "name": "Acer ConceptD 7 Ezel",
+      "price": 342890,
+      "type": "creative",
+      "spec": "i7-13700HX, RTX 4070 8GB, 32GB RAM, 4K IPS Convertible",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "15.6-inch 4K IPS (3840x2160) Touch Pantone 60Hz",
+      "refresh": "60Hz",
+      "weight": "2.9kg",
+      "battery": "8 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.0, SD Card",
+      "wifi": "WiFi 6"
+    },
+    {
+      "id": "l195",
+      "name": "Lenovo Yoga Pro 9i 16",
+      "price": 218670,
+      "type": "creative",
+      "spec": "i9-13905H, RTX 4070 8GB, 32GB RAM, 3.2K Mini LED",
+      "brand": "NVIDIA",
+      "gpuTier": "high",
+      "screen": "16-inch 3.2K Mini LED (3200x2000) 165Hz",
+      "refresh": "165Hz",
+      "weight": "2.2kg",
+      "battery": "9 hours",
+      "ports": "3x USB-C (2x Thunderbolt 4), 1x USB-A, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l196",
+      "name": "Dell Alienware x14 R2",
+      "price": 198450,
+      "type": "gaming",
+      "spec": "i7-13620H, RTX 4060 8GB, 32GB RAM, QHD+ 165Hz",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "14-inch QHD+ (2560x1600) IPS 165Hz",
+      "refresh": "165Hz",
+      "weight": "1.84kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 1x Thunderbolt 4, HDMI 2.1, Audio Jack",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l197",
+      "name": "Asus Vivobook Pro 16X OLED",
+      "price": 158920,
+      "type": "creative",
+      "spec": "i9-13980HX, RTX 4060 8GB, 32GB RAM, 3.2K OLED",
+      "brand": "NVIDIA",
+      "gpuTier": "mid",
+      "screen": "16-inch 3.2K OLED (3200x2000) 120Hz",
+      "refresh": "120Hz",
+      "weight": "2.3kg",
+      "battery": "9 hours",
+      "ports": "3x USB-A, 2x USB-C (1x Thunderbolt 4), HDMI 2.1, SD Card",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l198",
+      "name": "Razer Blade 16",
+      "price": 398720,
+      "type": "gaming",
+      "spec": "i9-13950HX, RTX 4090 16GB, 32GB RAM, Dual Mode Mini LED",
+      "brand": "NVIDIA",
+      "gpuTier": "ultra",
+      "screen": "16-inch UHD+ Mini LED (3840x2400) 120Hz / FHD+ 240Hz Switchable",
+      "refresh": "120Hz / 240Hz",
+      "weight": "2.45kg",
+      "battery": "7 hours",
+      "ports": "3x USB-A, 2x Thunderbolt 4, HDMI 2.1, SD Card, Ethernet",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l199",
+      "name": "MSI Summit E16 Flip Evo",
+      "price": 178450,
+      "type": "creative",
+      "spec": "i7-1360P, 32GB RAM, 1TB SSD, 2-in-1 QHD+ Touch",
+      "brand": "Intel",
+      "gpuTier": "integrated",
+      "screen": "16-inch QHD+ (2560x1600) IPS Touch 60Hz",
+      "refresh": "60Hz",
+      "weight": "2.1kg",
+      "battery": "11 hours",
+      "ports": "2x Thunderbolt 4, 2x USB-A, HDMI 2.0, MicroSD",
+      "wifi": "WiFi 6E"
+    },
+    {
+      "id": "l200",
+      "name": "HP Dragonfly Pro",
+      "price": 142890,
+      "type": "creative",
+      "spec": "Ryzen 7 7736U, Radeon 680M, 32GB RAM, 3:2 OLED",
+      "brand": "AMD",
+      "gpuTier": "integrated",
+      "screen": "14-inch 3:2 WUXGA+ (1920x1280) OLED Touch 60Hz",
+      "refresh": "60Hz",
+      "weight": "1.38kg",
+      "battery": "13 hours",
+      "ports": "2x USB-C (USB 4), 1x USB-A, HDMI 2.1, Audio Jack",
+      "wifi": "WiFi 6E"
     }
   ],
   "cpus": [
     {
       "id": "c00",
       "name": "AMD Athlon 3000G",
-      "price": 5138,
+      "price": 5383,
       "brand": "AMD",
       "score": 20,
       "socket": "AM4",
-      "integrated": true
+      "integrated": true,
+      "cores": 2,
+      "threads": 4,
+      "baseClock": "3.5 GHz",
+      "boostClock": "N/A",
+      "tdp": "35W",
+      "cache": "5MB L3",
+      "architecture": "Zen",
+      "igpu": "Radeon Vega 3"
     },
     {
       "id": "c0",
       "name": "AMD Ryzen 5 5600G",
-      "price": 12601,
+      "price": 13658,
       "brand": "AMD",
       "score": 45,
       "socket": "AM4",
-      "integrated": true
+      "integrated": true,
+      "cores": 6,
+      "threads": 12,
+      "baseClock": "3.9 GHz",
+      "boostClock": "4.4 GHz",
+      "tdp": "65W",
+      "cache": "19MB (3MB L2 + 16MB L3)",
+      "architecture": "Zen 3",
+      "igpu": "Radeon Vega 7"
     },
     {
       "id": "c1",
       "name": "Intel Core i3-12100F",
-      "price": 8090,
+      "price": 8701,
       "brand": "Intel",
       "score": 30,
-      "socket": "LGA1700"
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "baseClock": "3.3 GHz",
+      "boostClock": "4.3 GHz",
+      "tdp": "58W / 89W Turbo",
+      "cache": "12MB L3",
+      "architecture": "Alder Lake",
+      "igpu": "None (F variant)"
     },
     {
       "id": "c1b",
       "name": "Intel Core i3-13100F",
-      "price": 9423,
+      "price": 10140,
       "brand": "Intel",
       "score": 35,
-      "socket": "LGA1700"
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "baseClock": "3.4 GHz",
+      "boostClock": "4.5 GHz",
+      "tdp": "60W / 110W Turbo",
+      "cache": "12MB L3",
+      "architecture": "Raptor Lake",
+      "igpu": "None (F variant)"
     },
     {
       "id": "c2",
       "name": "AMD Ryzen 5 5600",
-      "price": 12152,
+      "price": 13227,
       "brand": "AMD",
       "score": 50,
-      "socket": "AM4"
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "baseClock": "3.5 GHz",
+      "boostClock": "4.4 GHz",
+      "tdp": "65W",
+      "cache": "35MB (3MB L2 + 32MB L3)",
+      "architecture": "Zen 3",
+      "igpu": "None"
     },
     {
       "id": "c2b",
       "name": "AMD Ryzen 5 5700X",
-      "price": 14281,
+      "price": 14830,
       "brand": "AMD",
       "score": 52,
-      "socket": "AM4"
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "baseClock": "3.4 GHz",
+      "boostClock": "4.6 GHz",
+      "tdp": "65W",
+      "cache": "36MB (4MB L2 + 32MB L3)",
+      "architecture": "Zen 3",
+      "igpu": "None"
     },
     {
       "id": "c3",
       "name": "Intel Core i5-12400F",
-      "price": 10608,
+      "price": 10996,
       "brand": "Intel",
       "score": 55,
-      "socket": "LGA1700"
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "baseClock": "2.5 GHz",
+      "boostClock": "4.4 GHz",
+      "tdp": "65W / 117W Turbo",
+      "cache": "18MB L3",
+      "architecture": "Alder Lake",
+      "igpu": "None (F variant)"
     },
     {
       "id": "c3b",
       "name": "Intel Core i5-12600K",
-      "price": 18520,
+      "price": 19826,
       "brand": "Intel",
       "score": 62,
-      "socket": "LGA1700"
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "baseClock": "3.7 GHz P-core / 2.8 GHz E-core",
+      "boostClock": "4.9 GHz",
+      "tdp": "125W / 150W Turbo",
+      "cache": "20MB L3",
+      "architecture": "Alder Lake (6P+4E)",
+      "igpu": "Intel UHD Graphics 770"
     },
     {
       "id": "c4",
       "name": "Intel Core i5-13400F",
-      "price": 19323,
+      "price": 20329,
       "brand": "Intel",
       "score": 65,
       "socket": "LGA1700"
@@ -1465,7 +2359,7 @@
     {
       "id": "c4b",
       "name": "Intel Core i5-14400F",
-      "price": 21193,
+      "price": 22664,
       "brand": "Intel",
       "score": 67,
       "socket": "LGA1700"
@@ -1473,7 +2367,7 @@
     {
       "id": "c5",
       "name": "AMD Ryzen 5 7600",
-      "price": 19200,
+      "price": 21000,
       "brand": "AMD",
       "score": 70,
       "socket": "AM5"
@@ -1481,7 +2375,7 @@
     {
       "id": "c5b",
       "name": "AMD Ryzen 5 7600X",
-      "price": 23062,
+      "price": 24239,
       "brand": "AMD",
       "score": 73,
       "socket": "AM5"
@@ -1489,7 +2383,7 @@
     {
       "id": "c6",
       "name": "Intel Core i5-13600K",
-      "price": 27323,
+      "price": 28586,
       "brand": "Intel",
       "score": 85,
       "socket": "LGA1700"
@@ -1497,7 +2391,7 @@
     {
       "id": "c6b",
       "name": "Intel Core i5-14600K",
-      "price": 29317,
+      "price": 30391,
       "brand": "Intel",
       "score": 87,
       "socket": "LGA1700"
@@ -1505,7 +2399,7 @@
     {
       "id": "c7",
       "name": "AMD Ryzen 7 7700",
-      "price": 28305,
+      "price": 29722,
       "brand": "AMD",
       "score": 80,
       "socket": "AM5"
@@ -1513,7 +2407,7 @@
     {
       "id": "c7b",
       "name": "AMD Ryzen 7 7700X",
-      "price": 31560,
+      "price": 33429,
       "brand": "AMD",
       "score": 82,
       "socket": "AM5"
@@ -1521,7 +2415,7 @@
     {
       "id": "c8",
       "name": "Intel Core i7-13700K",
-      "price": 35862,
+      "price": 37801,
       "brand": "Intel",
       "score": 90,
       "socket": "LGA1700"
@@ -1529,7 +2423,7 @@
     {
       "id": "c8b",
       "name": "Intel Core i7-13700KF",
-      "price": 33776,
+      "price": 35596,
       "brand": "Intel",
       "score": 90,
       "socket": "LGA1700"
@@ -1537,7 +2431,7 @@
     {
       "id": "c9",
       "name": "Intel Core i7-14700K",
-      "price": 38184,
+      "price": 40085,
       "brand": "Intel",
       "score": 95,
       "socket": "LGA1700"
@@ -1545,7 +2439,7 @@
     {
       "id": "c9b",
       "name": "Intel Core i7-14700KF",
-      "price": 36602,
+      "price": 38020,
       "brand": "Intel",
       "score": 95,
       "socket": "LGA1700"
@@ -1553,7 +2447,7 @@
     {
       "id": "c10",
       "name": "AMD Ryzen 7 7800X3D",
-      "price": 37970,
+      "price": 39637,
       "brand": "AMD",
       "score": 98,
       "socket": "AM5"
@@ -1561,7 +2455,7 @@
     {
       "id": "c10b",
       "name": "AMD Ryzen 9 5900X",
-      "price": 30228,
+      "price": 32391,
       "brand": "AMD",
       "score": 75,
       "socket": "AM4"
@@ -1569,7 +2463,7 @@
     {
       "id": "c11",
       "name": "AMD Ryzen 9 7900X",
-      "price": 40529,
+      "price": 43057,
       "brand": "AMD",
       "score": 92,
       "socket": "AM5"
@@ -1577,7 +2471,7 @@
     {
       "id": "c11b",
       "name": "AMD Ryzen 9 7900X3D",
-      "price": 43988,
+      "price": 46523,
       "brand": "AMD",
       "score": 96,
       "socket": "AM5"
@@ -1585,7 +2479,7 @@
     {
       "id": "c12",
       "name": "Intel Core i9-13900K",
-      "price": 51613,
+      "price": 53589,
       "brand": "Intel",
       "score": 99,
       "socket": "LGA1700"
@@ -1593,7 +2487,7 @@
     {
       "id": "c12b",
       "name": "Intel Core i9-13900KF",
-      "price": 50030,
+      "price": 52892,
       "brand": "Intel",
       "score": 99,
       "socket": "LGA1700"
@@ -1601,7 +2495,7 @@
     {
       "id": "c13",
       "name": "Intel Core i9-14900K",
-      "price": 57220,
+      "price": 61758,
       "brand": "Intel",
       "score": 100,
       "socket": "LGA1700"
@@ -1609,7 +2503,7 @@
     {
       "id": "c13b",
       "name": "Intel Core i9-14900KF",
-      "price": 55339,
+      "price": 57838,
       "brand": "Intel",
       "score": 100,
       "socket": "LGA1700"
@@ -1617,7 +2511,7 @@
     {
       "id": "c14",
       "name": "AMD Ryzen 9 7950X",
-      "price": 53227,
+      "price": 57146,
       "brand": "AMD",
       "score": 98,
       "socket": "AM5"
@@ -1625,7 +2519,7 @@
     {
       "id": "c15",
       "name": "AMD Ryzen 9 7950X3D",
-      "price": 65785,
+      "price": 69111,
       "brand": "AMD",
       "score": 100,
       "socket": "AM5"
@@ -1633,7 +2527,7 @@
     {
       "id": "c16",
       "name": "AMD Ryzen 5 5500",
-      "price": 9108,
+      "price": 9449,
       "brand": "AMD",
       "score": 42,
       "socket": "AM4"
@@ -1641,7 +2535,7 @@
     {
       "id": "c17",
       "name": "Intel Core i3-14100F",
-      "price": 11111,
+      "price": 11855,
       "brand": "Intel",
       "score": 38,
       "socket": "LGA1700"
@@ -1649,7 +2543,7 @@
     {
       "id": "c18",
       "name": "AMD Ryzen 7 5800X",
-      "price": 23412,
+      "price": 24930,
       "brand": "AMD",
       "score": 68,
       "socket": "AM4"
@@ -1657,7 +2551,7 @@
     {
       "id": "c19",
       "name": "AMD Ryzen 7 5800X3D",
-      "price": 29289,
+      "price": 31044,
       "brand": "AMD",
       "score": 85,
       "socket": "AM4"
@@ -1665,7 +2559,7 @@
     {
       "id": "c20",
       "name": "Intel Core i7-12700K",
-      "price": 32024,
+      "price": 33994,
       "brand": "Intel",
       "score": 88,
       "socket": "LGA1700"
@@ -1673,7 +2567,7 @@
     {
       "id": "c21",
       "name": "Intel Core i7-12700KF",
-      "price": 30607,
+      "price": 33076,
       "brand": "Intel",
       "score": 88,
       "socket": "LGA1700"
@@ -1681,7 +2575,7 @@
     {
       "id": "c22",
       "name": "Intel Pentium G6405",
-      "price": 5813,
+      "price": 6190,
       "brand": "Intel",
       "score": 18,
       "socket": "LGA1200",
@@ -1690,7 +2584,7 @@
     {
       "id": "c23",
       "name": "Intel Core i3-10100F",
-      "price": 6772,
+      "price": 7301,
       "brand": "Intel",
       "score": 25,
       "socket": "LGA1200"
@@ -1698,7 +2592,7 @@
     {
       "id": "c24",
       "name": "Intel Core i3-10105F",
-      "price": 7215,
+      "price": 7724,
       "brand": "Intel",
       "score": 27,
       "socket": "LGA1200"
@@ -1706,7 +2600,7 @@
     {
       "id": "c25",
       "name": "AMD Ryzen 3 3200G",
-      "price": 7608,
+      "price": 8276,
       "brand": "AMD",
       "score": 22,
       "socket": "AM4",
@@ -1715,7 +2609,7 @@
     {
       "id": "c26",
       "name": "AMD Ryzen 3 4100",
-      "price": 6271,
+      "price": 6635,
       "brand": "AMD",
       "score": 28,
       "socket": "AM4"
@@ -1723,7 +2617,7 @@
     {
       "id": "c27",
       "name": "Intel Core i3-12100",
-      "price": 10204,
+      "price": 10748,
       "brand": "Intel",
       "score": 32,
       "socket": "LGA1700",
@@ -1732,7 +2626,7 @@
     {
       "id": "c28",
       "name": "Intel Core i5-10400F",
-      "price": 9398,
+      "price": 9834,
       "brand": "Intel",
       "score": 40,
       "socket": "LGA1200"
@@ -1740,7 +2634,7 @@
     {
       "id": "c29",
       "name": "Intel Core i5-11400F",
-      "price": 9722,
+      "price": 10421,
       "brand": "Intel",
       "score": 43,
       "socket": "LGA1200"
@@ -1748,7 +2642,7 @@
     {
       "id": "c30",
       "name": "AMD Ryzen 5 3600",
-      "price": 11233,
+      "price": 11830,
       "brand": "AMD",
       "score": 48,
       "socket": "AM4"
@@ -1756,7 +2650,7 @@
     {
       "id": "c31",
       "name": "AMD Ryzen 5 4600G",
-      "price": 10476,
+      "price": 11223,
       "brand": "AMD",
       "score": 46,
       "socket": "AM4",
@@ -1765,7 +2659,7 @@
     {
       "id": "c32",
       "name": "AMD Ryzen 5 5600X",
-      "price": 15657,
+      "price": 16326,
       "brand": "AMD",
       "score": 54,
       "socket": "AM4"
@@ -1773,7 +2667,7 @@
     {
       "id": "c33",
       "name": "Intel Core i5-10600K",
-      "price": 14804,
+      "price": 16101,
       "brand": "Intel",
       "score": 51,
       "socket": "LGA1200"
@@ -1781,7 +2675,7 @@
     {
       "id": "c34",
       "name": "Intel Core i5-11600K",
-      "price": 16574,
+      "price": 17638,
       "brand": "Intel",
       "score": 56,
       "socket": "LGA1200"
@@ -1789,7 +2683,7 @@
     {
       "id": "c35",
       "name": "Intel Core i5-12500",
-      "price": 17346,
+      "price": 18596,
       "brand": "Intel",
       "score": 58,
       "socket": "LGA1700"
@@ -1797,7 +2691,7 @@
     {
       "id": "c36",
       "name": "Intel Core i5-12600",
-      "price": 19287,
+      "price": 20077,
       "brand": "Intel",
       "score": 60,
       "socket": "LGA1700"
@@ -1805,7 +2699,7 @@
     {
       "id": "c37",
       "name": "AMD Ryzen 5 7500F",
-      "price": 16933,
+      "price": 17911,
       "brand": "AMD",
       "score": 66,
       "socket": "AM5"
@@ -1813,7 +2707,7 @@
     {
       "id": "c38",
       "name": "Intel Core i5-13500",
-      "price": 20993,
+      "price": 22246,
       "brand": "Intel",
       "score": 69,
       "socket": "LGA1700"
@@ -1821,7 +2715,7 @@
     {
       "id": "c39",
       "name": "Intel Core i5-13600",
-      "price": 23759,
+      "price": 25742,
       "brand": "Intel",
       "score": 78,
       "socket": "LGA1700"
@@ -1829,7 +2723,7 @@
     {
       "id": "c40",
       "name": "AMD Ryzen 7 3700X",
-      "price": 17107,
+      "price": 18310,
       "brand": "AMD",
       "score": 53,
       "socket": "AM4"
@@ -1837,7 +2731,7 @@
     {
       "id": "c41",
       "name": "AMD Ryzen 7 3800X",
-      "price": 20063,
+      "price": 21470,
       "brand": "AMD",
       "score": 57,
       "socket": "AM4"
@@ -1845,7 +2739,7 @@
     {
       "id": "c42",
       "name": "Intel Core i7-10700K",
-      "price": 21433,
+      "price": 23190,
       "brand": "Intel",
       "score": 63,
       "socket": "LGA1200"
@@ -1853,7 +2747,7 @@
     {
       "id": "c43",
       "name": "Intel Core i7-10700KF",
-      "price": 19779,
+      "price": 20681,
       "brand": "Intel",
       "score": 63,
       "socket": "LGA1200"
@@ -1861,7 +2755,7 @@
     {
       "id": "c44",
       "name": "Intel Core i7-11700K",
-      "price": 24893,
+      "price": 27046,
       "brand": "Intel",
       "score": 70,
       "socket": "LGA1200"
@@ -1869,7 +2763,7 @@
     {
       "id": "c45",
       "name": "Intel Core i7-11700KF",
-      "price": 23308,
+      "price": 24647,
       "brand": "Intel",
       "score": 70,
       "socket": "LGA1200"
@@ -1877,7 +2771,7 @@
     {
       "id": "c46",
       "name": "AMD Ryzen 7 5700G",
-      "price": 20525,
+      "price": 22295,
       "brand": "AMD",
       "score": 64,
       "socket": "AM4",
@@ -1886,7 +2780,7 @@
     {
       "id": "c47",
       "name": "AMD Ryzen 7 5700X",
-      "price": 21694,
+      "price": 22980,
       "brand": "AMD",
       "score": 66,
       "socket": "AM4"
@@ -1894,7 +2788,7 @@
     {
       "id": "c48",
       "name": "Intel Core i7-12700",
-      "price": 28248,
+      "price": 30183,
       "brand": "Intel",
       "score": 83,
       "socket": "LGA1700"
@@ -1902,7 +2796,7 @@
     {
       "id": "c49",
       "name": "Intel Core i7-12700F",
-      "price": 27276,
+      "price": 28658,
       "brand": "Intel",
       "score": 83,
       "socket": "LGA1700"
@@ -1910,7 +2804,7 @@
     {
       "id": "c50",
       "name": "Intel Core i7-13700",
-      "price": 32183,
+      "price": 34650,
       "brand": "Intel",
       "score": 86,
       "socket": "LGA1700"
@@ -1918,7 +2812,7 @@
     {
       "id": "c51",
       "name": "Intel Core i7-13700F",
-      "price": 30847,
+      "price": 33074,
       "brand": "Intel",
       "score": 86,
       "socket": "LGA1700"
@@ -1926,7 +2820,7 @@
     {
       "id": "c52",
       "name": "AMD Ryzen 9 3900X",
-      "price": 26374,
+      "price": 28364,
       "brand": "AMD",
       "score": 72,
       "socket": "AM4"
@@ -1934,7 +2828,7 @@
     {
       "id": "c53",
       "name": "AMD Ryzen 9 3950X",
-      "price": 34701,
+      "price": 36835,
       "brand": "AMD",
       "score": 78,
       "socket": "AM4"
@@ -1942,7 +2836,7 @@
     {
       "id": "c54",
       "name": "AMD Ryzen 9 5950X",
-      "price": 37131,
+      "price": 38758,
       "brand": "AMD",
       "score": 88,
       "socket": "AM4"
@@ -1950,7 +2844,7 @@
     {
       "id": "c55",
       "name": "Intel Core i9-10900K",
-      "price": 34279,
+      "price": 36258,
       "brand": "Intel",
       "score": 74,
       "socket": "LGA1200"
@@ -1958,7 +2852,7 @@
     {
       "id": "c56",
       "name": "Intel Core i9-10900KF",
-      "price": 31925,
+      "price": 34421,
       "brand": "Intel",
       "score": 74,
       "socket": "LGA1200"
@@ -1966,7 +2860,7 @@
     {
       "id": "c57",
       "name": "Intel Core i9-11900K",
-      "price": 36747,
+      "price": 39004,
       "brand": "Intel",
       "score": 79,
       "socket": "LGA1200"
@@ -1974,7 +2868,7 @@
     {
       "id": "c58",
       "name": "Intel Core i9-11900KF",
-      "price": 35348,
+      "price": 38373,
       "brand": "Intel",
       "score": 79,
       "socket": "LGA1200"
@@ -1982,7 +2876,7 @@
     {
       "id": "c59",
       "name": "Intel Core i9-12900K",
-      "price": 44012,
+      "price": 46680,
       "brand": "Intel",
       "score": 94,
       "socket": "LGA1700"
@@ -1990,7 +2884,7 @@
     {
       "id": "c60",
       "name": "Intel Core i9-12900KF",
-      "price": 42374,
+      "price": 45035,
       "brand": "Intel",
       "score": 94,
       "socket": "LGA1700"
@@ -1998,7 +2892,7 @@
     {
       "id": "c61",
       "name": "Intel Core i9-12900",
-      "price": 40066,
+      "price": 43670,
       "brand": "Intel",
       "score": 91,
       "socket": "LGA1700"
@@ -2006,7 +2900,7 @@
     {
       "id": "c62",
       "name": "Intel Core i9-13900",
-      "price": 46104,
+      "price": 48540,
       "brand": "Intel",
       "score": 96,
       "socket": "LGA1700"
@@ -2014,7 +2908,7 @@
     {
       "id": "c63",
       "name": "Intel Core i9-13900F",
-      "price": 45437,
+      "price": 48036,
       "brand": "Intel",
       "score": 96,
       "socket": "LGA1700"
@@ -2022,7 +2916,7 @@
     {
       "id": "c64",
       "name": "AMD Ryzen 9 7900",
-      "price": 35557,
+      "price": 38923,
       "brand": "AMD",
       "score": 89,
       "socket": "AM5"
@@ -2030,7 +2924,7 @@
     {
       "id": "c65",
       "name": "AMD Ryzen 9 7950X",
-      "price": 53108,
+      "price": 57961,
       "brand": "AMD",
       "score": 98,
       "socket": "AM5"
@@ -2038,7 +2932,7 @@
     {
       "id": "c66",
       "name": "Intel Core i5-14500",
-      "price": 22182,
+      "price": 23787,
       "brand": "Intel",
       "score": 71,
       "socket": "LGA1700"
@@ -2046,7 +2940,7 @@
     {
       "id": "c67",
       "name": "Intel Core i5-14600",
-      "price": 25891,
+      "price": 27875,
       "brand": "Intel",
       "score": 80,
       "socket": "LGA1700"
@@ -2054,7 +2948,7 @@
     {
       "id": "c68",
       "name": "Intel Core i7-14700",
-      "price": 34724,
+      "price": 37632,
       "brand": "Intel",
       "score": 92,
       "socket": "LGA1700"
@@ -2062,7 +2956,7 @@
     {
       "id": "c69",
       "name": "Intel Core i7-14700F",
-      "price": 33125,
+      "price": 35644,
       "brand": "Intel",
       "score": 92,
       "socket": "LGA1700"
@@ -2070,7 +2964,7 @@
     {
       "id": "c70",
       "name": "Intel Core i9-14900",
-      "price": 54331,
+      "price": 57401,
       "brand": "Intel",
       "score": 97,
       "socket": "LGA1700"
@@ -2078,7 +2972,7 @@
     {
       "id": "c71",
       "name": "Intel Core i9-14900F",
-      "price": 51331,
+      "price": 53903,
       "brand": "Intel",
       "score": 97,
       "socket": "LGA1700"
@@ -2086,7 +2980,7 @@
     {
       "id": "c72",
       "name": "AMD Ryzen 3 3100",
-      "price": 6906,
+      "price": 7295,
       "brand": "AMD",
       "score": 24,
       "socket": "AM4"
@@ -2094,7 +2988,7 @@
     {
       "id": "c73",
       "name": "AMD Ryzen 3 3300X",
-      "price": 8192,
+      "price": 8671,
       "brand": "AMD",
       "score": 29,
       "socket": "AM4"
@@ -2102,7 +2996,7 @@
     {
       "id": "c74",
       "name": "AMD Ryzen 5 3600X",
-      "price": 13018,
+      "price": 13813,
       "brand": "AMD",
       "score": 51,
       "socket": "AM4"
@@ -2110,7 +3004,7 @@
     {
       "id": "c75",
       "name": "AMD Ryzen 5 3600XT",
-      "price": 14355,
+      "price": 15394,
       "brand": "AMD",
       "score": 52,
       "socket": "AM4"
@@ -2118,7 +3012,7 @@
     {
       "id": "c76",
       "name": "AMD Ryzen 7 3800XT",
-      "price": 21399,
+      "price": 22453,
       "brand": "AMD",
       "score": 60,
       "socket": "AM4"
@@ -2126,7 +3020,7 @@
     {
       "id": "c77",
       "name": "Intel Core i3-13100",
-      "price": 11357,
+      "price": 12254,
       "brand": "Intel",
       "score": 37,
       "socket": "LGA1700",
@@ -2135,7 +3029,7 @@
     {
       "id": "c78",
       "name": "Intel Core i3-14100",
-      "price": 12680,
+      "price": 13377,
       "brand": "Intel",
       "score": 40,
       "socket": "LGA1700",
@@ -2144,7 +3038,7 @@
     {
       "id": "c79",
       "name": "Intel Core i5-11500",
-      "price": 12565,
+      "price": 13019,
       "brand": "Intel",
       "score": 45,
       "socket": "LGA1200"
@@ -2152,7 +3046,7 @@
     {
       "id": "c80",
       "name": "Intel Core i5-11600",
-      "price": 13619,
+      "price": 14472,
       "brand": "Intel",
       "score": 49,
       "socket": "LGA1200"
@@ -2160,7 +3054,7 @@
     {
       "id": "c81",
       "name": "Intel Core i7-11700",
-      "price": 20893,
+      "price": 22292,
       "brand": "Intel",
       "score": 67,
       "socket": "LGA1200"
@@ -2168,7 +3062,7 @@
     {
       "id": "c82",
       "name": "Intel Core i7-11700F",
-      "price": 19159,
+      "price": 20247,
       "brand": "Intel",
       "score": 67,
       "socket": "LGA1200"
@@ -2176,7 +3070,7 @@
     {
       "id": "c83",
       "name": "Intel Core i9-11900",
-      "price": 31907,
+      "price": 33630,
       "brand": "Intel",
       "score": 76,
       "socket": "LGA1200"
@@ -2184,7 +3078,7 @@
     {
       "id": "c84",
       "name": "Intel Core i9-11900F",
-      "price": 29621,
+      "price": 31431,
       "brand": "Intel",
       "score": 76,
       "socket": "LGA1200"
@@ -2192,7 +3086,7 @@
     {
       "id": "c85",
       "name": "AMD Ryzen 5 4500",
-      "price": 8112,
+      "price": 8848,
       "brand": "AMD",
       "score": 36,
       "socket": "AM4"
@@ -2200,7 +3094,7 @@
     {
       "id": "c86",
       "name": "AMD Ryzen 5 5600GT",
-      "price": 11026,
+      "price": 11959,
       "brand": "AMD",
       "score": 47,
       "socket": "AM4",
@@ -2209,7 +3103,7 @@
     {
       "id": "c87",
       "name": "AMD Ryzen 7 5700",
-      "price": 19090,
+      "price": 20196,
       "brand": "AMD",
       "score": 62,
       "socket": "AM4"
@@ -2217,7 +3111,7 @@
     {
       "id": "c88",
       "name": "AMD Ryzen 7 7700",
-      "price": 28193,
+      "price": 30711,
       "brand": "AMD",
       "score": 80,
       "socket": "AM5"
@@ -2225,7 +3119,7 @@
     {
       "id": "c89",
       "name": "Intel Pentium Gold G7400",
-      "price": 7287,
+      "price": 7585,
       "brand": "Intel",
       "score": 21,
       "socket": "LGA1700",
@@ -2234,7 +3128,7 @@
     {
       "id": "c90",
       "name": "Intel Core i5-10400",
-      "price": 10966,
+      "price": 11911,
       "brand": "Intel",
       "score": 41,
       "socket": "LGA1200",
@@ -2243,7 +3137,7 @@
     {
       "id": "c91",
       "name": "Intel Core i5-11400",
-      "price": 11934,
+      "price": 12768,
       "brand": "Intel",
       "score": 44,
       "socket": "LGA1200",
@@ -2252,7 +3146,7 @@
     {
       "id": "c92",
       "name": "Intel Core i7-10700",
-      "price": 19226,
+      "price": 20285,
       "brand": "Intel",
       "score": 61,
       "socket": "LGA1200",
@@ -2261,7 +3155,7 @@
     {
       "id": "c93",
       "name": "Intel Core i7-10700F",
-      "price": 17425,
+      "price": 18484,
       "brand": "Intel",
       "score": 61,
       "socket": "LGA1200"
@@ -2269,7 +3163,7 @@
     {
       "id": "c94",
       "name": "Intel Core i9-10850K",
-      "price": 32712,
+      "price": 34566,
       "brand": "Intel",
       "score": 73,
       "socket": "LGA1200"
@@ -2277,7 +3171,7 @@
     {
       "id": "c95",
       "name": "Intel Core i9-10900",
-      "price": 30953,
+      "price": 33003,
       "brand": "Intel",
       "score": 72,
       "socket": "LGA1200",
@@ -2286,7 +3180,7 @@
     {
       "id": "c96",
       "name": "Intel Core i9-10900F",
-      "price": 28902,
+      "price": 30017,
       "brand": "Intel",
       "score": 72,
       "socket": "LGA1200"
@@ -2294,7 +3188,7 @@
     {
       "id": "c97",
       "name": "AMD Ryzen 9 5900",
-      "price": 28240,
+      "price": 30262,
       "brand": "AMD",
       "score": 73,
       "socket": "AM4"
@@ -2302,7 +3196,7 @@
     {
       "id": "c98",
       "name": "AMD Ryzen 7 7800X3D",
-      "price": 38966,
+      "price": 40610,
       "brand": "AMD",
       "score": 98,
       "socket": "AM5"
@@ -2310,7 +3204,7 @@
     {
       "id": "c99",
       "name": "Intel Core i5-13400",
-      "price": 18067,
+      "price": 19095,
       "brand": "Intel",
       "score": 63,
       "socket": "LGA1700"
@@ -2318,7 +3212,7 @@
     {
       "id": "c100",
       "name": "AMD Ryzen 5 7600X3D",
-      "price": 25579,
+      "price": 26756,
       "brand": "AMD",
       "score": 77,
       "socket": "AM5"
@@ -2330,1139 +3224,1197 @@
       "name": "Integrated Graphics",
       "price": 0,
       "brand": "Any",
-      "tier": "integrated"
+      "tier": "integrated",
+      "vram": "Shared System RAM",
+      "memoryType": "System DDR4/DDR5",
+      "boostClock": "Varies",
+      "tdp": "Integrated (15W typical)",
+      "cores": "Varies by CPU",
+      "busInterface": "Integrated"
     },
     {
       "id": "g1",
       "name": "NVIDIA GTX 1650",
-      "price": 13200,
+      "price": 14380,
       "brand": "NVIDIA",
-      "tier": "entry"
+      "tier": "entry",
+      "vram": "4GB GDDR5",
+      "memoryType": "GDDR5",
+      "boostClock": "1665 MHz",
+      "tdp": "75W",
+      "cores": "896 CUDA Cores",
+      "busInterface": "PCIe 3.0 x16",
+      "memoryBus": "128-bit"
     },
     {
       "id": "g2",
       "name": "AMD Radeon RX 6600",
-      "price": 21416,
+      "price": 23402,
       "brand": "AMD",
-      "tier": "entry"
+      "tier": "entry",
+      "vram": "8GB GDDR6",
+      "memoryType": "GDDR6",
+      "boostClock": "2491 MHz",
+      "tdp": "132W",
+      "cores": "1792 Stream Processors",
+      "busInterface": "PCIe 4.0 x8",
+      "memoryBus": "128-bit"
     },
     {
       "id": "g3",
       "name": "NVIDIA RTX 3050 6GB",
-      "price": 17891,
+      "price": 19197,
       "brand": "NVIDIA",
-      "tier": "entry"
+      "tier": "entry",
+      "vram": "6GB GDDR6",
+      "memoryType": "GDDR6",
+      "boostClock": "1777 MHz",
+      "tdp": "130W",
+      "cores": "2304 CUDA Cores, 72 Tensor Cores, 18 RT Cores",
+      "busInterface": "PCIe 4.0 x8",
+      "memoryBus": "96-bit"
     },
     {
       "id": "g4",
       "name": "NVIDIA RTX 3060 12GB",
-      "price": 27500,
+      "price": 30006,
       "brand": "NVIDIA",
-      "tier": "mid"
+      "tier": "mid",
+      "vram": "12GB GDDR6",
+      "memoryType": "GDDR6",
+      "boostClock": "1777 MHz",
+      "tdp": "170W",
+      "cores": "3584 CUDA Cores, 112 Tensor Cores, 28 RT Cores",
+      "busInterface": "PCIe 4.0 x16",
+      "memoryBus": "192-bit"
     },
     {
       "id": "g5",
       "name": "AMD Radeon RX 7600",
-      "price": 28600,
+      "price": 31460,
       "brand": "AMD",
-      "tier": "mid"
+      "tier": "mid",
+      "vram": "8GB GDDR6",
+      "memoryType": "GDDR6",
+      "boostClock": "2655 MHz",
+      "tdp": "165W",
+      "cores": "2048 Stream Processors",
+      "busInterface": "PCIe 4.0 x8",
+      "memoryBus": "128-bit",
+      "architecture": "RDNA 3"
     },
     {
       "id": "g6",
       "name": "NVIDIA RTX 4060 8GB",
-      "price": 31350,
+      "price": 34372,
       "brand": "NVIDIA",
-      "tier": "mid"
+      "tier": "mid",
+      "vram": "8GB GDDR6",
+      "memoryType": "GDDR6",
+      "boostClock": "2460 MHz",
+      "tdp": "115W",
+      "cores": "3072 CUDA Cores, 96 Tensor Cores, 24 RT Cores",
+      "busInterface": "PCIe 4.0 x8",
+      "memoryBus": "128-bit",
+      "architecture": "Ada Lovelace"
     },
     {
       "id": "g7",
       "name": "NVIDIA RTX 4060 Ti 8GB",
-      "price": 38010,
+      "price": 40518,
       "brand": "NVIDIA",
-      "tier": "mid"
+      "tier": "mid",
+      "vram": "8GB GDDR6",
+      "memoryType": "GDDR6",
+      "boostClock": "2535 MHz",
+      "tdp": "160W",
+      "cores": "4352 CUDA Cores, 136 Tensor Cores, 34 RT Cores",
+      "busInterface": "PCIe 4.0 x8",
+      "memoryBus": "128-bit",
+      "architecture": "Ada Lovelace"
     },
     {
       "id": "g8",
       "name": "AMD Radeon RX 7700 XT",
-      "price": 46200,
+      "price": 50820,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g9",
       "name": "NVIDIA RTX 4060 Ti 16GB",
-      "price": 49500,
+      "price": 54450,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g10",
       "name": "AMD Radeon RX 7800 XT",
-      "price": 55000,
+      "price": 60402,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g11",
       "name": "NVIDIA RTX 4070 12GB",
-      "price": 56737,
+      "price": 62411,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g12",
       "name": "NVIDIA RTX 4070 Super",
-      "price": 66000,
+      "price": 72600,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g13",
       "name": "AMD Radeon RX 7900 XT",
-      "price": 82039,
+      "price": 89048,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g14",
       "name": "NVIDIA RTX 4070 Ti Super",
-      "price": 87625,
+      "price": 95957,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g15",
       "name": "AMD Radeon RX 7900 XTX",
-      "price": 102918,
+      "price": 113210,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g16",
       "name": "NVIDIA RTX 4080 Super",
-      "price": 115405,
+      "price": 126946,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g17",
       "name": "NVIDIA RTX 4090 24GB",
-      "price": 203500,
+      "price": 222028,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g18",
       "name": "NVIDIA GT 1030",
-      "price": 8077,
+      "price": 8825,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g19",
       "name": "AMD Radeon RX 6400",
-      "price": 10450,
+      "price": 11219,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g20",
       "name": "NVIDIA GTX 1050 Ti",
-      "price": 11264,
+      "price": 12045,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g21",
       "name": "AMD Radeon RX 6500 XT",
-      "price": 14850,
+      "price": 16230,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g22",
       "name": "NVIDIA GTX 1660",
-      "price": 16216,
+      "price": 17808,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g23",
       "name": "NVIDIA GTX 1660 Super",
-      "price": 19250,
+      "price": 21175,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g24",
       "name": "NVIDIA GTX 1660 Ti",
-      "price": 20246,
+      "price": 22271,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g25",
       "name": "AMD Radeon RX 6600 XT",
-      "price": 24750,
+      "price": 27225,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g26",
       "name": "NVIDIA RTX 3050 8GB",
-      "price": 21059,
+      "price": 23165,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g27",
       "name": "AMD Radeon RX 6650 XT",
-      "price": 26400,
+      "price": 29040,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g28",
       "name": "NVIDIA RTX 3060 Ti",
-      "price": 35130,
+      "price": 38643,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g29",
       "name": "AMD Radeon RX 6700",
-      "price": 30771,
+      "price": 33848,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g30",
       "name": "AMD Radeon RX 6700 XT",
-      "price": 36109,
+      "price": 39720,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g31",
       "name": "NVIDIA RTX 3070",
-      "price": 46200,
+      "price": 49759,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g32",
       "name": "NVIDIA RTX 3070 Ti",
-      "price": 52185,
+      "price": 57404,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g33",
       "name": "AMD Radeon RX 6750 XT",
-      "price": 41800,
+      "price": 45709,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g34",
       "name": "AMD Radeon RX 6800",
-      "price": 49430,
+      "price": 54373,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g35",
       "name": "AMD Radeon RX 6800 XT",
-      "price": 57184,
+      "price": 62902,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g36",
       "name": "AMD Radeon RX 6900 XT",
-      "price": 66711,
+      "price": 73382,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g37",
       "name": "NVIDIA RTX 3080 10GB",
-      "price": 70913,
+      "price": 78004,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g38",
       "name": "NVIDIA RTX 3080 12GB",
-      "price": 77000,
+      "price": 84700,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g39",
       "name": "NVIDIA RTX 3080 Ti",
-      "price": 90200,
+      "price": 99220,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g40",
       "name": "NVIDIA RTX 3090",
-      "price": 137500,
+      "price": 151250,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g41",
       "name": "NVIDIA RTX 3090 Ti",
-      "price": 157710,
+      "price": 173481,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g42",
       "name": "AMD Radeon RX 7600 XT",
-      "price": 32166,
+      "price": 34495,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g43",
       "name": "NVIDIA RTX 4050",
-      "price": 23959,
+      "price": 26355,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g44",
       "name": "AMD Radeon RX 7700",
-      "price": 41800,
+      "price": 45882,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g45",
       "name": "NVIDIA RTX 4070 Ti",
-      "price": 79200,
+      "price": 87120,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g46",
       "name": "AMD Radeon RX 7800",
-      "price": 50600,
+      "price": 54613,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g47",
       "name": "AMD Radeon RX 7900 GRE",
-      "price": 74800,
+      "price": 82280,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g48",
       "name": "NVIDIA RTX 4080",
-      "price": 126500,
+      "price": 137174,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g49",
       "name": "Intel Arc A310",
-      "price": 9202,
+      "price": 10122,
       "brand": "Intel",
       "tier": "entry"
     },
     {
       "id": "g50",
       "name": "Intel Arc A380",
-      "price": 13200,
+      "price": 14492,
       "brand": "Intel",
       "tier": "entry"
     },
     {
       "id": "g51",
       "name": "Intel Arc A580",
-      "price": 19800,
+      "price": 21780,
       "brand": "Intel",
       "tier": "entry"
     },
     {
       "id": "g52",
       "name": "Intel Arc A750",
-      "price": 26400,
+      "price": 29040,
       "brand": "Intel",
       "tier": "mid"
     },
     {
       "id": "g53",
       "name": "Intel Arc A770 8GB",
-      "price": 30771,
+      "price": 33848,
       "brand": "Intel",
       "tier": "mid"
     },
     {
       "id": "g54",
       "name": "Intel Arc A770 16GB",
-      "price": 35200,
+      "price": 38720,
       "brand": "Intel",
       "tier": "mid"
     },
     {
       "id": "g55",
       "name": "NVIDIA GTX 1070",
-      "price": 21845,
+      "price": 24030,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g56",
       "name": "NVIDIA GTX 1070 Ti",
-      "price": 23719,
+      "price": 25751,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g57",
       "name": "NVIDIA GTX 1080",
-      "price": 27325,
+      "price": 29490,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g58",
       "name": "NVIDIA GTX 1080 Ti",
-      "price": 35200,
+      "price": 38279,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g59",
       "name": "NVIDIA RTX 2060",
-      "price": 26239,
+      "price": 28785,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g60",
       "name": "NVIDIA RTX 2060 Super",
-      "price": 30788,
+      "price": 33867,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g61",
       "name": "NVIDIA RTX 2070",
-      "price": 35200,
+      "price": 37602,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g62",
       "name": "NVIDIA RTX 2070 Super",
-      "price": 41800,
+      "price": 45694,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g63",
       "name": "NVIDIA RTX 2080",
-      "price": 46200,
+      "price": 50398,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g64",
       "name": "NVIDIA RTX 2080 Super",
-      "price": 52179,
+      "price": 56330,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g65",
       "name": "NVIDIA RTX 2080 Ti",
-      "price": 71500,
+      "price": 77038,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g66",
       "name": "AMD Radeon RX 580",
-      "price": 13200,
+      "price": 14520,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g67",
       "name": "AMD Radeon RX 590",
-      "price": 15309,
+      "price": 16668,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g68",
       "name": "AMD Radeon RX 5500 XT",
-      "price": 14850,
+      "price": 16335,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g69",
       "name": "AMD Radeon RX 5600 XT",
-      "price": 19800,
+      "price": 21780,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g70",
       "name": "AMD Radeon RX 5700",
-      "price": 24200,
+      "price": 26620,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g71",
       "name": "AMD Radeon RX 5700 XT",
-      "price": 30800,
+      "price": 33880,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g72",
       "name": "AMD Radeon RX Vega 56",
-      "price": 21583,
+      "price": 23386,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g73",
       "name": "AMD Radeon RX Vega 64",
-      "price": 27033,
+      "price": 28847,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g74",
       "name": "AMD Radeon VII",
-      "price": 38500,
+      "price": 42350,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g75",
       "name": "NVIDIA Quadro P2000",
-      "price": 30800,
+      "price": 33582,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g76",
       "name": "NVIDIA Quadro P4000",
-      "price": 45886,
+      "price": 49666,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g77",
       "name": "NVIDIA Quadro RTX 4000",
-      "price": 70764,
+      "price": 77840,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g78",
       "name": "NVIDIA Quadro RTX 5000",
-      "price": 113023,
+      "price": 122832,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g79",
       "name": "NVIDIA Quadro RTX 6000",
-      "price": 203500,
+      "price": 219015,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g80",
       "name": "NVIDIA RTX A2000",
-      "price": 45802,
+      "price": 49850,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g81",
       "name": "NVIDIA RTX A4000",
-      "price": 93198,
+      "price": 99897,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g82",
       "name": "NVIDIA RTX A5000",
-      "price": 154492,
+      "price": 169941,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g83",
       "name": "NVIDIA RTX A6000",
-      "price": 291500,
+      "price": 320650,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g84",
       "name": "AMD Radeon Pro W6800",
-      "price": 148500,
+      "price": 163350,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g85",
       "name": "AMD Radeon Pro W7900",
-      "price": 244387,
+      "price": 268826,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g86",
       "name": "NVIDIA GTX 1630",
-      "price": 12100,
+      "price": 13218,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g87",
       "name": "AMD Radeon RX 6950 XT",
-      "price": 79200,
+      "price": 84932,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g88",
       "name": "NVIDIA RTX 4060 Ti 16GB",
-      "price": 48559,
+      "price": 52621,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g89",
       "name": "NVIDIA RTX 4070",
-      "price": 57200,
+      "price": 62255,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g90",
       "name": "NVIDIA GTX 1650 GDDR6",
-      "price": 14543,
+      "price": 15997,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g91",
       "name": "NVIDIA GTX 1650 Super",
-      "price": 15950,
+      "price": 17410,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g92",
       "name": "AMD Radeon RX 7600S",
-      "price": 26384,
+      "price": 29022,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g93",
       "name": "AMD Radeon RX 7700S",
-      "price": 38889,
+      "price": 42778,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g94",
       "name": "AMD Radeon RX 7900M",
-      "price": 89523,
+      "price": 98475,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g95",
       "name": "NVIDIA RTX 4090 Ti",
-      "price": 254135,
+      "price": 273136,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g96",
       "name": "NVIDIA Titan RTX",
-      "price": 214500,
+      "price": 234564,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g97",
       "name": "NVIDIA Titan V",
-      "price": 188621,
+      "price": 207483,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g98",
       "name": "NVIDIA Titan Xp",
-      "price": 92441,
+      "price": 101291,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g99",
       "name": "AMD Radeon Pro Duo",
-      "price": 104500,
+      "price": 114950,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g100",
       "name": "NVIDIA RTX 6000 Ada",
-      "price": 422243,
+      "price": 464467,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g101",
       "name": "NVIDIA GTX 1630 GDDR6",
-      "price": 10500,
+      "price": 11550,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g102",
       "name": "AMD Radeon RX 5300",
-      "price": 9800,
+      "price": 10709,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g103",
       "name": "NVIDIA GTX 1650 Super GDDR6",
-      "price": 15200,
+      "price": 16720,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g104",
       "name": "AMD Radeon RX 6500M",
-      "price": 12000,
+      "price": 13119,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g105",
       "name": "NVIDIA GTX 1660 GDDR6",
-      "price": 17500,
+      "price": 19030,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g106",
       "name": "AMD Radeon RX 7600M",
-      "price": 28000,
+      "price": 30174,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g107",
       "name": "NVIDIA RTX 3050 Ti Mobile",
-      "price": 24000,
+      "price": 26400,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g108",
       "name": "AMD Radeon RX 6700M",
-      "price": 35000,
+      "price": 38500,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g109",
       "name": "NVIDIA RTX 3060 Mobile",
-      "price": 32000,
+      "price": 34412,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g110",
       "name": "AMD Radeon RX 6800M",
-      "price": 48000,
+      "price": 52031,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g111",
       "name": "NVIDIA RTX 3070 Mobile",
-      "price": 52000,
+      "price": 57200,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g112",
       "name": "AMD Radeon RX 6850M XT",
-      "price": 58000,
+      "price": 63800,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g113",
       "name": "NVIDIA RTX 3080 Mobile",
-      "price": 78000,
+      "price": 85800,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g114",
       "name": "AMD Radeon RX 6900M",
-      "price": 85000,
+      "price": 93150,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g115",
       "name": "NVIDIA RTX 4050 Mobile",
-      "price": 28500,
+      "price": 31324,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g116",
       "name": "NVIDIA RTX 4060 Mobile",
-      "price": 38000,
+      "price": 41800,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g117",
       "name": "NVIDIA RTX 4070 Mobile",
-      "price": 58000,
+      "price": 63800,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g118",
       "name": "NVIDIA RTX 4080 Mobile",
-      "price": 95000,
+      "price": 104400,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g119",
       "name": "NVIDIA RTX 4090 Mobile",
-      "price": 158000,
+      "price": 173800,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g120",
       "name": "Intel Arc A350M",
-      "price": 15000,
+      "price": 16500,
       "brand": "Intel",
       "tier": "entry"
     },
     {
       "id": "g121",
       "name": "Intel Arc A370M",
-      "price": 18000,
+      "price": 19773,
       "brand": "Intel",
       "tier": "entry"
     },
     {
       "id": "g122",
       "name": "Intel Arc A550M",
-      "price": 22000,
+      "price": 24200,
       "brand": "Intel",
       "tier": "mid"
     },
     {
       "id": "g123",
       "name": "Intel Arc A730M",
-      "price": 32000,
+      "price": 34941,
       "brand": "Intel",
       "tier": "mid"
     },
     {
       "id": "g124",
       "name": "Intel Arc A770M",
-      "price": 42000,
+      "price": 46200,
       "brand": "Intel",
       "tier": "high"
     },
     {
       "id": "g125",
       "name": "AMD Radeon RX 7900 GRE Golden Rabbit",
-      "price": 72000,
+      "price": 77897,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g126",
       "name": "NVIDIA GTX 980",
-      "price": 18000,
+      "price": 19709,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g127",
       "name": "NVIDIA GTX 980 Ti",
-      "price": 24000,
+      "price": 26015,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g128",
       "name": "AMD Radeon R9 390X",
-      "price": 15000,
+      "price": 16500,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g129",
       "name": "AMD Radeon RX 480",
-      "price": 12000,
+      "price": 13200,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g130",
       "name": "NVIDIA GTX 970",
-      "price": 15000,
+      "price": 16500,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g131",
       "name": "AMD Radeon RX 570 8GB",
-      "price": 11000,
+      "price": 12030,
       "brand": "AMD",
       "tier": "entry"
     },
     {
       "id": "g132",
       "name": "NVIDIA GTX 1060 6GB",
-      "price": 14000,
+      "price": 15400,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g133",
       "name": "NVIDIA GTX 1060 3GB",
-      "price": 11500,
+      "price": 12597,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g134",
       "name": "AMD Radeon RX 5600 XT",
-      "price": 19000,
+      "price": 20852,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g135",
       "name": "NVIDIA RTX 2060 KO",
-      "price": 25000,
+      "price": 26626,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g136",
       "name": "AMD Radeon Pro W5700",
-      "price": 95000,
+      "price": 104500,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g137",
       "name": "NVIDIA Quadro P5000",
-      "price": 125000,
+      "price": 137500,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g138",
       "name": "AMD Radeon Pro VII",
-      "price": 185000,
+      "price": 203500,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g139",
       "name": "NVIDIA RTX A4500",
-      "price": 145000,
+      "price": 158966,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g140",
       "name": "AMD Radeon Pro W6600",
-      "price": 65000,
+      "price": 71407,
       "brand": "AMD",
       "tier": "high"
     },
     {
       "id": "g141",
       "name": "NVIDIA T1000",
-      "price": 38000,
+      "price": 41800,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g142",
       "name": "NVIDIA T600",
-      "price": 28000,
+      "price": 30384,
       "brand": "NVIDIA",
       "tier": "entry"
     },
     {
       "id": "g143",
       "name": "AMD Radeon Pro W5500",
-      "price": 48000,
+      "price": 52608,
       "brand": "AMD",
       "tier": "mid"
     },
     {
       "id": "g144",
       "name": "NVIDIA RTX 4000 SFF Ada",
-      "price": 98000,
+      "price": 105723,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g145",
       "name": "AMD Radeon Pro W7700",
-      "price": 185000,
+      "price": 203500,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g146",
       "name": "NVIDIA RTX 5000 Ada Generation",
-      "price": 285000,
+      "price": 313500,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g147",
       "name": "AMD Radeon Pro W7800",
-      "price": 215000,
+      "price": 236500,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g148",
       "name": "NVIDIA L40",
-      "price": 650000,
+      "price": 710488,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g149",
       "name": "NVIDIA L4",
-      "price": 185000,
+      "price": 203500,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g150",
       "name": "AMD Instinct MI250",
-      "price": 1200000,
+      "price": 1293168,
       "brand": "AMD",
       "tier": "ultra"
     },
     {
       "id": "g151",
       "name": "NVIDIA RTX 5060",
-      "price": 32000,
+      "price": 34230,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g152",
       "name": "NVIDIA RTX 5060 Ti",
-      "price": 42000,
+      "price": 45754,
       "brand": "NVIDIA",
       "tier": "mid"
     },
     {
       "id": "g153",
       "name": "NVIDIA RTX 5070",
-      "price": 58000,
+      "price": 62719,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g154",
       "name": "NVIDIA RTX 5070 Ti",
-      "price": 72000,
+      "price": 77455,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g155",
       "name": "NVIDIA RTX 5070 Super",
-      "price": 68000,
+      "price": 74315,
       "brand": "NVIDIA",
       "tier": "high"
     },
     {
       "id": "g156",
       "name": "NVIDIA RTX 5070 Ti Super",
-      "price": 85000,
+      "price": 91833,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g157",
       "name": "NVIDIA RTX 5080",
-      "price": 115000,
+      "price": 125994,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g158",
       "name": "NVIDIA RTX 5080 Super",
-      "price": 135000,
+      "price": 148500,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g159",
       "name": "NVIDIA RTX 5080 Ti",
-      "price": 145000,
+      "price": 159500,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g160",
       "name": "NVIDIA RTX 5090",
-      "price": 225000,
+      "price": 247500,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g161",
       "name": "NVIDIA RTX 5090 Ti",
-      "price": 285000,
+      "price": 311315,
       "brand": "NVIDIA",
       "tier": "ultra"
     },
     {
       "id": "g162",
       "name": "NVIDIA RTX 5090 D",
-      "price": 235000,
+      "price": 255552,
       "brand": "NVIDIA",
       "tier": "ultra"
     }
@@ -3471,714 +4423,714 @@
     {
       "id": "m00",
       "name": "ASRock A320M-HDV",
-      "price": 3771,
+      "price": 3836,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m0",
       "name": "MSI A520M-A Pro",
-      "price": 4535,
+      "price": 4580,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m1",
       "name": "Gigabyte H610M",
-      "price": 6437,
+      "price": 6505,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m2",
       "name": "MSI B550M Pro-VDH",
-      "price": 9448,
+      "price": 9368,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m3",
       "name": "MSI PRO B760M-A",
-      "price": 13994,
+      "price": 14009,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m4",
       "name": "ASRock B650M PG Lightning",
-      "price": 13454,
+      "price": 13782,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m5",
       "name": "ASUS TUF Gaming B650-Plus",
-      "price": 18435,
+      "price": 19046,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m6",
       "name": "MSI MAG B760 Tomahawk",
-      "price": 19638,
+      "price": 19860,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m7",
       "name": "MSI PRO Z790-A WiFi",
-      "price": 24939,
+      "price": 25652,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m8",
       "name": "ASUS ROG Strix B650E-F",
-      "price": 26219,
+      "price": 27117,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m9",
       "name": "Gigabyte X670 AORUS Elite",
-      "price": 28748,
+      "price": 29010,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m10",
       "name": "ASUS ROG Strix Z790-F",
-      "price": 36597,
+      "price": 36734,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m11",
       "name": "ASUS ROG Maximus Z790 Hero",
-      "price": 56629,
+      "price": 58443,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m12",
       "name": "MSI MEG X670E ACE",
-      "price": 67100,
+      "price": 69092,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m13",
       "name": "ASUS ROG Crosshair X670E Extreme",
-      "price": 92917,
+      "price": 93382,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m14",
       "name": "Gigabyte B450M DS3H",
-      "price": 5602,
+      "price": 5641,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m15",
       "name": "ASRock B450M-HDV R4.0",
-      "price": 5443,
+      "price": 5652,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m16",
       "name": "MSI B450 Tomahawk Max II",
-      "price": 8483,
+      "price": 8452,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m17",
       "name": "ASUS Prime B450M-A II",
-      "price": 6581,
+      "price": 6721,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m18",
       "name": "Gigabyte B550 AORUS Elite",
-      "price": 12607,
+      "price": 12768,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m19",
       "name": "ASRock B550M Steel Legend",
-      "price": 11152,
+      "price": 11548,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m20",
       "name": "MSI MAG B550 Tomahawk",
-      "price": 14988,
+      "price": 14970,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m21",
       "name": "ASUS TUF Gaming B550M-Plus",
-      "price": 11913,
+      "price": 12098,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m22",
       "name": "Gigabyte X570 AORUS Elite",
-      "price": 17705,
+      "price": 17998,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m23",
       "name": "MSI MPG X570 Gaming Plus",
-      "price": 16538,
+      "price": 16799,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m24",
       "name": "ASUS ROG Strix X570-E Gaming",
-      "price": 28650,
+      "price": 28655,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m25",
       "name": "ASRock X570 Taichi",
-      "price": 25388,
+      "price": 26051,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m26",
       "name": "Gigabyte X570S AORUS Master",
-      "price": 35502,
+      "price": 35847,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m27",
       "name": "ASUS ROG Crosshair VIII Hero",
-      "price": 43826,
+      "price": 45619,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m28",
       "name": "MSI MEG X570 Godlike",
-      "price": 78025,
+      "price": 78556,
       "socket": "AM4",
       "type": "DDR4"
     },
     {
       "id": "m29",
       "name": "Gigabyte H510M H",
-      "price": 5620,
+      "price": 5866,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m30",
       "name": "MSI H510M-A PRO",
-      "price": 6072,
+      "price": 6286,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m31",
       "name": "ASUS Prime H510M-E",
-      "price": 6460,
+      "price": 6530,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m32",
       "name": "Gigabyte B560M DS3H",
-      "price": 8585,
+      "price": 8772,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m33",
       "name": "MSI B560M PRO-VDH",
-      "price": 9120,
+      "price": 9325,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m34",
       "name": "ASUS TUF Gaming B560M-Plus",
-      "price": 10858,
+      "price": 10873,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m35",
       "name": "Gigabyte Z590 AORUS Elite",
-      "price": 18530,
+      "price": 18739,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m36",
       "name": "MSI MPG Z590 Gaming Force",
-      "price": 20076,
+      "price": 20412,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m37",
       "name": "ASUS ROG Strix Z590-E Gaming",
-      "price": 32222,
+      "price": 33246,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m38",
       "name": "ASRock Z590 Taichi",
-      "price": 29126,
+      "price": 29985,
       "socket": "LGA1200",
       "type": "DDR4"
     },
     {
       "id": "m39",
       "name": "Gigabyte H610M S2H",
-      "price": 7176,
+      "price": 7453,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m40",
       "name": "MSI PRO H610M-G",
-      "price": 7062,
+      "price": 7169,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m41",
       "name": "ASUS Prime H610M-K",
-      "price": 7389,
+      "price": 7469,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m42",
       "name": "Gigabyte B660M DS3H",
-      "price": 10162,
+      "price": 10160,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m43",
       "name": "MSI PRO B660M-A",
-      "price": 10495,
+      "price": 10769,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m44",
       "name": "ASUS TUF Gaming B660M-Plus",
-      "price": 13034,
+      "price": 13402,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m45",
       "name": "Gigabyte B660 AORUS Master",
-      "price": 22038,
+      "price": 22574,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m46",
       "name": "MSI MAG B660 Tomahawk",
-      "price": 16501,
+      "price": 17082,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m47",
       "name": "ASUS ROG Strix B660-A",
-      "price": 24098,
+      "price": 24568,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m48",
       "name": "Gigabyte Z690 UD",
-      "price": 18060,
+      "price": 18840,
       "socket": "LGA1700",
       "type": "DDR4"
     },
     {
       "id": "m49",
       "name": "MSI PRO Z690-A",
-      "price": 19987,
+      "price": 20574,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m50",
       "name": "ASUS Prime Z690-P",
-      "price": 20079,
+      "price": 20762,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m51",
       "name": "Gigabyte Z690 AORUS Elite AX",
-      "price": 25846,
+      "price": 26016,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m52",
       "name": "MSI MPG Z690 Carbon WiFi",
-      "price": 33125,
+      "price": 34334,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m53",
       "name": "ASUS ROG Strix Z690-A",
-      "price": 35645,
+      "price": 37076,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m54",
       "name": "ASRock Z690 Taichi",
-      "price": 38404,
+      "price": 39572,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m55",
       "name": "Gigabyte Z690 AORUS Master",
-      "price": 48365,
+      "price": 50176,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m56",
       "name": "MSI MEG Z690 Ace",
-      "price": 53151,
+      "price": 54771,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m57",
       "name": "ASUS ROG Maximus Z690 Hero",
-      "price": 58111,
+      "price": 59965,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m58",
       "name": "Gigabyte Z790 UD",
-      "price": 20288,
+      "price": 20597,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m59",
       "name": "MSI PRO Z790-P",
-      "price": 20936,
+      "price": 21001,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m60",
       "name": "ASUS Prime Z790-A",
-      "price": 26932,
+      "price": 27107,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m61",
       "name": "Gigabyte Z790 AORUS Elite AX",
-      "price": 29274,
+      "price": 29880,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m62",
       "name": "ASRock Z790 Pro RS",
-      "price": 22987,
+      "price": 23133,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m63",
       "name": "MSI MPG Z790 Edge WiFi",
-      "price": 34546,
+      "price": 35834,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m64",
       "name": "ASRock Z790 Taichi",
-      "price": 43217,
+      "price": 44229,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m65",
       "name": "Gigabyte Z790 AORUS Master",
-      "price": 52907,
+      "price": 53135,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m66",
       "name": "MSI MEG Z790 Ace",
-      "price": 57845,
+      "price": 58027,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m67",
       "name": "ASUS ROG Maximus Z790 Extreme",
-      "price": 85281,
+      "price": 86203,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m68",
       "name": "Gigabyte Z790 AORUS Xtreme",
-      "price": 97627,
+      "price": 98507,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m69",
       "name": "MSI MEG Z790 Godlike",
-      "price": 130200,
+      "price": 133730,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m70",
       "name": "Gigabyte A620M S2H",
-      "price": 6606,
+      "price": 6749,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m71",
       "name": "MSI PRO A620M-E",
-      "price": 6759,
+      "price": 6943,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m72",
       "name": "ASUS Prime A620M-K",
-      "price": 7440,
+      "price": 7421,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m73",
       "name": "Gigabyte B650M DS3H",
-      "price": 11704,
+      "price": 12063,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m74",
       "name": "MSI PRO B650M-A",
-      "price": 12086,
+      "price": 12017,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m75",
       "name": "ASUS Prime B650M-A",
-      "price": 12834,
+      "price": 13096,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m76",
       "name": "Gigabyte B650 AORUS Elite AX",
-      "price": 19584,
+      "price": 20367,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m77",
       "name": "MSI MAG B650 Tomahawk WiFi",
-      "price": 21571,
+      "price": 22286,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m78",
       "name": "ASUS ROG Strix B650-A",
-      "price": 23900,
+      "price": 24579,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m79",
       "name": "ASRock B650 Pro RS",
-      "price": 16852,
+      "price": 17447,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m80",
       "name": "Gigabyte B650E AORUS Master",
-      "price": 32517,
+      "price": 32845,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m81",
       "name": "MSI MPG B650 Edge WiFi",
-      "price": 28312,
+      "price": 29136,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m82",
       "name": "Gigabyte X670 Gaming X AX",
-      "price": 24238,
+      "price": 25310,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m83",
       "name": "MSI PRO X670-P WiFi",
-      "price": 25466,
+      "price": 26147,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m84",
       "name": "ASUS Prime X670-P",
-      "price": 27574,
+      "price": 27723,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m85",
       "name": "ASRock X670E Pro RS",
-      "price": 28758,
+      "price": 29227,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m86",
       "name": "Gigabyte X670E AORUS Pro X",
-      "price": 36694,
+      "price": 37471,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m87",
       "name": "MSI MPG X670E Carbon WiFi",
-      "price": 43071,
+      "price": 43522,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m88",
       "name": "ASUS ROG Strix X670E-E",
-      "price": 49822,
+      "price": 50457,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m89",
       "name": "ASRock X670E Taichi",
-      "price": 52542,
+      "price": 52427,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m90",
       "name": "Gigabyte X670E AORUS Master",
-      "price": 59234,
+      "price": 60655,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m91",
       "name": "ASUS ROG Crosshair X670E Hero",
-      "price": 74480,
+      "price": 75154,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m92",
       "name": "Gigabyte X670E AORUS Xtreme",
-      "price": 97404,
+      "price": 98787,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m93",
       "name": "MSI MEG X670E Godlike",
-      "price": 115254,
+      "price": 117996,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m94",
       "name": "ASRock X670E Aqua",
-      "price": 138884,
+      "price": 139998,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m95",
       "name": "ASUS ROG Crosshair X670E Gene",
-      "price": 69565,
+      "price": 69074,
       "socket": "AM5",
       "type": "DDR5"
     },
     {
       "id": "m96",
       "name": "Gigabyte B760M AORUS Elite",
-      "price": 12512,
+      "price": 12898,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m97",
       "name": "MSI MAG B760M Mortar WiFi",
-      "price": 16117,
+      "price": 16504,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m98",
       "name": "ASUS TUF Gaming B760M-Plus WiFi",
-      "price": 15820,
+      "price": 16029,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m99",
       "name": "ASRock B760M Pro RS",
-      "price": 11563,
+      "price": 11771,
       "socket": "LGA1700",
       "type": "DDR5"
     },
     {
       "id": "m100",
       "name": "Biostar B760MX-E PRO",
-      "price": 9849,
+      "price": 10070,
       "socket": "LGA1700",
       "type": "DDR5"
     }
@@ -4187,607 +5139,607 @@
     {
       "id": "r0",
       "name": "Crucial 4GB DDR4 2666MHz",
-      "price": 1096,
+      "price": 1093,
       "type": "DDR4"
     },
     {
       "id": "r1",
       "name": "Corsair Vengeance 8GB DDR4 3200MHz",
-      "price": 1749,
+      "price": 1754,
       "type": "DDR4"
     },
     {
       "id": "r2",
       "name": "G.Skill Ripjaws 16GB (8x2) DDR4 3200MHz",
-      "price": 3527,
+      "price": 3476,
       "type": "DDR4"
     },
     {
       "id": "r3",
       "name": "Corsair Vengeance 32GB (16x2) DDR4 3600MHz",
-      "price": 6400,
+      "price": 6480,
       "type": "DDR4"
     },
     {
       "id": "r4",
       "name": "Crucial 16GB (8x2) DDR5 4800MHz",
-      "price": 4918,
+      "price": 4972,
       "type": "DDR5"
     },
     {
       "id": "r5",
       "name": "G.Skill Ripjaws S5 32GB (16x2) DDR5 6000MHz",
-      "price": 9556,
+      "price": 9441,
       "type": "DDR5"
     },
     {
       "id": "r6",
       "name": "Corsair Vengeance RGB 32GB (16x2) DDR5 6000MHz",
-      "price": 10899,
+      "price": 10650,
       "type": "DDR5"
     },
     {
       "id": "r7",
       "name": "G.Skill Trident Z5 64GB (32x2) DDR5 6400MHz",
-      "price": 21560,
+      "price": 21713,
       "type": "DDR5"
     },
     {
       "id": "r8",
       "name": "Corsair Dominator Titanium 96GB (48x2) DDR5 6600MHz",
-      "price": 38200,
+      "price": 38211,
       "type": "DDR5"
     },
     {
       "id": "r9",
       "name": "Kingston FURY Beast 8GB DDR4 3200MHz",
-      "price": 1937,
+      "price": 1989,
       "type": "DDR4"
     },
     {
       "id": "r10",
       "name": "Kingston ValueRAM 4GB DDR4 2400MHz",
-      "price": 1011,
+      "price": 997,
       "type": "DDR4"
     },
     {
       "id": "r11",
       "name": "Crucial Ballistix 16GB (8x2) DDR4 3600MHz",
-      "price": 4136,
+      "price": 4076,
       "type": "DDR4"
     },
     {
       "id": "r12",
       "name": "G.Skill Ripjaws V 32GB (16x2) DDR4 3200MHz",
-      "price": 6091,
+      "price": 6004,
       "type": "DDR4"
     },
     {
       "id": "r13",
       "name": "Corsair Vengeance LPX 16GB (8x2) DDR4 3600MHz",
-      "price": 4446,
+      "price": 4416,
       "type": "DDR4"
     },
     {
       "id": "r14",
       "name": "Kingston FURY Renegade 32GB (16x2) DDR4 3600MHz",
-      "price": 7455,
+      "price": 7436,
       "type": "DDR4"
     },
     {
       "id": "r15",
       "name": "G.Skill Trident Z RGB 16GB (8x2) DDR4 3600MHz",
-      "price": 5263,
+      "price": 5342,
       "type": "DDR4"
     },
     {
       "id": "r16",
       "name": "Corsair Vengeance RGB Pro 32GB (16x2) DDR4 3600MHz",
-      "price": 7733,
+      "price": 7705,
       "type": "DDR4"
     },
     {
       "id": "r17",
       "name": "G.Skill Trident Z Royal 32GB (16x2) DDR4 4000MHz",
-      "price": 10312,
+      "price": 10236,
       "type": "DDR4"
     },
     {
       "id": "r18",
       "name": "TeamGroup T-Force Delta RGB 16GB (8x2) DDR4 3200MHz",
-      "price": 3822,
+      "price": 3858,
       "type": "DDR4"
     },
     {
       "id": "r19",
       "name": "Crucial 8GB DDR4 2666MHz",
-      "price": 1583,
+      "price": 1580,
       "type": "DDR4"
     },
     {
       "id": "r20",
       "name": "Kingston FURY Beast 16GB (8x2) DDR4 3200MHz",
-      "price": 3778,
+      "price": 3746,
       "type": "DDR4"
     },
     {
       "id": "r21",
       "name": "G.Skill Aegis 8GB DDR4 3200MHz",
-      "price": 1664,
+      "price": 1686,
       "type": "DDR4"
     },
     {
       "id": "r22",
       "name": "Corsair Vengeance LPX 8GB DDR4 3000MHz",
-      "price": 1906,
+      "price": 1931,
       "type": "DDR4"
     },
     {
       "id": "r23",
       "name": "Crucial 16GB (8x2) DDR5 5200MHz",
-      "price": 5383,
+      "price": 5403,
       "type": "DDR5"
     },
     {
       "id": "r24",
       "name": "Kingston FURY Beast 16GB (8x2) DDR5 5600MHz",
-      "price": 6080,
+      "price": 6094,
       "type": "DDR5"
     },
     {
       "id": "r25",
       "name": "G.Skill Ripjaws S5 16GB (8x2) DDR5 6000MHz",
-      "price": 6946,
+      "price": 7065,
       "type": "DDR5"
     },
     {
       "id": "r26",
       "name": "Corsair Vengeance 32GB (16x2) DDR5 5600MHz",
-      "price": 10058,
+      "price": 10257,
       "type": "DDR5"
     },
     {
       "id": "r27",
       "name": "Kingston FURY Beast 32GB (16x2) DDR5 6000MHz",
-      "price": 11395,
+      "price": 11404,
       "type": "DDR5"
     },
     {
       "id": "r28",
       "name": "G.Skill Trident Z5 32GB (16x2) DDR5 6400MHz",
-      "price": 12307,
+      "price": 12293,
       "type": "DDR5"
     },
     {
       "id": "r29",
       "name": "TeamGroup T-Force Delta RGB 32GB (16x2) DDR5 6000MHz",
-      "price": 10665,
+      "price": 10514,
       "type": "DDR5"
     },
     {
       "id": "r30",
       "name": "Corsair Dominator Platinum RGB 32GB (16x2) DDR5 6200MHz",
-      "price": 14159,
+      "price": 14334,
       "type": "DDR5"
     },
     {
       "id": "r31",
       "name": "G.Skill Trident Z5 RGB 32GB (16x2) DDR5 6400MHz",
-      "price": 13660,
+      "price": 13426,
       "type": "DDR5"
     },
     {
       "id": "r32",
       "name": "Kingston FURY Renegade 32GB (16x2) DDR5 6400MHz",
-      "price": 12924,
+      "price": 12730,
       "type": "DDR5"
     },
     {
       "id": "r33",
       "name": "Crucial 32GB (16x2) DDR5 5200MHz",
-      "price": 8983,
+      "price": 8885,
       "type": "DDR5"
     },
     {
       "id": "r34",
       "name": "G.Skill Flare X5 32GB (16x2) DDR5 6000MHz",
-      "price": 11398,
+      "price": 11556,
       "type": "DDR5"
     },
     {
       "id": "r35",
       "name": "Corsair Vengeance RGB 64GB (32x2) DDR5 6000MHz",
-      "price": 19518,
+      "price": 19694,
       "type": "DDR5"
     },
     {
       "id": "r36",
       "name": "G.Skill Trident Z5 64GB (32x2) DDR5 6000MHz",
-      "price": 19237,
+      "price": 19155,
       "type": "DDR5"
     },
     {
       "id": "r37",
       "name": "Kingston FURY Beast 64GB (32x2) DDR5 5600MHz",
-      "price": 18322,
+      "price": 18133,
       "type": "DDR5"
     },
     {
       "id": "r38",
       "name": "Corsair Dominator Platinum 64GB (32x2) DDR5 6400MHz",
-      "price": 25242,
+      "price": 25437,
       "type": "DDR5"
     },
     {
       "id": "r39",
       "name": "G.Skill Trident Z5 Royal 64GB (32x2) DDR5 6800MHz",
-      "price": 32523,
+      "price": 33193,
       "type": "DDR5"
     },
     {
       "id": "r40",
       "name": "Kingston FURY Renegade 64GB (32x2) DDR5 6800MHz",
-      "price": 27563,
+      "price": 27956,
       "type": "DDR5"
     },
     {
       "id": "r41",
       "name": "G.Skill Trident Z5 96GB (48x2) DDR5 6000MHz",
-      "price": 34933,
+      "price": 35614,
       "type": "DDR5"
     },
     {
       "id": "r42",
       "name": "Corsair Vengeance RGB 96GB (48x2) DDR5 5600MHz",
-      "price": 31747,
+      "price": 32097,
       "type": "DDR5"
     },
     {
       "id": "r43",
       "name": "Kingston FURY Beast 96GB (48x2) DDR5 5200MHz",
-      "price": 27827,
+      "price": 27790,
       "type": "DDR5"
     },
     {
       "id": "r44",
       "name": "G.Skill Trident Z5 128GB (64x2) DDR5 6000MHz",
-      "price": 51748,
+      "price": 52398,
       "type": "DDR5"
     },
     {
       "id": "r45",
       "name": "Corsair Dominator Titanium 128GB (64x2) DDR5 6400MHz",
-      "price": 58729,
+      "price": 57417,
       "type": "DDR5"
     },
     {
       "id": "r46",
       "name": "Kingston FURY Renegade 128GB (64x2) DDR5 6000MHz",
-      "price": 47670,
+      "price": 47569,
       "type": "DDR5"
     },
     {
       "id": "r47",
       "name": "G.Skill Ripjaws 64GB (32x2) DDR4 3600MHz",
-      "price": 12130,
+      "price": 12236,
       "type": "DDR4"
     },
     {
       "id": "r48",
       "name": "Corsair Vengeance LPX 64GB (32x2) DDR4 3200MHz",
-      "price": 11235,
+      "price": 11394,
       "type": "DDR4"
     },
     {
       "id": "r49",
       "name": "Kingston FURY Beast 64GB (32x2) DDR4 3600MHz",
-      "price": 12860,
+      "price": 12698,
       "type": "DDR4"
     },
     {
       "id": "r50",
       "name": "G.Skill Trident Z 64GB (32x2) DDR4 4000MHz",
-      "price": 16087,
+      "price": 16046,
       "type": "DDR4"
     },
     {
       "id": "r51",
       "name": "TeamGroup Elite 4GB DDR4 2666MHz",
-      "price": 951,
+      "price": 926,
       "type": "DDR4"
     },
     {
       "id": "r52",
       "name": "Patriot Viper Steel 8GB DDR4 3200MHz",
-      "price": 1760,
+      "price": 1735,
       "type": "DDR4"
     },
     {
       "id": "r53",
       "name": "ADATA XPG Spectrix D60G 16GB (8x2) DDR4 3600MHz",
-      "price": 4793,
+      "price": 4774,
       "type": "DDR4"
     },
     {
       "id": "r54",
       "name": "Patriot Viper RGB 32GB (16x2) DDR4 3600MHz",
-      "price": 7290,
+      "price": 7334,
       "type": "DDR4"
     },
     {
       "id": "r55",
       "name": "ADATA XPG Lancer 16GB (8x2) DDR5 6000MHz",
-      "price": 6493,
+      "price": 6454,
       "type": "DDR5"
     },
     {
       "id": "r56",
       "name": "Patriot Viper Venom 32GB (16x2) DDR5 6200MHz",
-      "price": 11599,
+      "price": 11798,
       "type": "DDR5"
     },
     {
       "id": "r57",
       "name": "TeamGroup T-Force Vulcan Z 16GB (8x2) DDR4 3200MHz",
-      "price": 3618,
+      "price": 3549,
       "type": "DDR4"
     },
     {
       "id": "r58",
       "name": "Silicon Power Gaming 16GB (8x2) DDR4 3200MHz",
-      "price": 3415,
+      "price": 3388,
       "type": "DDR4"
     },
     {
       "id": "r59",
       "name": "Lexar ARES RGB 16GB (8x2) DDR4 3600MHz",
-      "price": 4191,
+      "price": 4196,
       "type": "DDR4"
     },
     {
       "id": "r60",
       "name": "PNY XLR8 Gaming 16GB (8x2) DDR4 3200MHz",
-      "price": 3793,
+      "price": 3811,
       "type": "DDR4"
     },
     {
       "id": "r61",
       "name": "Mushkin Redline 32GB (16x2) DDR4 3600MHz",
-      "price": 6924,
+      "price": 6871,
       "type": "DDR4"
     },
     {
       "id": "r62",
       "name": "GeIL EVO Potenza 16GB (8x2) DDR4 3200MHz",
-      "price": 3450,
+      "price": 3489,
       "type": "DDR4"
     },
     {
       "id": "r63",
       "name": "Crucial Ballistix MAX 16GB (8x2) DDR4 4000MHz",
-      "price": 5406,
+      "price": 5478,
       "type": "DDR4"
     },
     {
       "id": "r64",
       "name": "Corsair Vengeance 16GB (8x2) DDR5 5200MHz",
-      "price": 5724,
+      "price": 5760,
       "type": "DDR5"
     },
     {
       "id": "r65",
       "name": "G.Skill Ripjaws S5 32GB (16x2) DDR5 5600MHz",
-      "price": 9646,
+      "price": 9549,
       "type": "DDR5"
     },
     {
       "id": "r66",
       "name": "Kingston FURY Beast 32GB (16x2) DDR5 5200MHz",
-      "price": 9203,
+      "price": 9157,
       "type": "DDR5"
     },
     {
       "id": "r67",
       "name": "Corsair Dominator Platinum 32GB (16x2) DDR5 5600MHz",
-      "price": 12181,
+      "price": 12016,
       "type": "DDR5"
     },
     {
       "id": "r68",
       "name": "G.Skill Trident Z5 RGB 64GB (32x2) DDR5 6200MHz",
-      "price": 23551,
+      "price": 23392,
       "type": "DDR5"
     },
     {
       "id": "r69",
       "name": "TeamGroup T-Force Vulcan 32GB (16x2) DDR5 5600MHz",
-      "price": 9370,
+      "price": 9445,
       "type": "DDR5"
     },
     {
       "id": "r70",
       "name": "ADATA XPG Lancer RGB 32GB (16x2) DDR5 6000MHz",
-      "price": 10827,
+      "price": 10603,
       "type": "DDR5"
     },
     {
       "id": "r71",
       "name": "Patriot Viper Venom RGB 64GB (32x2) DDR5 6400MHz",
-      "price": 22535,
+      "price": 22112,
       "type": "DDR5"
     },
     {
       "id": "r72",
       "name": "Lexar ARES RGB 32GB (16x2) DDR5 6000MHz",
-      "price": 10461,
+      "price": 10237,
       "type": "DDR5"
     },
     {
       "id": "r73",
       "name": "Silicon Power Zenith 32GB (16x2) DDR5 5600MHz",
-      "price": 8919,
+      "price": 8927,
       "type": "DDR5"
     },
     {
       "id": "r74",
       "name": "PNY XLR8 Gaming EPIC-X 32GB (16x2) DDR5 6000MHz",
-      "price": 10953,
+      "price": 10956,
       "type": "DDR5"
     },
     {
       "id": "r75",
       "name": "Mushkin Redline Lumina 32GB (16x2) DDR5 6400MHz",
-      "price": 12898,
+      "price": 12890,
       "type": "DDR5"
     },
     {
       "id": "r76",
       "name": "GeIL Polaris RGB 32GB (16x2) DDR5 6000MHz",
-      "price": 10327,
+      "price": 10294,
       "type": "DDR5"
     },
     {
       "id": "r77",
       "name": "Corsair Vengeance 48GB (24x2) DDR5 6000MHz",
-      "price": 14768,
+      "price": 14675,
       "type": "DDR5"
     },
     {
       "id": "r78",
       "name": "G.Skill Trident Z5 48GB (24x2) DDR5 6400MHz",
-      "price": 16492,
+      "price": 16130,
       "type": "DDR5"
     },
     {
       "id": "r79",
       "name": "Kingston FURY Beast 48GB (24x2) DDR5 5600MHz",
-      "price": 14112,
+      "price": 14130,
       "type": "DDR5"
     },
     {
       "id": "r80",
       "name": "TeamGroup T-Force Delta 48GB (24x2) DDR5 6000MHz",
-      "price": 14533,
+      "price": 14238,
       "type": "DDR5"
     },
     {
       "id": "r81",
       "name": "Corsair Vengeance RGB 48GB (24x2) DDR5 6200MHz",
-      "price": 15794,
+      "price": 15791,
       "type": "DDR5"
     },
     {
       "id": "r82",
       "name": "G.Skill Ripjaws 128GB (32x4) DDR4 3200MHz",
-      "price": 22080,
+      "price": 21925,
       "type": "DDR4"
     },
     {
       "id": "r83",
       "name": "Corsair Vengeance LPX 128GB (32x4) DDR4 3600MHz",
-      "price": 25098,
+      "price": 24892,
       "type": "DDR4"
     },
     {
       "id": "r84",
       "name": "Kingston FURY Beast 128GB (32x4) DDR4 3200MHz",
-      "price": 23721,
+      "price": 24070,
       "type": "DDR4"
     },
     {
       "id": "r85",
       "name": "G.Skill Trident Z Neo 32GB (16x2) DDR4 3800MHz",
-      "price": 8551,
+      "price": 8523,
       "type": "DDR4"
     },
     {
       "id": "r86",
       "name": "Corsair Dominator Platinum RGB 32GB (16x2) DDR4 3600MHz",
-      "price": 9457,
+      "price": 9543,
       "type": "DDR4"
     },
     {
       "id": "r87",
       "name": "G.Skill Trident Z5 Neo 32GB (16x2) DDR5 6000MHz",
-      "price": 11461,
+      "price": 11262,
       "type": "DDR5"
     },
     {
       "id": "r88",
       "name": "Kingston FURY Beast RGB 16GB (8x2) DDR5 6000MHz",
-      "price": 7301,
+      "price": 7141,
       "type": "DDR5"
     },
     {
       "id": "r89",
       "name": "Corsair Vengeance RGB 16GB (8x2) DDR5 6400MHz",
-      "price": 7797,
+      "price": 7728,
       "type": "DDR5"
     },
     {
       "id": "r90",
       "name": "G.Skill Trident Z5 RGB 16GB (8x2) DDR5 6800MHz",
-      "price": 9061,
+      "price": 9108,
       "type": "DDR5"
     },
     {
       "id": "r91",
       "name": "TeamGroup T-Force Xtreem 16GB (8x2) DDR4 4000MHz",
-      "price": 5857,
+      "price": 5862,
       "type": "DDR4"
     },
     {
       "id": "r92",
       "name": "Patriot Viper Steel 16GB (8x2) DDR4 4400MHz",
-      "price": 6595,
+      "price": 6540,
       "type": "DDR4"
     },
     {
       "id": "r93",
       "name": "ADATA XPG Spectrix D50 32GB (16x2) DDR4 3600MHz",
-      "price": 7504,
+      "price": 7398,
       "type": "DDR4"
     },
     {
       "id": "r94",
       "name": "Crucial Ballistix Elite 16GB (8x2) DDR4 3600MHz",
-      "price": 4655,
+      "price": 4638,
       "type": "DDR4"
     },
     {
       "id": "r95",
       "name": "G.Skill Ripjaws V 8GB DDR4 3600MHz",
-      "price": 2032,
+      "price": 2034,
       "type": "DDR4"
     },
     {
       "id": "r96",
       "name": "TeamGroup T-Force Zeus 8GB DDR4 3200MHz",
-      "price": 1662,
+      "price": 1670,
       "type": "DDR4"
     },
     {
       "id": "r97",
       "name": "Corsair Vengeance LPX 32GB (16x2) DDR4 4000MHz",
-      "price": 9185,
+      "price": 9299,
       "type": "DDR4"
     },
     {
       "id": "r98",
       "name": "G.Skill Trident Z Royal Elite 32GB (16x2) DDR4 4000MHz",
-      "price": 11527,
+      "price": 11302,
       "type": "DDR4"
     },
     {
       "id": "r99",
       "name": "Kingston FURY Renegade RGB 32GB (16x2) DDR4 4000MHz",
-      "price": 9835,
+      "price": 9934,
       "type": "DDR4"
     },
     {
       "id": "r100",
       "name": "Corsair Dominator Titanium RGB 64GB (32x2) DDR5 7200MHz",
-      "price": 41567,
+      "price": 40904,
       "type": "DDR5"
     }
   ],
@@ -4795,1521 +5747,1521 @@
     {
       "id": "s0",
       "name": "Consistent 256GB SATA SSD",
-      "price": 1177
+      "price": 1136
     },
     {
       "id": "s1",
       "name": "Crucial P3 500GB NVMe",
-      "price": 3124
+      "price": 3111
     },
     {
       "id": "s2",
       "name": "WD Black SN770 1TB Gen4",
-      "price": 6442
+      "price": 6297
     },
     {
       "id": "s3",
       "name": "Samsung 990 Pro 2TB Gen4",
-      "price": 15435
+      "price": 15542
     },
     {
       "id": "s4",
       "name": "WD Black SN850X 4TB Gen4",
-      "price": 30749
+      "price": 30292
     },
     {
       "id": "s5",
       "name": "Crucial T700 2TB Gen5 NVMe (12GB/s)",
-      "price": 27457
+      "price": 26731
     },
     {
       "id": "s6",
       "name": "Seagate FireCuda 530 4TB + 8TB HDD",
-      "price": 54656
+      "price": 53244
     },
     {
       "id": "s7",
       "name": "Kingston A400 240GB SATA SSD",
-      "price": 1780
+      "price": 1743
     },
     {
       "id": "s8",
       "name": "Crucial BX500 240GB SATA SSD",
-      "price": 1531
+      "price": 1536
     },
     {
       "id": "s9",
       "name": "WD Green 240GB SATA SSD",
-      "price": 1641
+      "price": 1614
     },
     {
       "id": "s10",
       "name": "Kingston A400 480GB SATA SSD",
-      "price": 2776
+      "price": 2643
     },
     {
       "id": "s11",
       "name": "Crucial BX500 480GB SATA SSD",
-      "price": 2533
+      "price": 2490
     },
     {
       "id": "s12",
       "name": "Samsung 870 EVO 500GB SATA SSD",
-      "price": 3409
+      "price": 3407
     },
     {
       "id": "s13",
       "name": "WD Blue 500GB SATA SSD",
-      "price": 3152
+      "price": 3030
     },
     {
       "id": "s14",
       "name": "Kingston A400 960GB SATA SSD",
-      "price": 4901
+      "price": 4746
     },
     {
       "id": "s15",
       "name": "Crucial MX500 1TB SATA SSD",
-      "price": 5246
+      "price": 5043
     },
     {
       "id": "s16",
       "name": "Samsung 870 EVO 1TB SATA SSD",
-      "price": 6352
+      "price": 6086
     },
     {
       "id": "s17",
       "name": "WD Blue 1TB SATA SSD",
-      "price": 5582
+      "price": 5528
     },
     {
       "id": "s18",
       "name": "Samsung 870 QVO 2TB SATA SSD",
-      "price": 10499
+      "price": 10245
     },
     {
       "id": "s19",
       "name": "Crucial MX500 2TB SATA SSD",
-      "price": 10254
+      "price": 10096
     },
     {
       "id": "s20",
       "name": "Kingston NV2 500GB NVMe Gen4",
-      "price": 2877
+      "price": 2843
     },
     {
       "id": "s21",
       "name": "Crucial P3 500GB NVMe Gen3",
-      "price": 2700
+      "price": 2602
     },
     {
       "id": "s22",
       "name": "WD Blue SN570 500GB NVMe Gen3",
-      "price": 3143
+      "price": 3097
     },
     {
       "id": "s23",
       "name": "Samsung 980 500GB NVMe Gen3",
-      "price": 3738
+      "price": 3588
     },
     {
       "id": "s24",
       "name": "Kingston NV2 1TB NVMe Gen4",
-      "price": 4874
+      "price": 4777
     },
     {
       "id": "s25",
       "name": "Crucial P3 1TB NVMe Gen3",
-      "price": 4319
+      "price": 4118
     },
     {
       "id": "s26",
       "name": "WD Blue SN570 1TB NVMe Gen3",
-      "price": 5043
+      "price": 4969
     },
     {
       "id": "s27",
       "name": "Samsung 980 1TB NVMe Gen3",
-      "price": 5785
+      "price": 5665
     },
     {
       "id": "s28",
       "name": "Crucial P5 Plus 1TB NVMe Gen4",
-      "price": 7522
+      "price": 7423
     },
     {
       "id": "s29",
       "name": "Kingston KC3000 1TB NVMe Gen4",
-      "price": 7997
+      "price": 7803
     },
     {
       "id": "s30",
       "name": "WD Black SN770 1TB NVMe Gen4",
-      "price": 7592
+      "price": 7364
     },
     {
       "id": "s31",
       "name": "Samsung 980 Pro 1TB NVMe Gen4",
-      "price": 8734
+      "price": 8482
     },
     {
       "id": "s32",
       "name": "Corsair MP600 Pro 1TB NVMe Gen4",
-      "price": 8230
+      "price": 8061
     },
     {
       "id": "s33",
       "name": "Sabrent Rocket 4.0 1TB NVMe Gen4",
-      "price": 7995
+      "price": 7992
     },
     {
       "id": "s34",
       "name": "ADATA XPG Gammix S70 1TB NVMe Gen4",
-      "price": 8385
+      "price": 8152
     },
     {
       "id": "s35",
       "name": "Seagate FireCuda 530 1TB NVMe Gen4",
-      "price": 9381
+      "price": 8970
     },
     {
       "id": "s36",
       "name": "Samsung 990 Pro 1TB NVMe Gen4",
-      "price": 9140
+      "price": 8874
     },
     {
       "id": "s37",
       "name": "Crucial P5 Plus 2TB NVMe Gen4",
-      "price": 13352
+      "price": 12928
     },
     {
       "id": "s38",
       "name": "Kingston KC3000 2TB NVMe Gen4",
-      "price": 14475
+      "price": 13948
     },
     {
       "id": "s39",
       "name": "WD Black SN770 2TB NVMe Gen4",
-      "price": 14148
+      "price": 14001
     },
     {
       "id": "s40",
       "name": "WD Black SN850X 2TB NVMe Gen4",
-      "price": 15801
+      "price": 15397
     },
     {
       "id": "s41",
       "name": "Samsung 980 Pro 2TB NVMe Gen4",
-      "price": 16971
+      "price": 16792
     },
     {
       "id": "s42",
       "name": "Corsair MP600 Pro XT 2TB NVMe Gen4",
-      "price": 15987
+      "price": 15287
     },
     {
       "id": "s43",
       "name": "Sabrent Rocket 4.0 Plus 2TB NVMe Gen4",
-      "price": 15536
+      "price": 15309
     },
     {
       "id": "s44",
       "name": "ADATA XPG Gammix S70 Blade 2TB NVMe Gen4",
-      "price": 15385
+      "price": 15265
     },
     {
       "id": "s45",
       "name": "Seagate FireCuda 530 2TB NVMe Gen4",
-      "price": 16872
+      "price": 16698
     },
     {
       "id": "s46",
       "name": "Samsung 990 Pro 4TB NVMe Gen4",
-      "price": 34677
+      "price": 33733
     },
     {
       "id": "s47",
       "name": "Crucial P5 Plus 4TB NVMe Gen4",
-      "price": 27884
+      "price": 27029
     },
     {
       "id": "s48",
       "name": "Kingston KC3000 4TB NVMe Gen4",
-      "price": 29912
+      "price": 29393
     },
     {
       "id": "s49",
       "name": "Corsair MP600 Pro XT 4TB NVMe Gen4",
-      "price": 31901
+      "price": 30729
     },
     {
       "id": "s50",
       "name": "Sabrent Rocket 4.0 Plus 4TB NVMe Gen4",
-      "price": 29861
+      "price": 29418
     },
     {
       "id": "s51",
       "name": "Seagate FireCuda 530 4TB NVMe Gen4",
-      "price": 32743
+      "price": 32190
     },
     {
       "id": "s52",
       "name": "Samsung 870 EVO 4TB SATA SSD",
-      "price": 23456
+      "price": 22419
     },
     {
       "id": "s53",
       "name": "Crucial MX500 4TB SATA SSD",
-      "price": 21398
+      "price": 21097
     },
     {
       "id": "s54",
       "name": "WD Red Plus 1TB HDD 5400RPM",
-      "price": 3380
+      "price": 3263
     },
     {
       "id": "s55",
       "name": "Seagate Barracuda 1TB HDD 7200RPM",
-      "price": 3175
+      "price": 3196
     },
     {
       "id": "s56",
       "name": "WD Blue 2TB HDD 5400RPM",
-      "price": 4362
+      "price": 4330
     },
     {
       "id": "s57",
       "name": "Seagate Barracuda 2TB HDD 7200RPM",
-      "price": 4701
+      "price": 4565
     },
     {
       "id": "s58",
       "name": "WD Black 4TB HDD 7200RPM",
-      "price": 8735
+      "price": 8657
     },
     {
       "id": "s59",
       "name": "Seagate IronWolf 4TB HDD 5900RPM",
-      "price": 8316
+      "price": 8342
     },
     {
       "id": "s60",
       "name": "WD Red Plus 6TB HDD 5400RPM",
-      "price": 11688
+      "price": 11255
     },
     {
       "id": "s61",
       "name": "Seagate IronWolf 6TB HDD 5900RPM",
-      "price": 11259
+      "price": 11075
     },
     {
       "id": "s62",
       "name": "WD Black 8TB HDD 7200RPM",
-      "price": 17655
+      "price": 17342
     },
     {
       "id": "s63",
       "name": "Seagate Exos X18 8TB HDD 7200RPM",
-      "price": 16575
+      "price": 16241
     },
     {
       "id": "s64",
       "name": "WD Red Pro 10TB HDD 7200RPM",
-      "price": 21998
+      "price": 21399
     },
     {
       "id": "s65",
       "name": "Seagate IronWolf Pro 10TB HDD 7200RPM",
-      "price": 20159
+      "price": 20178
     },
     {
       "id": "s66",
       "name": "Kingston NV1 1TB NVMe Gen3",
-      "price": 4039
+      "price": 3858
     },
     {
       "id": "s67",
       "name": "TeamGroup MP33 1TB NVMe Gen3",
-      "price": 3980
+      "price": 3866
     },
     {
       "id": "s68",
       "name": "Silicon Power P34A60 1TB NVMe Gen3",
-      "price": 4261
+      "price": 4173
     },
     {
       "id": "s69",
       "name": "Patriot P300 1TB NVMe Gen3",
-      "price": 3833
+      "price": 3727
     },
     {
       "id": "s70",
       "name": "PNY CS3030 1TB NVMe Gen3",
-      "price": 4462
+      "price": 4294
     },
     {
       "id": "s71",
       "name": "Mushkin Pilot-E 1TB NVMe Gen3",
-      "price": 4647
+      "price": 4540
     },
     {
       "id": "s72",
       "name": "Lexar NM790 1TB NVMe Gen4",
-      "price": 6878
+      "price": 6727
     },
     {
       "id": "s73",
       "name": "TeamGroup Cardea A440 Pro 1TB NVMe Gen4",
-      "price": 8333
+      "price": 8065
     },
     {
       "id": "s74",
       "name": "Silicon Power XS70 1TB NVMe Gen4",
-      "price": 7301
+      "price": 7100
     },
     {
       "id": "s75",
       "name": "Patriot Viper VP4300 1TB NVMe Gen4",
-      "price": 8005
+      "price": 7748
     },
     {
       "id": "s76",
       "name": "PNY XLR8 CS3140 1TB NVMe Gen4",
-      "price": 8643
+      "price": 8563
     },
     {
       "id": "s77",
       "name": "Mushkin Redline Vortex 1TB NVMe Gen4",
-      "price": 9107
+      "price": 8713
     },
     {
       "id": "s78",
       "name": "ADATA XPG SX8200 Pro 1TB NVMe Gen3",
-      "price": 5404
+      "price": 5230
     },
     {
       "id": "s79",
       "name": "Kingston A2000 1TB NVMe Gen3",
-      "price": 4800
+      "price": 4639
     },
     {
       "id": "s80",
       "name": "Crucial P2 1TB NVMe Gen3",
-      "price": 4506
+      "price": 4369
     },
     {
       "id": "s81",
       "name": "WD Green SN350 1TB NVMe Gen3",
-      "price": 4278
+      "price": 4219
     },
     {
       "id": "s82",
       "name": "Samsung 970 EVO Plus 1TB NVMe Gen3",
-      "price": 6866
+      "price": 6713
     },
     {
       "id": "s83",
       "name": "Samsung 970 EVO Plus 2TB NVMe Gen3",
-      "price": 12435
+      "price": 12145
     },
     {
       "id": "s84",
       "name": "Intel 670p 1TB NVMe Gen3",
-      "price": 4986
+      "price": 4937
     },
     {
       "id": "s85",
       "name": "Intel 660p 2TB NVMe Gen3",
-      "price": 9439
+      "price": 9080
     },
     {
       "id": "s86",
       "name": "Seagate FireCuda 520 1TB NVMe Gen4",
-      "price": 8846
+      "price": 8701
     },
     {
       "id": "s87",
       "name": "Seagate FireCuda 520 2TB NVMe Gen4",
-      "price": 15717
+      "price": 15601
     },
     {
       "id": "s88",
       "name": "Corsair MP600 2TB NVMe Gen4",
-      "price": 14538
+      "price": 14204
     },
     {
       "id": "s89",
       "name": "Corsair MP600 Core 2TB NVMe Gen4",
-      "price": 13064
+      "price": 12943
     },
     {
       "id": "s90",
       "name": "WD Black SN750 1TB NVMe Gen3",
-      "price": 6381
+      "price": 6217
     },
     {
       "id": "s91",
       "name": "WD Black SN750 2TB NVMe Gen3",
-      "price": 11647
+      "price": 11207
     },
     {
       "id": "s92",
       "name": "SK Hynix Gold P31 1TB NVMe Gen3",
-      "price": 6931
+      "price": 6851
     },
     {
       "id": "s93",
       "name": "SK Hynix Platinum P41 1TB NVMe Gen4",
-      "price": 8711
+      "price": 8592
     },
     {
       "id": "s94",
       "name": "SK Hynix Platinum P41 2TB NVMe Gen4",
-      "price": 16438
+      "price": 16228
     },
     {
       "id": "s95",
       "name": "Micron 2400 1TB NVMe Gen4",
-      "price": 6539
+      "price": 6524
     },
     {
       "id": "s96",
       "name": "Lexar NM790 2TB NVMe Gen4",
-      "price": 12967
+      "price": 12924
     },
     {
       "id": "s97",
       "name": "Patriot Viper VP4300 2TB NVMe Gen4",
-      "price": 15502
+      "price": 15304
     },
     {
       "id": "s98",
       "name": "Gigabyte Aorus Gen4 7000s 2TB NVMe Gen4",
-      "price": 17202
+      "price": 17089
     },
     {
       "id": "s99",
       "name": "MSI Spatium M480 2TB NVMe Gen4",
-      "price": 16590
+      "price": 16012
     },
     {
       "id": "s100",
       "name": "Crucial T700 4TB NVMe Gen5",
-      "price": 52318
+      "price": 51806
     }
   ],
   "psu": [
     {
       "id": "p0",
       "name": "Ant Esports VS450L",
-      "price": 1512
+      "price": 1578
     },
     {
       "id": "p1",
       "name": "Deepcool PK550D 550W Bronze",
-      "price": 3513
+      "price": 3610
     },
     {
       "id": "p2",
       "name": "Corsair CV650 650W Bronze",
-      "price": 4876
+      "price": 5081
     },
     {
       "id": "p3",
       "name": "Deepcool PM750D 750W Gold",
-      "price": 6669
+      "price": 6913
     },
     {
       "id": "p4",
       "name": "Corsair RM850e 850W Gold ATX 3.0",
-      "price": 9854
+      "price": 9872
     },
     {
       "id": "p5",
       "name": "MSI A1000G 1000W Gold ATX 3.0",
-      "price": 14488
+      "price": 14995
     },
     {
       "id": "p6",
       "name": "Corsair HX1200 1200W Platinum",
-      "price": 22895
+      "price": 23122
     },
     {
       "id": "p7",
       "name": "MSI MEG Ai1300P 1300W Platinum ATX 3.0",
-      "price": 28641
+      "price": 29101
     },
     {
       "id": "p8",
       "name": "Corsair AX1600i 1600W Titanium",
-      "price": 38766
+      "price": 40475
     },
     {
       "id": "p9",
       "name": "Cooler Master MWE 450W 80+ White",
-      "price": 2280
+      "price": 2350
     },
     {
       "id": "p10",
       "name": "Thermaltake Smart 500W 80+ White",
-      "price": 2562
+      "price": 2634
     },
     {
       "id": "p11",
       "name": "EVGA 450 BR 450W 80+ Bronze",
-      "price": 2858
+      "price": 2928
     },
     {
       "id": "p12",
       "name": "Corsair VS550 550W 80+ White",
-      "price": 3115
+      "price": 3235
     },
     {
       "id": "p13",
       "name": "Cooler Master MWE Bronze V2 550W",
-      "price": 3325
+      "price": 3366
     },
     {
       "id": "p14",
       "name": "Thermaltake Smart RGB 600W 80+ White",
-      "price": 3573
+      "price": 3678
     },
     {
       "id": "p15",
       "name": "EVGA 600 W1 600W 80+ White",
-      "price": 3617
+      "price": 3775
     },
     {
       "id": "p16",
       "name": "Corsair CX650M 650W 80+ Bronze Semi-Modular",
-      "price": 4523
+      "price": 4733
     },
     {
       "id": "p17",
       "name": "Cooler Master MWE Gold 650W",
-      "price": 5263
+      "price": 5468
     },
     {
       "id": "p18",
       "name": "Thermaltake Toughpower GF1 650W 80+ Gold",
-      "price": 5434
+      "price": 5680
     },
     {
       "id": "p19",
       "name": "EVGA SuperNOVA 650 GT 650W 80+ Gold",
-      "price": 6023
+      "price": 6269
     },
     {
       "id": "p20",
       "name": "Seasonic Focus GX-650 650W 80+ Gold",
-      "price": 6432
+      "price": 6472
     },
     {
       "id": "p21",
       "name": "Corsair RM750e 750W 80+ Gold ATX 3.0",
-      "price": 7277
+      "price": 7467
     },
     {
       "id": "p22",
       "name": "Cooler Master V750 Gold V2 750W",
-      "price": 7485
+      "price": 7749
     },
     {
       "id": "p23",
       "name": "Thermaltake Toughpower GF1 750W 80+ Gold",
-      "price": 7682
+      "price": 7875
     },
     {
       "id": "p24",
       "name": "EVGA SuperNOVA 750 G6 750W 80+ Gold",
-      "price": 8051
+      "price": 8305
     },
     {
       "id": "p25",
       "name": "Seasonic Focus GX-750 750W 80+ Gold",
-      "price": 8168
+      "price": 8317
     },
     {
       "id": "p26",
       "name": "Corsair RM850x 850W 80+ Gold Fully Modular",
-      "price": 10022
+      "price": 10508
     },
     {
       "id": "p27",
       "name": "Cooler Master V850 Gold V2 850W",
-      "price": 9836
+      "price": 10248
     },
     {
       "id": "p28",
       "name": "Thermaltake Toughpower GF1 850W 80+ Gold",
-      "price": 9998
+      "price": 10274
     },
     {
       "id": "p29",
       "name": "EVGA SuperNOVA 850 G6 850W 80+ Gold",
-      "price": 10146
+      "price": 10651
     },
     {
       "id": "p30",
       "name": "Seasonic Focus PX-850 850W 80+ Platinum",
-      "price": 11209
+      "price": 11349
     },
     {
       "id": "p31",
       "name": "be quiet! Straight Power 11 850W 80+ Gold",
-      "price": 10810
+      "price": 11326
     },
     {
       "id": "p32",
       "name": "Fractal Design Ion+ 860W 80+ Platinum",
-      "price": 12023
+      "price": 12229
     },
     {
       "id": "p33",
       "name": "Corsair RM1000e 1000W 80+ Gold ATX 3.0",
-      "price": 12506
+      "price": 12752
     },
     {
       "id": "p34",
       "name": "Cooler Master V1000 Platinum 1000W",
-      "price": 13948
+      "price": 14524
     },
     {
       "id": "p35",
       "name": "Thermaltake Toughpower iRGB PLUS 1000W 80+ Platinum",
-      "price": 14397
+      "price": 14884
     },
     {
       "id": "p36",
       "name": "EVGA SuperNOVA 1000 P6 1000W 80+ Platinum",
-      "price": 15452
+      "price": 15930
     },
     {
       "id": "p37",
       "name": "Seasonic Prime TX-1000 1000W 80+ Titanium",
-      "price": 19206
+      "price": 20211
     },
     {
       "id": "p38",
       "name": "be quiet! Dark Power Pro 12 1000W 80+ Titanium",
-      "price": 20639
+      "price": 21015
     },
     {
       "id": "p39",
       "name": "Corsair HX1000 1000W 80+ Platinum",
-      "price": 16633
+      "price": 17195
     },
     {
       "id": "p40",
       "name": "MSI MPG A1000G 1000W 80+ Gold ATX 3.0",
-      "price": 13354
+      "price": 13493
     },
     {
       "id": "p41",
       "name": "Gigabyte UD1000GM 1000W 80+ Gold",
-      "price": 12960
+      "price": 13586
     },
     {
       "id": "p42",
       "name": "ASUS TUF Gaming 1000W 80+ Gold",
-      "price": 13248
+      "price": 13761
     },
     {
       "id": "p43",
       "name": "Cooler Master MWE Gold V2 1050W",
-      "price": 14300
+      "price": 14502
     },
     {
       "id": "p44",
       "name": "Thermaltake Toughpower GF3 1050W 80+ Gold ATX 3.0",
-      "price": 15277
+      "price": 15670
     },
     {
       "id": "p45",
       "name": "EVGA SuperNOVA 1000 G7 1000W 80+ Gold ATX 3.0",
-      "price": 15560
+      "price": 15823
     },
     {
       "id": "p46",
       "name": "Seasonic Vertex PX-1200 1200W 80+ Platinum ATX 3.0",
-      "price": 20878
+      "price": 22062
     },
     {
       "id": "p47",
       "name": "Corsair HX1200i 1200W 80+ Platinum",
-      "price": 24587
+      "price": 25244
     },
     {
       "id": "p48",
       "name": "be quiet! Dark Power 13 1000W 80+ Titanium",
-      "price": 22369
+      "price": 22849
     },
     {
       "id": "p49",
       "name": "Fractal Design Ion+ Platinum 1200W",
-      "price": 22153
+      "price": 22907
     },
     {
       "id": "p50",
       "name": "MSI MEG Ai1300P PCIe5 1300W 80+ Platinum",
-      "price": 30427
+      "price": 30811
     },
     {
       "id": "p51",
       "name": "Gigabyte Aorus P1200W 1200W 80+ Platinum",
-      "price": 23450
+      "price": 24481
     },
     {
       "id": "p52",
       "name": "ASUS ROG Thor 1200W 80+ Platinum",
-      "price": 26682
+      "price": 27409
     },
     {
       "id": "p53",
       "name": "Cooler Master V1300 Platinum 1300W",
-      "price": 26015
+      "price": 26793
     },
     {
       "id": "p54",
       "name": "Thermaltake Toughpower PF3 1350W 80+ Platinum ATX 3.0",
-      "price": 28377
+      "price": 29388
     },
     {
       "id": "p55",
       "name": "EVGA SuperNOVA 1300 P2 1300W 80+ Platinum",
-      "price": 26533
+      "price": 27678
     },
     {
       "id": "p56",
       "name": "Seasonic Prime TX-1300 1300W 80+ Titanium",
-      "price": 33619
+      "price": 35431
     },
     {
       "id": "p57",
       "name": "be quiet! Dark Power Pro 13 1300W 80+ Titanium",
-      "price": 35858
+      "price": 36365
     },
     {
       "id": "p58",
       "name": "Corsair AX1500i 1500W 80+ Titanium",
-      "price": 37168
+      "price": 38904
     },
     {
       "id": "p59",
       "name": "ASUS ROG Thor 1600W 80+ Titanium",
-      "price": 42416
+      "price": 44520
     },
     {
       "id": "p60",
       "name": "MSI MEG Ai1600P 1600W 80+ Platinum ATX 3.0",
-      "price": 39700
+      "price": 41099
     },
     {
       "id": "p61",
       "name": "Seasonic Prime TX-1600 1600W 80+ Titanium",
-      "price": 46102
+      "price": 47729
     },
     {
       "id": "p62",
       "name": "EVGA SuperNOVA 1600 T2 1600W 80+ Titanium",
-      "price": 40658
+      "price": 42445
     },
     {
       "id": "p63",
       "name": "Thermaltake Toughpower iRGB PLUS 1500W 80+ Titanium",
-      "price": 38559
+      "price": 38862
     },
     {
       "id": "p64",
       "name": "Gigabyte Aorus P1650W 1650W 80+ Platinum",
-      "price": 43406
+      "price": 44854
     },
     {
       "id": "p65",
       "name": "Corsair AX1600i Digital 1600W 80+ Titanium",
-      "price": 50727
+      "price": 51464
     },
     {
       "id": "p66",
       "name": "Seasonic Prime Ultra Titanium 1000W",
-      "price": 18723
+      "price": 19109
     },
     {
       "id": "p67",
       "name": "be quiet! Straight Power 11 750W 80+ Platinum",
-      "price": 9857
+      "price": 10076
     },
     {
       "id": "p68",
       "name": "Fractal Design Ion Gold 650W",
-      "price": 5809
+      "price": 6042
     },
     {
       "id": "p69",
       "name": "Silverstone Strider Gold 750W",
-      "price": 7854
+      "price": 8156
     },
     {
       "id": "p70",
       "name": "XPG Core Reactor 850W 80+ Gold",
-      "price": 9592
+      "price": 9830
     },
     {
       "id": "p71",
       "name": "Antec High Current Gamer Gold 850W",
-      "price": 9192
+      "price": 9520
     },
     {
       "id": "p72",
       "name": "FSP Hydro G Pro 850W 80+ Gold",
-      "price": 8961
+      "price": 9142
     },
     {
       "id": "p73",
       "name": "Cooler Master V SFX Gold 850W",
-      "price": 12417
+      "price": 12879
     },
     {
       "id": "p74",
       "name": "Silverstone SX1000 1000W SFX-L 80+ Platinum",
-      "price": 16708
+      "price": 16911
     },
     {
       "id": "p75",
       "name": "Corsair SF750 750W SFX 80+ Platinum",
-      "price": 11255
+      "price": 11656
     },
     {
       "id": "p76",
       "name": "Lian Li SP750 750W SFX 80+ Gold",
-      "price": 9930
+      "price": 10331
     },
     {
       "id": "p77",
       "name": "be quiet! SFX-L Power 600W 80+ Gold",
-      "price": 8760
+      "price": 9082
     },
     {
       "id": "p78",
       "name": "Fractal Design Ion SFX-L 650W 80+ Gold",
-      "price": 9115
+      "price": 9253
     },
     {
       "id": "p79",
       "name": "Seasonic Focus SGX-650 650W SFX-L 80+ Gold",
-      "price": 9909
+      "price": 10338
     },
     {
       "id": "p80",
       "name": "Cooler Master V850 SFX Gold 850W",
-      "price": 13257
+      "price": 13483
     },
     {
       "id": "p81",
       "name": "Thermaltake Toughpower SFX 600W 80+ Gold",
-      "price": 8397
+      "price": 8621
     },
     {
       "id": "p82",
       "name": "EVGA SuperNOVA 550 GM 550W SFX 80+ Gold",
-      "price": 7818
+      "price": 7917
     },
     {
       "id": "p83",
       "name": "Silverstone SX700 700W SFX-L 80+ Platinum",
-      "price": 11998
+      "price": 12359
     },
     {
       "id": "p84",
       "name": "Corsair RM650x 650W 80+ Gold",
-      "price": 7025
+      "price": 7301
     },
     {
       "id": "p85",
       "name": "NZXT C850 850W 80+ Gold",
-      "price": 10072
+      "price": 10296
     },
     {
       "id": "p86",
       "name": "NZXT C1000 1000W 80+ Gold",
-      "price": 13535
+      "price": 13600
     },
     {
       "id": "p87",
       "name": "Phanteks Revolt X 1000W 80+ Platinum",
-      "price": 16485
+      "price": 17165
     },
     {
       "id": "p88",
       "name": "Phanteks AMP 750W 80+ Gold",
-      "price": 8076
+      "price": 8514
     },
     {
       "id": "p89",
       "name": "MSI MPG A850G PCIE5 850W 80+ Gold ATX 3.0",
-      "price": 10718
+      "price": 10975
     },
     {
       "id": "p90",
       "name": "MSI MPG A750G 750W 80+ Gold",
-      "price": 8507
+      "price": 8617
     },
     {
       "id": "p91",
       "name": "Gigabyte P850GM 850W 80+ Gold Modular",
-      "price": 9902
+      "price": 10091
     },
     {
       "id": "p92",
       "name": "ASUS ROG Strix 850W 80+ Gold",
-      "price": 11328
+      "price": 11627
     },
     {
       "id": "p93",
       "name": "ASUS ROG Strix 1000W 80+ Gold",
-      "price": 14296
+      "price": 14792
     },
     {
       "id": "p94",
       "name": "Lian Li SP850 850W 80+ Gold",
-      "price": 9666
+      "price": 10083
     },
     {
       "id": "p95",
       "name": "DeepCool PX1000G 1000W 80+ Gold",
-      "price": 12148
+      "price": 12788
     },
     {
       "id": "p96",
       "name": "DeepCool PQ850M 850W 80+ Gold",
-      "price": 8831
+      "price": 9198
     },
     {
       "id": "p97",
       "name": "XPG Cybercore Platinum 1000W 80+ Platinum",
-      "price": 16188
+      "price": 16735
     },
     {
       "id": "p98",
       "name": "FSP Hydro PTM PRO 1200W 80+ Platinum",
-      "price": 21479
+      "price": 22391
     },
     {
       "id": "p99",
       "name": "Super Flower Leadex Titanium 1600W 80+ Titanium",
-      "price": 49310
+      "price": 51012
     },
     {
       "id": "p100",
       "name": "Seasonic Prime TX-2000 2000W 80+ Titanium",
-      "price": 67509
+      "price": 68574
     }
   ],
   "case": [
     {
       "id": "ca0",
       "name": "Zebronics Cronus",
-      "price": 1800
+      "price": 1792
     },
     {
       "id": "ca1",
       "name": "Ant Esports ICE-100",
-      "price": 2982
+      "price": 2971
     },
     {
       "id": "ca2",
       "name": "Deepcool CC560",
-      "price": 4518
+      "price": 4516
     },
     {
       "id": "ca3",
       "name": "Lian Li Lancool 216",
-      "price": 8470
+      "price": 8375
     },
     {
       "id": "ca4",
       "name": "NZXT H9 Flow",
-      "price": 15169
+      "price": 15023
     },
     {
       "id": "ca5",
       "name": "Hyte Y60",
-      "price": 17559
+      "price": 17983
     },
     {
       "id": "ca6",
       "name": "Lian Li O11 Dynamic EVO XL",
-      "price": 21592
+      "price": 21727
     },
     {
       "id": "ca7",
       "name": "Hyte Y70 Touch (4K Screen)",
-      "price": 34489
+      "price": 35336
     },
     {
       "id": "ca8",
       "name": "Cooler Master MasterBox Q300L",
-      "price": 2517
+      "price": 2484
     },
     {
       "id": "ca9",
       "name": "Thermaltake Versa H18",
-      "price": 2158
+      "price": 2177
     },
     {
       "id": "ca10",
       "name": "Corsair Carbide 100R",
-      "price": 2822
+      "price": 2798
     },
     {
       "id": "ca11",
       "name": "NZXT H510",
-      "price": 5447
+      "price": 5477
     },
     {
       "id": "ca12",
       "name": "Fractal Design Meshify C",
-      "price": 6609
+      "price": 6543
     },
     {
       "id": "ca13",
       "name": "Phanteks Eclipse P300A",
-      "price": 4888
+      "price": 4958
     },
     {
       "id": "ca14",
       "name": "be quiet! Pure Base 500DX",
-      "price": 7152
+      "price": 7068
     },
     {
       "id": "ca15",
       "name": "Cooler Master TD500 Mesh",
-      "price": 6907
+      "price": 6874
     },
     {
       "id": "ca16",
       "name": "Corsair 4000D Airflow",
-      "price": 5959
+      "price": 6023
     },
     {
       "id": "ca17",
       "name": "Lian Li Lancool II Mesh",
-      "price": 7701
+      "price": 7721
     },
     {
       "id": "ca18",
       "name": "NZXT H7 Flow",
-      "price": 9244
+      "price": 9390
     },
     {
       "id": "ca19",
       "name": "Fractal Design Torrent",
-      "price": 11015
+      "price": 11091
     },
     {
       "id": "ca20",
       "name": "Phanteks Eclipse P500A",
-      "price": 9917
+      "price": 9955
     },
     {
       "id": "ca21",
       "name": "be quiet! Dark Base 700",
-      "price": 11874
+      "price": 12056
     },
     {
       "id": "ca22",
       "name": "Cooler Master MasterCase H500",
-      "price": 8574
+      "price": 8487
     },
     {
       "id": "ca23",
       "name": "Corsair 5000D Airflow",
-      "price": 10588
+      "price": 10523
     },
     {
       "id": "ca24",
       "name": "Lian Li O11 Dynamic",
-      "price": 9618
+      "price": 9387
     },
     {
       "id": "ca25",
       "name": "NZXT H710i",
-      "price": 11454
+      "price": 11722
     },
     {
       "id": "ca26",
       "name": "Fractal Design Define 7",
-      "price": 10930
+      "price": 10736
     },
     {
       "id": "ca27",
       "name": "Phanteks Enthoo Pro 2",
-      "price": 8996
+      "price": 8937
     },
     {
       "id": "ca28",
       "name": "be quiet! Silent Base 802",
-      "price": 11156
+      "price": 11195
     },
     {
       "id": "ca29",
       "name": "Cooler Master Cosmos C700M",
-      "price": 27562
+      "price": 27212
     },
     {
       "id": "ca30",
       "name": "Corsair Obsidian 1000D",
-      "price": 41579
+      "price": 40945
     },
     {
       "id": "ca31",
       "name": "Lian Li O11 XL",
-      "price": 13111
+      "price": 12733
     },
     {
       "id": "ca32",
       "name": "NZXT H9 Elite",
-      "price": 16206
+      "price": 16527
     },
     {
       "id": "ca33",
       "name": "Fractal Design North",
-      "price": 8665
+      "price": 8792
     },
     {
       "id": "ca34",
       "name": "Phanteks Evolv X",
-      "price": 13516
+      "price": 13524
     },
     {
       "id": "ca35",
       "name": "be quiet! Dark Base Pro 900 Rev. 2",
-      "price": 17841
+      "price": 17963
     },
     {
       "id": "ca36",
       "name": "Cooler Master HAF 700 EVO",
-      "price": 38604
+      "price": 37924
     },
     {
       "id": "ca37",
       "name": "Corsair 7000D Airflow",
-      "price": 19893
+      "price": 19534
     },
     {
       "id": "ca38",
       "name": "Lian Li O11 Vision",
-      "price": 11422
+      "price": 11155
     },
     {
       "id": "ca39",
       "name": "NZXT H5 Flow",
-      "price": 6893
+      "price": 6936
     },
     {
       "id": "ca40",
       "name": "Fractal Design Pop Air",
-      "price": 7238
+      "price": 7361
     },
     {
       "id": "ca41",
       "name": "Phanteks NV7",
-      "price": 12030
+      "price": 11876
     },
     {
       "id": "ca42",
       "name": "Thermaltake Core P3",
-      "price": 8740
+      "price": 8739
     },
     {
       "id": "ca43",
       "name": "Thermaltake View 51",
-      "price": 11789
+      "price": 11898
     },
     {
       "id": "ca44",
       "name": "Silverstone RL08",
-      "price": 6074
+      "price": 6022
     },
     {
       "id": "ca45",
       "name": "Silverstone FARA R1",
-      "price": 4530
+      "price": 4595
     },
     {
       "id": "ca46",
       "name": "Antec NX410",
-      "price": 4934
+      "price": 4985
     },
     {
       "id": "ca47",
       "name": "Antec P120 Crystal",
-      "price": 7927
+      "price": 8027
     },
     {
       "id": "ca48",
       "name": "MSI MAG Forge 100R",
-      "price": 4203
+      "price": 4197
     },
     {
       "id": "ca49",
       "name": "MSI MPG Gungnir 110R",
-      "price": 6435
+      "price": 6525
     },
     {
       "id": "ca50",
       "name": "MSI MAG Vampiric 100R",
-      "price": 5889
+      "price": 5921
     },
     {
       "id": "ca51",
       "name": "Gigabyte C200 Glass",
-      "price": 5200
+      "price": 5163
     },
     {
       "id": "ca52",
       "name": "Gigabyte C301 Glass",
-      "price": 6682
+      "price": 6672
     },
     {
       "id": "ca53",
       "name": "ASUS TUF Gaming GT301",
-      "price": 6206
+      "price": 6117
     },
     {
       "id": "ca54",
       "name": "ASUS TUF Gaming GT501",
-      "price": 9473
+      "price": 9437
     },
     {
       "id": "ca55",
       "name": "ASUS ROG Strix Helios",
-      "price": 22023
+      "price": 21519
     },
     {
       "id": "ca56",
       "name": "ASUS ROG Hyperion GR701",
-      "price": 48047
+      "price": 47155
     },
     {
       "id": "ca57",
       "name": "Corsair iCUE 4000X RGB",
-      "price": 8013
+      "price": 7884
     },
     {
       "id": "ca58",
       "name": "Corsair iCUE 5000X RGB",
-      "price": 14282
+      "price": 14353
     },
     {
       "id": "ca59",
       "name": "Corsair Crystal 680X RGB",
-      "price": 18174
+      "price": 18105
     },
     {
       "id": "ca60",
       "name": "NZXT H210i (Mini-ITX)",
-      "price": 6563
+      "price": 6590
     },
     {
       "id": "ca61",
       "name": "Cooler Master NR200P (Mini-ITX)",
-      "price": 5774
+      "price": 5776
     },
     {
       "id": "ca62",
       "name": "Lian Li Q58 (Mini-ITX)",
-      "price": 9686
+      "price": 9832
     },
     {
       "id": "ca63",
       "name": "Fractal Design Era ITX",
-      "price": 8219
+      "price": 8080
     },
     {
       "id": "ca64",
       "name": "Phanteks Enthoo Evolv Shift 2 (Mini-ITX)",
-      "price": 10144
+      "price": 10035
     },
     {
       "id": "ca65",
       "name": "SilverStone Sugo 14 (Mini-ITX)",
-      "price": 7468
+      "price": 7419
     },
     {
       "id": "ca66",
       "name": "SSUPD Meshlicious (Mini-ITX)",
-      "price": 8904
+      "price": 8926
     },
     {
       "id": "ca67",
       "name": "Dan Cases A4-H2O (Mini-ITX)",
-      "price": 11992
+      "price": 12104
     },
     {
       "id": "ca68",
       "name": "Cooler Master MasterBox NR600",
-      "price": 5445
+      "price": 5503
     },
     {
       "id": "ca69",
       "name": "Thermaltake H200 TG RGB",
-      "price": 4851
+      "price": 4957
     },
     {
       "id": "ca70",
       "name": "Corsair 3000D Airflow",
-      "price": 5264
+      "price": 5247
     },
     {
       "id": "ca71",
       "name": "Lian Li Lancool III",
-      "price": 9614
+      "price": 9667
     },
     {
       "id": "ca72",
       "name": "NZXT H7 Elite",
-      "price": 13657
+      "price": 13451
     },
     {
       "id": "ca73",
       "name": "Fractal Design Meshify 2",
-      "price": 9115
+      "price": 9182
     },
     {
       "id": "ca74",
       "name": "Phanteks Eclipse P360A",
-      "price": 5461
+      "price": 5572
     },
     {
       "id": "ca75",
       "name": "be quiet! Pure Base 600",
-      "price": 6828
+      "price": 6848
     },
     {
       "id": "ca76",
       "name": "Cooler Master Silencio S600",
-      "price": 7199
+      "price": 7212
     },
     {
       "id": "ca77",
       "name": "Fractal Design Define R6",
-      "price": 9694
+      "price": 9603
     },
     {
       "id": "ca78",
       "name": "be quiet! Silent Base 601",
-      "price": 9015
+      "price": 8878
     },
     {
       "id": "ca79",
       "name": "Nanoxia Deep Silence 6",
-      "price": 10983
+      "price": 10947
     },
     {
       "id": "ca80",
       "name": "Thermaltake Core X9",
-      "price": 15250
+      "price": 15375
     },
     {
       "id": "ca81",
       "name": "Thermaltake Tower 900",
-      "price": 31400
+      "price": 31772
     },
     {
       "id": "ca82",
       "name": "In Win 309",
-      "price": 22426
+      "price": 22326
     },
     {
       "id": "ca83",
       "name": "In Win D-Frame 2.0",
-      "price": 54557
+      "price": 54760
     },
     {
       "id": "ca84",
       "name": "Lian Li PC-O11 Dynamic Razer Edition",
-      "price": 13926
+      "price": 14105
     },
     {
       "id": "ca85",
       "name": "Lian Li PC-O11 Air Mini",
-      "price": 7482
+      "price": 7519
     },
     {
       "id": "ca86",
       "name": "Hyte Y40",
-      "price": 11903
+      "price": 11752
     },
     {
       "id": "ca87",
       "name": "Montech X3 Mesh",
-      "price": 4105
+      "price": 4093
     },
     {
       "id": "ca88",
       "name": "Montech Sky Two",
-      "price": 5558
+      "price": 5592
     },
     {
       "id": "ca89",
       "name": "Jonsbo D30",
-      "price": 7689
+      "price": 7695
     },
     {
       "id": "ca90",
       "name": "Jonsbo MOD3",
-      "price": 9159
+      "price": 9060
     },
     {
       "id": "ca91",
       "name": "Sama IM01",
-      "price": 3756
+      "price": 3698
     },
     {
       "id": "ca92",
       "name": "Asus Prime AP201 (Micro-ATX)",
-      "price": 4755
+      "price": 4708
     },
     {
       "id": "ca93",
       "name": "Corsair 6500X RGB",
-      "price": 15950
+      "price": 15875
     },
     {
       "id": "ca94",
       "name": "Lian Li O11 Dynamic EVO",
-      "price": 10271
+      "price": 10237
     },
     {
       "id": "ca95",
       "name": "Phanteks Eclipse G360A",
-      "price": 6128
+      "price": 6194
     },
     {
       "id": "ca96",
       "name": "Silverstone ALTA G1M",
-      "price": 9271
+      "price": 9228
     },
     {
       "id": "ca97",
       "name": "Thermaltake The Tower 300",
-      "price": 18303
+      "price": 17945
     },
     {
       "id": "ca98",
       "name": "In Win 928",
-      "price": 72521
+      "price": 72554
     },
     {
       "id": "ca99",
       "name": "Thermaltake Level 20 HT",
-      "price": 41294
+      "price": 42189
     },
     {
       "id": "ca100",
       "name": "Cooler Master MasterFrame 700",
-      "price": 86508
+      "price": 87857
     }
   ]
 }
