@@ -65,6 +65,62 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+        .shop-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            animation: fadeIn 0.2s ease-out;
+        }
+        .shop-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease-out;
+        }
+        .store-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .store-btn:hover {
+            border-color: #3b82f6;
+            background: #f0f9ff;
+            transform: translateX(4px);
+        }
+        .store-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
@@ -470,6 +526,22 @@
 
     </main>
 
+    <!-- Shopping Options Modal -->
+    <div id="shop-modal" class="shop-modal" onclick="closeShopModal(event)">
+        <div class="shop-modal-content" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-slate-800">Compare & Buy</h3>
+                <button onclick="closeShopModal()" class="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            <p class="text-sm text-slate-600 mb-6" id="shop-product-name"></p>
+            <div class="space-y-3" id="shop-links-container">
+                <!-- Store links will be injected here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Floating UI: AI Chat -->
     <div id="ai-chat-panel" class="fixed bottom-24 right-6 w-96 h-[500px] glass-panel rounded-2xl shadow-2xl transform translate-y-[120%] transition-transform duration-300 z-40 flex flex-col">
         <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-t-2xl flex justify-between items-center text-white shadow-lg">
@@ -736,6 +808,54 @@
             document.getElementById('view-landing').classList.remove('hidden');
             document.getElementById('view-wizard').classList.add('hidden');
             document.getElementById('view-results').classList.add('hidden');
+        }
+
+        // Shopping Modal Functions
+        function openShopModal(shopLinks, productName) {
+            const modal = document.getElementById('shop-modal');
+            const productNameEl = document.getElementById('shop-product-name');
+            const linksContainer = document.getElementById('shop-links-container');
+            
+            productNameEl.textContent = productName;
+            
+            const stores = [
+                { name: 'Amazon India', key: 'amazon', color: '#FF9900', icon: '🛒' },
+                { name: 'Flipkart', key: 'flipkart', color: '#2874F0', icon: '🛍️' },
+                { name: 'Reliance Digital', key: 'reliance', color: '#E42529', icon: '🏬' },
+                { name: 'Croma', key: 'croma', color: '#8CC63F', icon: '🏪' },
+                { name: 'Vijay Sales', key: 'vijay', color: '#FF6B00', icon: '🛒' },
+                { name: 'MD Computers', key: 'mdcomputers', color: '#0066CC', icon: '💻' }
+            ];
+            
+            let html = '';
+            stores.forEach(store => {
+                if (shopLinks && shopLinks[store.key]) {
+                    html += `
+                        <a href="${shopLinks[store.key]}" target="_blank" rel="noopener noreferrer" class="store-btn">
+                            <div class="store-logo" style="background: ${store.color}; color: white;">
+                                ${store.icon}
+                            </div>
+                            <div class="flex-1">
+                                <div class="font-bold text-slate-800">${store.name}</div>
+                                <div class="text-xs text-slate-500">Compare prices & deals</div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                        </a>
+                    `;
+                }
+            });
+            
+            linksContainer.innerHTML = html;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeShopModal(event) {
+            if (!event || event.target.id === 'shop-modal') {
+                const modal = document.getElementById('shop-modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         function startWizard() {
@@ -1019,7 +1139,7 @@
                                 <span style="font-size: 0.8em; opacity: 0.8;">₹</span>${laptop.price.toLocaleString('en-IN')}
                              </div>
                         </div>
-                        <a href="${laptop.buyLink || '#'}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-bold text-sm hover:from-orange-600 hover:to-orange-700 transition shadow-md hover:shadow-lg"><i class="fa-brands fa-amazon text-lg"></i> Buy on Amazon</a>
+                        <button onclick='openShopModal(${JSON.stringify(laptop.shopLinks)}, "${laptop.name.replace(/'/g, "\\'")}")' class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-bold text-sm hover:from-blue-700 hover:to-purple-700 transition shadow-md hover:shadow-lg"><i class="fa-solid fa-store text-lg"></i> Compare & Buy</button>
                     </div>`;
                 });
                 html += '</div>';
@@ -1055,7 +1175,7 @@
                             <div class="font-bold text-lg ${p.data.price === 0 ? 'text-green-600' : 'text-slate-800'}">
                                 ${p.data.price === 0 ? '<span class="flex items-center gap-1"><i class="fa-solid fa-gift"></i> Included</span>' : '<span class="text-green-600" style="font-size: 14px;">₹</span>' + p.data.price.toLocaleString('en-IN')}
                             </div>
-                            ${p.data.price > 0 && p.data.buyLink ? '<a href="' + p.data.buyLink + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs text-orange-600 font-bold hover:text-orange-700 mt-1"><i class="fa-brands fa-amazon"></i> Buy on Amazon</a>' : ''}
+                            ${p.data.price > 0 && p.data.shopLinks ? '<button onclick=\'openShopModal(' + JSON.stringify(p.data.shopLinks) + ', "' + p.data.name.replace(/'/g, "\\'") + '")\' class="inline-flex items-center gap-1 text-xs text-blue-600 font-bold hover:text-blue-700 mt-1 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition"><i class="fa-solid fa-store"></i> Compare & Buy</button>' : ''}
                         </div>
                     </div>`;
                 });
