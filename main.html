@@ -10,6 +10,8 @@
     <title>PCSensei | Intelligent PC & Laptop Consultant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Three.js for 3D Visualization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
             crossorigin="anonymous"></script>
@@ -48,6 +50,62 @@
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        /* 3D Viewer Styles */
+        #pc-3d-viewer {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .viewer-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .viewer-control-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .viewer-control-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .component-label {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            pointer-events: none;
+            z-index: 5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .component-label.active {
+            opacity: 1;
         }
         .ad-container {
             margin: 20px auto;
@@ -416,6 +474,60 @@
                         </div>
                     </div>
 
+                    <!-- 3D PC Visualization -->
+                    <div id="pc-3d-section" class="p-6 bg-gradient-to-br from-slate-50 to-blue-50 border-b border-slate-200" style="display: none;">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-cube text-blue-600"></i>
+                                <span>3D Build Preview</span>
+                                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full ml-2">Interactive</span>
+                            </h3>
+                            <button onclick="toggle3DView()" class="text-sm text-slate-600 hover:text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-eye-slash"></i> Hide 3D View
+                            </button>
+                        </div>
+                        
+                        <!-- 3D Canvas Container -->
+                        <div class="relative">
+                            <div id="pc-3d-viewer"></div>
+                            
+                            <!-- Component Labels -->
+                            <div id="label-cpu" class="component-label" style="top: 30%; left: 45%;">
+                                <i class="fa-solid fa-microchip text-blue-600"></i> CPU
+                            </div>
+                            <div id="label-gpu" class="component-label" style="top: 50%; left: 40%;">
+                                <i class="fa-solid fa-display text-purple-600"></i> GPU
+                            </div>
+                            <div id="label-ram" class="component-label" style="top: 25%; left: 65%;">
+                                <i class="fa-solid fa-memory text-green-600"></i> RAM
+                            </div>
+                            <div id="label-storage" class="component-label" style="bottom: 30%; left: 50%;">
+                                <i class="fa-solid fa-hard-drive text-orange-600"></i> Storage
+                            </div>
+                            <div id="label-psu" class="component-label" style="bottom: 20%; left: 30%;">
+                                <i class="fa-solid fa-bolt text-yellow-600"></i> PSU
+                            </div>
+                            
+                            <!-- Viewer Controls -->
+                            <div class="viewer-controls">
+                                <button class="viewer-control-btn" onclick="rotate3DView('left')">
+                                    <i class="fa-solid fa-arrow-left"></i> Rotate Left
+                                </button>
+                                <button class="viewer-control-btn" onclick="reset3DView()">
+                                    <i class="fa-solid fa-redo"></i> Reset
+                                </button>
+                                <button class="viewer-control-btn" onclick="rotate3DView('right')">
+                                    Rotate Right <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-center text-sm text-slate-600">
+                            <i class="fa-solid fa-info-circle"></i> 
+                            Drag to rotate • Scroll to zoom • Click components for details
+                        </div>
+                    </div>
+
                     <!-- Dynamic Performance Section -->
                     <div id="performance-section" class="p-6 bg-slate-50 border-b border-slate-200">
                         <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
@@ -433,9 +545,14 @@
                     </div>
 
                     <!-- Actions -->
-                    <div class="p-6 bg-slate-50 border-t border-slate-200 flex flex-wrap justify-end gap-4">
-                        <button onclick="startWizard()" class="px-6 py-2 border border-slate-300 rounded-lg hover:bg-white text-slate-600 transition-all hover:shadow-md flex items-center gap-2"><i class="fa-solid fa-edit"></i> Edit Preferences</button>
-                        <button onclick="window.print()" class="px-6 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all hover:shadow-lg flex items-center gap-2"><i class="fa-solid fa-print"></i> Save Details</button>
+                    <div class="p-6 bg-slate-50 border-t border-slate-200 flex flex-wrap justify-between gap-4">
+                        <button onclick="toggle3DView()" id="btn-3d-toggle" class="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all flex items-center gap-2" style="display: none;">
+                            <i class="fa-solid fa-cube"></i> View in 3D
+                        </button>
+                        <div class="flex gap-4">
+                            <button onclick="startWizard()" class="px-6 py-2 border border-slate-300 rounded-lg hover:bg-white text-slate-600 transition-all hover:shadow-md flex items-center gap-2"><i class="fa-solid fa-edit"></i> Edit Preferences</button>
+                            <button onclick="window.print()" class="px-6 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all hover:shadow-lg flex items-center gap-2"><i class="fa-solid fa-print"></i> Save Details</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -1429,6 +1546,19 @@
             document.getElementById('res-budget').innerHTML = '<span style="font-size: 0.9em; opacity: 0.9;">₹</span>' + state.budget.toLocaleString('en-IN');
 
             renderBenchmarks(res);
+            
+            // Show 3D viewer for desktop builds
+            const btn3D = document.getElementById('btn-3d-toggle');
+            if (res.type === 'desktop') {
+                document.getElementById('pc-3d-section').style.display = 'block';
+                if (btn3D) btn3D.style.display = 'flex';
+                setTimeout(() => {
+                    init3DViewer();
+                }, 100);
+            } else {
+                document.getElementById('pc-3d-section').style.display = 'none';
+                if (btn3D) btn3D.style.display = 'none';
+            }
 
             if (res.type === 'laptop') {
                 const laptops = res.data;
@@ -1770,6 +1900,375 @@
             div.innerHTML = icon + bubble;
             history.appendChild(div);
             history.scrollTop = history.scrollHeight;
+        }
+
+        // --- 7. 3D VISUALIZATION SYSTEM ---
+        let scene, camera, renderer, pcCase, components = {};
+        let isRotating = false;
+        let rotationSpeed = 0;
+
+        function init3DViewer() {
+            const container = document.getElementById('pc-3d-viewer');
+            if (!container || !THREE) return;
+
+            // Scene setup
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a2e);
+            
+            // Camera setup
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(3, 2, 5);
+            camera.lookAt(0, 0, 0);
+            
+            // Renderer setup
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            container.appendChild(renderer.domElement);
+            
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+            
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(5, 10, 5);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+            
+            const pointLight1 = new THREE.PointLight(0x4a90e2, 0.5);
+            pointLight1.position.set(-3, 2, 3);
+            scene.add(pointLight1);
+            
+            const pointLight2 = new THREE.PointLight(0x9b59b6, 0.5);
+            pointLight2.position.set(3, 2, -3);
+            scene.add(pointLight2);
+            
+            // Create PC case (main structure)
+            createPCCase();
+            
+            // Create components based on build
+            if (state.currentBuild && state.currentBuild.type === 'desktop') {
+                createComponents(state.currentBuild.data);
+            }
+            
+            // Add grid floor for reference
+            const gridHelper = new THREE.GridHelper(10, 10, 0x444444, 0x222222);
+            gridHelper.position.y = -1.5;
+            scene.add(gridHelper);
+            
+            // Mouse controls
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+            
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                previousMousePosition = { x: e.clientX, y: e.clientY };
+            });
+            
+            container.addEventListener('mousemove', (e) => {
+                if (isDragging && pcCase) {
+                    const deltaX = e.clientX - previousMousePosition.x;
+                    const deltaY = e.clientY - previousMousePosition.y;
+                    
+                    pcCase.rotation.y += deltaX * 0.01;
+                    pcCase.rotation.x += deltaY * 0.01;
+                    
+                    // Limit X rotation
+                    pcCase.rotation.x = Math.max(-Math.PI / 4, Math.min(Math.PI / 4, pcCase.rotation.x));
+                    
+                    previousMousePosition = { x: e.clientX, y: e.clientY };
+                }
+            });
+            
+            container.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                isDragging = false;
+            });
+            
+            // Zoom with mouse wheel
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                camera.position.z += e.deltaY * 0.01;
+                camera.position.z = Math.max(3, Math.min(10, camera.position.z));
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (container.clientWidth > 0) {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                }
+            });
+            
+            // Start animation loop
+            animate3D();
+        }
+
+        function createPCCase() {
+            pcCase = new THREE.Group();
+            
+            // Case body (tempered glass effect)
+            const caseGeometry = new THREE.BoxGeometry(2, 3, 2);
+            const caseMaterial = new THREE.MeshPhysicalMaterial({
+                color: 0x1a1a1a,
+                metalness: 0.9,
+                roughness: 0.1,
+                transparent: true,
+                opacity: 0.3,
+                side: THREE.DoubleSide
+            });
+            const caseBody = new THREE.Mesh(caseGeometry, caseMaterial);
+            caseBody.castShadow = true;
+            caseBody.receiveShadow = true;
+            
+            // Case frame (metal edges)
+            const edgeGeometry = new THREE.EdgesGeometry(caseGeometry);
+            const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x888888, linewidth: 2 });
+            const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
+            
+            pcCase.add(caseBody);
+            pcCase.add(edges);
+            
+            // Front panel (with RGB strip effect)
+            const frontPanelGeometry = new THREE.BoxGeometry(1.9, 0.1, 0.05);
+            const frontPanelMaterial = new THREE.MeshStandardMaterial({
+                color: 0x2c3e50,
+                metalness: 0.8,
+                roughness: 0.2,
+                emissive: 0x3498db,
+                emissiveIntensity: 0.3
+            });
+            const frontPanel = new THREE.Mesh(frontPanelGeometry, frontPanelMaterial);
+            frontPanel.position.set(0, -1.4, 1);
+            pcCase.add(frontPanel);
+            
+            // RGB LED strip
+            const rgbGeometry = new THREE.BoxGeometry(1.8, 0.05, 0.02);
+            const rgbMaterial = new THREE.MeshStandardMaterial({
+                color: 0x00ff00,
+                emissive: 0x00ff00,
+                emissiveIntensity: 1
+            });
+            const rgbStrip = new THREE.Mesh(rgbGeometry, rgbMaterial);
+            rgbStrip.position.set(0, 1.3, 1.01);
+            pcCase.add(rgbStrip);
+            components.rgbStrip = rgbStrip; // Save for animation
+            
+            scene.add(pcCase);
+        }
+
+        function createComponents(build) {
+            // Clear existing components
+            Object.keys(components).forEach(key => {
+                if (key !== 'rgbStrip' && components[key]) {
+                    pcCase.remove(components[key]);
+                }
+            });
+            
+            // Motherboard (large flat board)
+            const moboGeometry = new THREE.BoxGeometry(1.6, 0.05, 1.6);
+            const moboMaterial = new THREE.MeshStandardMaterial({
+                color: 0x2ecc71,
+                metalness: 0.5,
+                roughness: 0.5
+            });
+            const mobo = new THREE.Mesh(moboGeometry, moboMaterial);
+            mobo.position.set(0, -0.5, 0);
+            mobo.rotation.x = Math.PI / 2;
+            pcCase.add(mobo);
+            components.mobo = mobo;
+            
+            // CPU (small square on motherboard)
+            const cpuGeometry = new THREE.BoxGeometry(0.4, 0.15, 0.4);
+            const cpuMaterial = new THREE.MeshStandardMaterial({
+                color: 0x3498db,
+                metalness: 0.9,
+                roughness: 0.1
+            });
+            const cpu = new THREE.Mesh(cpuGeometry, cpuMaterial);
+            cpu.position.set(0, -0.4, 0);
+            pcCase.add(cpu);
+            components.cpu = cpu;
+            
+            // CPU cooler (fan on top)
+            const coolerGeometry = new THREE.CylinderGeometry(0.3, 0.3, 0.4, 32);
+            const coolerMaterial = new THREE.MeshStandardMaterial({
+                color: 0x95a5a6,
+                metalness: 0.7,
+                roughness: 0.3
+            });
+            const cooler = new THREE.Mesh(coolerGeometry, coolerMaterial);
+            cooler.position.set(0, 0, 0);
+            pcCase.add(cooler);
+            components.cooler = cooler;
+            
+            // GPU (large card)
+            const gpuGeometry = new THREE.BoxGeometry(1.2, 0.3, 0.15);
+            const gpuMaterial = new THREE.MeshStandardMaterial({
+                color: 0x9b59b6,
+                metalness: 0.8,
+                roughness: 0.2,
+                emissive: 0x9b59b6,
+                emissiveIntensity: 0.2
+            });
+            const gpu = new THREE.Mesh(gpuGeometry, gpuMaterial);
+            gpu.position.set(0, -0.7, 0.3);
+            gpu.rotation.y = Math.PI / 2;
+            pcCase.add(gpu);
+            components.gpu = gpu;
+            
+            // RAM sticks (2 vertical sticks)
+            const ramGeometry = new THREE.BoxGeometry(0.1, 0.6, 0.15);
+            const ramMaterial = new THREE.MeshStandardMaterial({
+                color: 0xe74c3c,
+                metalness: 0.6,
+                roughness: 0.4
+            });
+            
+            for (let i = 0; i < 2; i++) {
+                const ram = new THREE.Mesh(ramGeometry, ramMaterial);
+                ram.position.set(0.4 + i * 0.2, -0.1, -0.5);
+                pcCase.add(ram);
+                components[`ram${i}`] = ram;
+            }
+            
+            // Storage (M.2 SSD - small flat rectangle)
+            const storageGeometry = new THREE.BoxGeometry(0.6, 0.03, 0.15);
+            const storageMaterial = new THREE.MeshStandardMaterial({
+                color: 0xf39c12,
+                metalness: 0.7,
+                roughness: 0.3
+            });
+            const storage = new THREE.Mesh(storageGeometry, storageMaterial);
+            storage.position.set(-0.3, -0.45, 0.6);
+            storage.rotation.x = Math.PI / 2;
+            pcCase.add(storage);
+            components.storage = storage;
+            
+            // PSU (power supply at bottom)
+            const psuGeometry = new THREE.BoxGeometry(1.4, 0.4, 0.7);
+            const psuMaterial = new THREE.MeshStandardMaterial({
+                color: 0x34495e,
+                metalness: 0.9,
+                roughness: 0.1
+            });
+            const psu = new THREE.Mesh(psuGeometry, psuMaterial);
+            psu.position.set(0, -1.2, -0.4);
+            pcCase.add(psu);
+            components.psu = psu;
+            
+            // Fans (case fans)
+            const fanGeometry = new THREE.CylinderGeometry(0.25, 0.25, 0.05, 32);
+            const fanMaterial = new THREE.MeshStandardMaterial({
+                color: 0x7f8c8d,
+                metalness: 0.5,
+                roughness: 0.5,
+                transparent: true,
+                opacity: 0.7
+            });
+            
+            // Front fan
+            const fan1 = new THREE.Mesh(fanGeometry, fanMaterial);
+            fan1.position.set(0.5, 0.5, 1);
+            fan1.rotation.x = Math.PI / 2;
+            pcCase.add(fan1);
+            components.fan1 = fan1;
+            
+            // Top fan
+            const fan2 = new THREE.Mesh(fanGeometry, fanMaterial);
+            fan2.position.set(-0.5, 1.45, 0);
+            pcCase.add(fan2);
+            components.fan2 = fan2;
+        }
+
+        function animate3D() {
+            requestAnimationFrame(animate3D);
+            
+            if (pcCase && isRotating) {
+                pcCase.rotation.y += rotationSpeed;
+            }
+            
+            // Animate RGB strip color
+            if (components.rgbStrip) {
+                const time = Date.now() * 0.001;
+                const hue = (time * 0.1) % 1;
+                components.rgbStrip.material.color.setHSL(hue, 1, 0.5);
+                components.rgbStrip.material.emissive.setHSL(hue, 1, 0.5);
+            }
+            
+            // Rotate fans
+            if (components.fan1) components.fan1.rotation.z += 0.1;
+            if (components.fan2) components.fan2.rotation.y += 0.1;
+            if (components.cooler) components.cooler.rotation.y += 0.05;
+            
+            renderer.render(scene, camera);
+        }
+
+        function toggle3DView() {
+            const section = document.getElementById('pc-3d-section');
+            const btn = document.getElementById('btn-3d-toggle');
+            
+            if (section.style.display === 'none') {
+                section.style.display = 'block';
+                if (btn) btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide 3D View';
+                if (!renderer) init3DViewer();
+            } else {
+                section.style.display = 'none';
+                if (btn) btn.innerHTML = '<i class="fa-solid fa-cube"></i> View in 3D';
+            }
+        }
+
+        function rotate3DView(direction) {
+            if (!pcCase) return;
+            
+            isRotating = true;
+            rotationSpeed = direction === 'left' ? -0.02 : 0.02;
+            
+            setTimeout(() => {
+                isRotating = false;
+                rotationSpeed = 0;
+            }, 1000);
+        }
+
+        function reset3DView() {
+            if (!pcCase) return;
+            
+            // Smooth reset animation
+            const startRotation = { x: pcCase.rotation.x, y: pcCase.rotation.y };
+            const duration = 500;
+            const startTime = Date.now();
+            
+            function animateReset() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                
+                pcCase.rotation.x = startRotation.x * (1 - easeProgress);
+                pcCase.rotation.y = startRotation.y * (1 - easeProgress);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animateReset);
+                }
+            }
+            
+            animateReset();
+            
+            // Reset camera
+            camera.position.set(3, 2, 5);
+        }
+
+        // Show component labels on hover
+        function showComponentLabel(componentName) {
+            const label = document.getElementById(`label-${componentName}`);
+            if (label) {
+                label.classList.add('active');
+                setTimeout(() => label.classList.remove('active'), 2000);
+            }
         }
     </script>
 </body>
