@@ -1543,29 +1543,230 @@
 
         function sendMessage() {
             const input = document.getElementById('chat-input');
-            const txt = input.value.trim().toLowerCase();
-            if(!txt) return;
+            const rawText = input.value.trim();
+            if(!rawText) return;
 
-            addChatMsg(input.value, 'user');
+            // Sanitize input
+            const txt = Security.sanitizeHTML(rawText).toLowerCase();
+            
+            // Rate limiting
+            if (!Security.rateLimit.check()) {
+                addChatMsg('Please wait a moment before sending another message.', 'ai');
+                return;
+            }
+
+            addChatMsg(rawText, 'user');
             input.value = '';
 
+            // Show typing indicator
+            const typingId = addTypingIndicator();
+
             setTimeout(() => {
-                let response = "I'm not sure about that. Try asking about 'budget' or 'compatibility'.";
-                if(txt.includes('budget')) response = "For a balanced build, we recommend allocating 40% of your budget to the GPU.";
-                if(txt.includes('laptop')) response = "Laptops offer great portability. For gaming, look for at least an RTX 3050.";
-                if(txt.includes('cheap') || txt.includes('15000')) response = "At ₹15,000, we recommend a Chromebook or a refurbished ThinkPad for basic tasks.";
-                if(txt.includes('fps') || txt.includes('game') || txt.includes('perform')) response = "Check the Performance Estimates section in your results! It updates based on your usage choice.";
-                if(txt.includes('hello') || txt.includes('hi')) response = "Hi there! Ready to find your perfect computer?";
+                removeTypingIndicator(typingId);
+                const response = generateIntelligentResponse(txt, rawText);
                 addChatMsg(response, 'ai');
-            }, 800);
+            }, 600 + Math.random() * 400); // Natural typing delay
+        }
+
+        function generateIntelligentResponse(txt, originalText) {
+            // Context-aware AI response system with pattern matching
+            
+            // Greetings
+            if (/\b(hello|hi|hey|greetings)\b/.test(txt)) {
+                return "👋 Hi! I'm PCSensei AI, your computer building expert. I can help you with:\n• Budget recommendations\n• Component compatibility\n• Performance expectations\n• Upgrade suggestions\n\nWhat would you like to know?";
+            }
+
+            // Budget-related queries
+            if (/budget|price|cost|afford|spend|money|expensive|cheap/i.test(txt)) {
+                const budgetMatch = txt.match(/(\d+)k|\u20b9\s*(\d+)|rs\s*(\d+)/);
+                if (budgetMatch) {
+                    const amount = (parseInt(budgetMatch[1] || budgetMatch[2] || budgetMatch[3]) || 50) * 1000;
+                    if (amount < 20000) {
+                        return `💰 For ₹${amount.toLocaleString('en-IN')}, I recommend:\n• Laptop: Entry-level Chromebook or used ThinkPad\n• Desktop: AMD Athlon APU build (no discrete GPU)\n\nThis budget is best for basic tasks like browsing and office work.`;
+                    } else if (amount < 50000) {
+                        return `💰 With ₹${amount.toLocaleString('en-IN')}, you can get:\n• Laptop: AMD Ryzen 5 with Vega graphics\n• Desktop: AMD 5600G APU (integrated graphics)\n\n✨ Good for 1080p gaming at medium settings and productivity work.`;
+                    } else if (amount < 100000) {
+                        return `💰 At ₹${amount.toLocaleString('en-IN')}, excellent options:\n• Laptop: Gaming laptop with RTX 4050/4060\n• Desktop: Ryzen 5/i5 + RTX 4060\n\n🎮 Ideal for 1080p-1440p gaming and content creation!`;
+                    } else {
+                        return `💰 With ₹${amount.toLocaleString('en-IN')}+, you're in enthusiast territory!\n• High-end CPU: Ryzen 7/9 or i7/i9\n• GPU: RTX 4070+ or RX 7800 XT+\n• Fast DDR5 RAM and Gen4 NVMe\n\n🚀 Perfect for 4K gaming, streaming, and professional work!`;
+                    }
+                }
+                
+                if (state.budget) {
+                    return `💰 Your current budget is ₹${state.budget.toLocaleString('en-IN')}.\n\nFor optimal builds, I recommend:\n🎮 Gaming: 40% GPU, 22% CPU\n🎨 Content: 30% GPU, 25% CPU\n💼 Productivity: 20% GPU, 28% CPU\n\nWant specific component recommendations?`;
+                }
+                
+                return "💰 Budget allocation tips:\n• Gaming: Prioritize GPU (40% of budget)\n• Content Creation: Balance CPU & GPU (25-30% each)\n• Productivity: Focus on CPU & RAM (28% CPU)\n• Always leave 10-15% for PSU, storage, and case\n\nWhat's your target budget?";
+            }
+
+            // Component compatibility
+            if (/compatib|work.*together|match|fit|socket|support/i.test(txt)) {
+                if (state.currentBuild && state.currentBuild.type === 'desktop') {
+                    const build = state.currentBuild.data;
+                    return `✅ Compatibility Check for your build:\n\n🔌 CPU-Mobo: ${build.cpu.socket} socket - ✓ Compatible\n💾 RAM-Mobo: DDR${build.mobo.name.includes('DDR5') ? '5' : '4'} - ✓ Compatible\n⚡ PSU: ${build.psu.name} - ✓ Adequate for components\n📦 All components fit standard ATX cases\n\nEverything looks good! Any specific concerns?`;
+                }
+                return "🔍 To check compatibility, I need to know:\n• CPU socket type (AM4, AM5, LGA1700, etc.)\n• Motherboard chipset\n• RAM generation (DDR4/DDR5)\n• PSU wattage vs. component TDP\n\nGenerate a build first, or tell me your components!";
+            }
+
+            // Performance queries
+            if (/fps|frame.*rate|perform|benchmark|how.*fast|speed|run/i.test(txt)) {
+                if (txt.includes('4k') || txt.includes('2160p')) {
+                    return "🎮 4K Gaming Performance:\n• RTX 4080+: 60-120 FPS (AAA titles)\n• RTX 4070 Ti: 50-80 FPS (high settings)\n• RTX 4060 Ti: 30-50 FPS (medium settings)\n\nPair with Ryzen 7/i7+ to avoid bottlenecks!\n\nBudget needed: ₹1,50,000+";
+                } else if (txt.includes('1440p')) {
+                    return "🎮 1440p Gaming Performance:\n• RTX 4070: 100-144 FPS (AAA titles)\n• RTX 4060 Ti: 80-120 FPS (high settings)\n• RTX 4060: 60-90 FPS (medium-high)\n\nSweet spot for price-performance!\n\nBudget: ₹80,000-₹1,50,000";
+                } else {
+                    return "🎮 1080p Gaming Performance:\n• RTX 4060: 120-200+ FPS (most games)\n• RTX 4050: 80-120 FPS (high settings)\n• GTX 1650: 50-80 FPS (medium settings)\n\nAll paired with Ryzen 5/i5 or better.\n\nBudget: ₹50,000-₹1,00,000";
+                }
+            }
+
+            // Specific component queries - GPU
+            if (/gpu|graphics.*card|rtx|gtx|radeon|rx|vram|video.*card/i.test(txt)) {
+                if (/4090/i.test(txt)) {
+                    return "🚀 RTX 4090 - The Absolute Beast!\n• VRAM: 24GB GDDR6X\n• Performance: 4K gaming at 120+ FPS\n• Price: ₹1,70,000 - ₹2,00,000\n• TDP: 450W (needs 850W+ PSU)\n\n⚠️ Pair with Ryzen 9 7950X or i9-14900K to avoid bottlenecks!";
+                } else if (/4080/i.test(txt)) {
+                    return "💎 RTX 4080 - Enthusiast Powerhouse\n• VRAM: 16GB GDDR6X\n• Performance: 4K @ 100+ FPS, 1440p @ 165+ FPS\n• Price: ₹1,10,000 - ₹1,30,000\n• TDP: 320W (needs 750W+ PSU)\n\n✨ Best for 4K gaming without breaking the bank!";
+                } else if (/4070/i.test(txt)) {
+                    return "⭐ RTX 4070/4070 Ti - Sweet Spot\n• VRAM: 12GB GDDR6X\n• Performance: 1440p @ 120+ FPS, 4K @ 60+ FPS\n• Price: ₹55,000 - ₹75,000\n• TDP: 200-285W (needs 650W PSU)\n\n🎯 Perfect balance of price and performance!";
+                } else if (/4060/i.test(txt)) {
+                    return "🎮 RTX 4060/4060 Ti - Value King\n• VRAM: 8GB/16GB GDDR6\n• Performance: 1080p @ 144+ FPS, 1440p @ 80+ FPS\n• Price: ₹32,000 - ₹48,000\n• TDP: 160-170W (needs 550W PSU)\n\n💰 Best value for 1080p-1440p gaming!";
+                } else if (/amd|radeon|rx/i.test(txt)) {
+                    return "🔴 AMD Radeon Options:\n• RX 7900 XTX: Competes with RTX 4080 (₹95k-₹1.1L)\n• RX 7800 XT: Between 4070-4070 Ti (₹50k-₹60k)\n• RX 7600: Entry 1080p gaming (₹25k-₹30k)\n\n✨ Great value, excellent rasterization, more VRAM!\n⚠️ Ray tracing not as strong as NVIDIA.";
+                } else {
+                    return "🎮 GPU Selection Guide:\n\n💎 Budget:\n• ₹25k-₹35k: RTX 4060, RX 7600 (1080p)\n• ₹40k-₹60k: RTX 4060 Ti, RX 7700 XT (1440p)\n• ₹65k-₹90k: RTX 4070 Ti, RX 7800 XT (1440p-4K)\n• ₹1L+: RTX 4080/4090 (4K ultra)\n\n🎯 Gaming: Prioritize VRAM (8GB min, 12GB+ ideal)\n🎨 Content: 12GB+ for rendering\n\nWhat's your budget and resolution target?";
+                }
+            }
+
+            // Specific component queries - CPU
+            if (/cpu|processor|ryzen|intel|core.*i[3579]|thread|clock.*speed/i.test(txt)) {
+                if (/gaming/i.test(txt)) {
+                    return "🎮 Gaming CPU Recommendations:\n\n⭐ Best: Ryzen 7 7800X3D (₹35k-₹40k)\n• 8 cores, 3D V-Cache = best gaming CPU\n\n💎 Great: i5-14600K or Ryzen 5 7600X (₹25k-₹30k)\n• 6 cores sufficient for most games\n\n💰 Budget: i3-13100F or Ryzen 5 5600 (₹8k-₹12k)\n• Solid 1080p gaming performance\n\n🔑 Gaming needs: 6+ cores, high single-thread speed";
+                } else if (/content|render|edit|stream/i.test(txt)) {
+                    return "🎨 Content Creation CPU Recommendations:\n\n🚀 Pro: Ryzen 9 7950X or i9-14900K (₹45k-₹60k)\n• 16-24 cores for fast rendering\n\n⭐ Great: Ryzen 7 7700X or i7-14700K (₹30k-₹40k)\n• 8-12 cores, excellent multitasking\n\n💰 Budget: Ryzen 5 7600 (₹18k-₹22k)\n• 6 cores, good for light editing\n\n🔑 Content needs: More cores = faster exports!";
+                } else {
+                    return "💻 CPU Selection Guide:\n\n🎮 Gaming: 6-8 cores, high clock speed\n• Ryzen 7800X3D, i5-14600K\n\n🎨 Content: 12-16 cores, multi-thread\n• Ryzen 9 7950X, i9-14900K\n\n💼 Productivity: 8-12 cores, balanced\n• Ryzen 7 7700X, i7-14700K\n\n💰 Budget: 4-6 cores\n• Ryzen 5 5600, i3-13100F\n\nWhat's your primary use case?";
+                }
+            }
+
+            // RAM queries
+            if (/ram|memory|ddr4|ddr5|gb.*ram|how.*much.*ram/i.test(txt)) {
+                return "🧠 RAM Recommendations:\n\n🎮 Gaming:\n• 16GB DDR4/DDR5 (minimum)\n• 32GB for AAA titles + multitasking\n• 3200MHz+ DDR4 or 5600MHz+ DDR5\n\n🎨 Content Creation:\n• 32GB minimum (4K editing)\n• 64GB for heavy projects\n• Speed matters less, capacity first\n\n💼 Productivity:\n• 16GB for office work\n• 32GB for VMs/development\n\n💰 Prices:\n• 16GB DDR4: ₹3k-₹5k\n• 32GB DDR5: ₹10k-₹15k";
+            }
+
+            // Storage queries
+            if (/ssd|nvme|storage|hard.*drive|hdd|gen4|m\.2/i.test(txt)) {
+                return "💾 Storage Recommendations:\n\n⚡ Best: PCIe Gen4 NVMe SSD\n• 7000+ MB/s read speeds\n• WD Black SN850X, Samsung 990 Pro\n• ₹6k-₹10k for 1TB\n\n✨ Great: PCIe Gen3 NVMe SSD\n• 3500+ MB/s, excellent value\n• WD Blue SN570, Samsung 980\n• ₹4k-₹6k for 1TB\n\n💰 Budget: SATA SSD\n• 550 MB/s, still way better than HDD\n• ₹2.5k-₹4k for 1TB\n\n📊 Capacity:\n• 500GB: OS + few games\n• 1TB: Recommended minimum\n• 2TB: Ideal for large game libraries";
+            }
+
+            // PSU queries
+            if (/psu|power.*supply|watt|efficiency|80.*plus|gold|platinum/i.test(txt)) {
+                if (state.currentBuild && state.currentBuild.type === 'desktop') {
+                    const build = state.currentBuild.data;
+                    const cpuTdp = parseInt(build.cpu.tdp?.match(/\d+/)?.[0] || 65);
+                    const gpuTdp = parseInt(build.gpu.tdp?.match(/\d+/)?.[0] || 150);
+                    const totalTdp = cpuTdp + gpuTdp + 100;
+                    const recommended = Math.ceil(totalTdp * 1.2);
+                    
+                    return `⚡ PSU Analysis for Your Build:\n\n📊 Power Requirements:\n• CPU: ${cpuTdp}W\n• GPU: ${gpuTdp}W\n• System: 100W\n• Total: ${totalTdp}W\n\n✅ Recommended: ${recommended}W+ (20% headroom)\n\n🏆 Quality:\n• 80+ Gold: Best value\n• 80+ Platinum: High efficiency\n• Brands: Corsair, Seasonic, EVGA\n\nCurrent PSU: ${build.psu.name}`;
+                }
+                
+                return "⚡ PSU Selection Guide:\n\n🎯 Wattage:\n• Budget build: 450-550W\n• Mid-range: 650-750W\n• High-end: 850W+\n• RTX 4090: 1000W+\n\n🏆 Efficiency:\n• 80+ Bronze: Basic\n• 80+ Gold: Best value ⭐\n• 80+ Platinum: High efficiency\n\n💡 Rule: (CPU TDP + GPU TDP + 100W) × 1.2\n\n✅ Trusted Brands:\nCorsair, Seasonic, EVGA, Cooler Master";
+            }
+
+            // Laptop specific queries
+            if (/laptop|notebook|portable|mobile/i.test(txt)) {
+                if (/gaming.*laptop|laptop.*gaming/i.test(txt)) {
+                    return "🎮 Gaming Laptop Guide:\n\n💎 Premium (₹1.5L+):\n• RTX 4070+, 165Hz screen\n• ASUS ROG, MSI Raider, Legion 7\n\n⭐ Mid-Range (₹80k-₹1.5L):\n• RTX 4060, 144Hz screen\n• Legion 5, TUF A15, Nitro 5\n\n💰 Budget (₹50k-₹80k):\n• RTX 4050/3050, 120Hz\n• Victus, IdeaPad Gaming\n\n🔑 Must-haves:\n• 144Hz+ display\n• 16GB RAM (upgradeable)\n• Good cooling system";
+                } else if (/productivity|work|office/i.test(txt)) {
+                    return "💼 Productivity Laptop Guide:\n\n🏆 Premium (₹1L+):\n• ThinkPad X1, Dell XPS, MacBook Air M2\n• 16GB+ RAM, 512GB+ SSD\n• 10+ hour battery\n\n⭐ Mid-Range (₹50k-₹1L):\n• ThinkPad E/T series, HP EliteBook\n• 8-16GB RAM, good keyboard\n\n💰 Budget (₹30k-₹50k):\n• IdeaPad, Inspiron, VivoBook\n• 8GB RAM, basic needs\n\n🔑 Priorities:\n• Battery life > Performance\n• Build quality matters\n• Good keyboard & trackpad";
+                } else {
+                    return "💻 Laptop vs Desktop:\n\n✅ Choose Laptop if:\n• Need portability\n• College/travel frequently\n• Limited desk space\n\n✅ Choose Desktop if:\n• Gaming/heavy work\n• Need upgradability\n• Better price-performance\n\n🎮 Gaming: Desktop = 30-40% better value\n💼 Work: Laptop = better flexibility\n\nWhat's your priority? Performance or portability?";
+                }
+            }
+
+            // Build review/help
+            if (/review|check|suggest|recommend|help.*build|good.*build/i.test(txt)) {
+                if (state.currentBuild) {
+                    if (state.currentBuild.type === 'laptop') {
+                        const best = state.currentBuild.data[0];
+                        return `📊 Your Laptop Selection Analysis:\n\n✅ Top Pick: ${best.name}\n• Price: ₹${best.price.toLocaleString('en-IN')}\n• Usage: ${state.usage}\n• Specs: ${best.spec}\n\n${best.aiScore ? `🎯 AI Score: ${best.aiScore}/100` : ''}\n\n💡 This laptop ${best.aiScore > 80 ? 'is an excellent match' : 'fits your needs well'} for ${state.usage} tasks!\n\nWant alternatives or have specific questions?`;
+                    } else {
+                        const build = state.currentBuild.data;
+                        return `📊 Your Desktop Build Analysis:\n\n✅ Components:\n• CPU: ${build.cpu.name}\n• GPU: ${build.gpu.name}\n• RAM: ${build.ram.name}\n• Storage: ${build.storage.name}\n\n🎯 Usage: ${state.usage}\n💰 Budget: ₹${state.budget.toLocaleString('en-IN')}\n\n✨ This build is optimized for ${state.usage} with balanced performance!\n\nNeed component upgrades or have compatibility questions?`;
+                    }
+                }
+                return "🤔 I can help you build the perfect PC!\n\n1️⃣ Tell me your budget (₹50,000? ₹1,00,000?)\n2️⃣ What's your use case? (Gaming, editing, work?)\n3️⃣ Any brand preferences? (Intel/AMD, NVIDIA/AMD)\n\nOr use the wizard above to generate a build, then I can review it for you!";
+            }
+
+            // Upgrade queries
+            if (/upgrade|improve|better|replace|swap/i.test(txt)) {
+                return "⬆️ Upgrade Priority Guide:\n\n🎮 Gaming PC:\n1. GPU (biggest FPS boost)\n2. CPU (if bottlenecking)\n3. RAM (16GB → 32GB)\n4. Storage (HDD → SSD)\n\n🎨 Content Creation:\n1. RAM (32GB → 64GB)\n2. CPU (more cores)\n3. Storage (larger/faster SSD)\n4. GPU (rendering acceleration)\n\n💡 General Rule:\n• Upgrade GPU every 3-4 years\n• CPU every 5-6 years\n• RAM/Storage as needed\n\nWhat component are you thinking of upgrading?";
+            }
+
+            // Thanks/goodbye
+            if (/thank|thanks|appreciate|bye|goodbye/i.test(txt)) {
+                return "😊 You're welcome! Happy building!\n\nFeel free to ask if you have more questions. Good luck with your new PC! 🚀";
+            }
+
+            // Generic game-specific queries
+            if (/fortnite|pubg|valorant|apex|warzone|gta|cyberpunk|minecraft/i.test(txt)) {
+                const game = txt.match(/fortnite|pubg|valorant|apex|warzone|gta|cyberpunk|minecraft/i)?.[0];
+                const specs = {
+                    fortnite: { gpu: 'RTX 4050+', cpu: 'Ryzen 5/i5', ram: '16GB', budget: '₹60k+' },
+                    valorant: { gpu: 'RTX 4050', cpu: 'Ryzen 5/i5', ram: '8GB', budget: '₹50k+' },
+                    cyberpunk: { gpu: 'RTX 4070+', cpu: 'Ryzen 7/i7', ram: '16GB', budget: '₹1.2L+' },
+                    gta: { gpu: 'RTX 4060', cpu: 'Ryzen 5/i5', ram: '16GB', budget: '₹75k+' },
+                    minecraft: { gpu: 'RTX 4050', cpu: 'Ryzen 5/i5', ram: '8GB', budget: '₹45k+' },
+                    warzone: { gpu: 'RTX 4060', cpu: 'Ryzen 5/i5', ram: '16GB', budget: '₹80k+' },
+                };
+                
+                const spec = specs[game.toLowerCase()] || { gpu: 'RTX 4060', cpu: 'Ryzen 5/i5', ram: '16GB', budget: '₹70k+' };
+                
+                return `🎮 ${game.charAt(0).toUpperCase() + game.slice(1)} Requirements:\n\n📊 Recommended:\n• GPU: ${spec.gpu}\n• CPU: ${spec.cpu}\n• RAM: ${spec.ram}\n• Budget: ${spec.budget}\n\n✨ For 1080p 144fps+ at high settings!\n\nWant a specific build for this game?`;
+            }
+
+            // Fallback with helpful suggestions
+            return "🤔 I'm not sure I understood that completely.\n\n💡 I can help with:\n• 💰 Budget recommendations\n• 🔧 Component selection (CPU, GPU, RAM, etc.)\n• 🎮 Gaming performance estimates\n• ✅ Compatibility checking\n• ⬆️ Upgrade suggestions\n• 💻 Laptop recommendations\n\nTry asking:\n• \"What GPU for ₹50k?\"\n• \"Is my build compatible?\"\n• \"Can it run Cyberpunk?\"\n• \"Should I upgrade my CPU?\"";
+        }
+
+        function addTypingIndicator() {
+            const history = document.getElementById('chat-history');
+            const div = document.createElement('div');
+            const id = 'typing-' + Date.now();
+            div.id = id;
+            div.className = 'flex gap-2 chat-msg';
+            div.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-xs">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white border-slate-100 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm border flex gap-1 items-center">
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+                </div>
+            `;
+            history.appendChild(div);
+            history.scrollTop = history.scrollHeight;
+            return id;
+        }
+
+        function removeTypingIndicator(id) {
+            const indicator = document.getElementById(id);
+            if (indicator) indicator.remove();
         }
 
         function addChatMsg(text, sender) {
             const history = document.getElementById('chat-history');
             const div = document.createElement('div');
             div.className = `flex gap-2 chat-msg ${sender === 'user' ? 'flex-row-reverse' : ''}`;
-            const icon = sender === 'ai' ? '<div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-xs"><i class="fa-solid fa-robot"></i></div>' : '<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs"><i class="fa-solid fa-user"></i></div>';
-            const bubble = `<div class="${sender === 'ai' ? 'bg-white border-slate-100' : 'bg-blue-600 text-white'} p-3 rounded-2xl ${sender === 'ai' ? 'rounded-tl-none' : 'rounded-tr-none'} shadow-sm text-sm max-w-[80%] border">${text}</div>`;
+            const icon = sender === 'ai' 
+                ? '<div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-xs"><i class="fa-solid fa-robot"></i></div>' 
+                : '<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs"><i class="fa-solid fa-user"></i></div>';
+            
+            // Sanitize text for display
+            const safeText = Security.sanitizeHTML(text);
+            const formattedText = safeText.replace(/\n/g, '<br>');
+            
+            const bubble = `<div class="${sender === 'ai' ? 'bg-white border-slate-100 text-slate-700' : 'bg-blue-600 text-white'} p-3 rounded-2xl ${sender === 'ai' ? 'rounded-tl-none' : 'rounded-tr-none'} shadow-sm text-sm max-w-[80%] border whitespace-pre-line">${formattedText}</div>`;
             div.innerHTML = icon + bubble;
             history.appendChild(div);
             history.scrollTop = history.scrollHeight;
