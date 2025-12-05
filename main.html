@@ -928,28 +928,102 @@
             
             const { budget, prefs, usage, formFactor } = state;
             
+            // Comprehensive input validation
+            const validationErrors = [];
+            
+            if (!formFactor || !['laptop', 'desktop'].includes(formFactor)) {
+                validationErrors.push('Invalid form factor selected');
+            }
+            
+            const validUsages = ['gaming', 'productivity', 'coding', 'content'];
+            if (!usage || !validUsages.includes(usage)) {
+                validationErrors.push('Invalid usage type selected');
+            }
+            
+            if (!budget || isNaN(budget)) {
+                validationErrors.push('Invalid budget amount');
+            } else if (budget < 15000) {
+                validationErrors.push('Minimum budget is ₹15,000');
+            } else if (budget > 10000000) {
+                validationErrors.push('Maximum budget is ₹1,00,00,000');
+            }
+            
+            if (validationErrors.length > 0) {
+                alert('⚠️ Validation Error:\n\n' + validationErrors.join('\n'));
+                return;
+            }
+            
             if (formFactor === 'laptop') {
-                let potentialLaptops = db.laptops.filter(l => l.price <= budget * 1.1);
-                if (potentialLaptops.length === 0) potentialLaptops = [db.laptops[0]];
+                // Filter laptops within budget range (allow 5% over for better options)
+                let potentialLaptops = db.laptops.filter(l => l.price <= budget * 1.05);
+                if (potentialLaptops.length === 0) {
+                    // If no laptops in budget, show closest options
+                    potentialLaptops = db.laptops.filter(l => l.price <= budget * 1.2).slice(0, 3);
+                    if (potentialLaptops.length === 0) potentialLaptops = db.laptops.slice(0, 3);
+                }
 
-                let usageMatches = potentialLaptops.filter(l => {
-                    if (usage === 'gaming' && l.type === 'gaming') return true;
-                    if (usage === 'productivity' && (l.type === 'office' || l.type === 'creative')) return true;
-                    if (usage === 'coding') return true;
-                    if (usage === 'gaming' && budget < 50000) return true;
-                    return false;
+                // Score laptops based on usage and specs
+                let scoredLaptops = potentialLaptops.map(laptop => {
+                    let score = 0;
+                    
+                    // Usage-based scoring
+                    if (usage === 'gaming') {
+                        if (laptop.type === 'gaming') score += 50;
+                        if (laptop.gpuTier === 'high' || laptop.gpuTier === 'ultra') score += 30;
+                        else if (laptop.gpuTier === 'mid') score += 20;
+                        else if (laptop.gpuTier === 'entry') score += 10;
+                        if (laptop.refresh && parseInt(laptop.refresh) >= 144) score += 15;
+                    } else if (usage === 'productivity') {
+                        if (laptop.type === 'office' || laptop.type === 'creative') score += 50;
+                        if (laptop.ram && laptop.ram.includes('16GB')) score += 20;
+                        if (laptop.ram && laptop.ram.includes('32GB')) score += 30;
+                        if (laptop.storage && laptop.storage.includes('1TB')) score += 10;
+                    } else if (usage === 'coding') {
+                        if (laptop.type === 'office' || laptop.type === 'creative') score += 40;
+                        if (laptop.ram && (laptop.ram.includes('16GB') || laptop.ram.includes('32GB'))) score += 25;
+                        if (laptop.storage && laptop.storage.includes('SSD')) score += 15;
+                        if (laptop.battery && parseInt(laptop.battery) >= 8) score += 10;
+                    } else if (usage === 'content') {
+                        if (laptop.type === 'creative') score += 50;
+                        if (laptop.screen && laptop.screen.includes('OLED')) score += 20;
+                        if (laptop.ram && laptop.ram.includes('32GB')) score += 15;
+                    }
+                    
+                    // Budget efficiency scoring
+                    const budgetUtilization = laptop.price / budget;
+                    if (budgetUtilization >= 0.85 && budgetUtilization <= 1.0) score += 25;
+                    else if (budgetUtilization >= 0.70 && budgetUtilization < 0.85) score += 15;
+                    else if (budgetUtilization >= 0.50 && budgetUtilization < 0.70) score += 10;
+                    
+                    // Brand preference
+                    if (prefs.gpu !== 'Any') {
+                        if (laptop.brand === prefs.gpu) score += 10;
+                    }
+                    
+                    return { ...laptop, aiScore: score };
                 });
 
-                usageMatches.sort((a,b) => b.price - a.price);
-                let topPicks = usageMatches.slice(0, 3);
-                if (topPicks.length === 0) {
-                     potentialLaptops.sort((a,b) => b.price - a.price);
-                     topPicks = potentialLaptops.slice(0, 3);
-                }
+                // Sort by AI score, then by price
+                scoredLaptops.sort((a, b) => {
+                    if (Math.abs(a.aiScore - b.aiScore) > 10) return b.aiScore - a.aiScore;
+                    return b.price - a.price;
+                });
+                
+                let topPicks = scoredLaptops.slice(0, 3);
 
                 state.currentBuild = { type: 'laptop', data: topPicks };
                 const best = topPicks[0];
-                document.getElementById('build-reasoning').innerText = `We found ${topPicks.length} great options. The top pick is the ${best.name} which perfectly fits your ${state.usage} needs. Compare specs below!`;
+                
+                // Generate intelligent reasoning
+                let reasoning = `Based on your ${usage} requirements with a ₹${budget.toLocaleString('en-IN')} budget, `;
+                reasoning += `our AI analyzed ${potentialLaptops.length} laptops and scored them on performance, value, and compatibility. `;
+                reasoning += `The ${best.name} (Score: ${best.aiScore}/100) is our top recommendation because it offers `;
+                if (usage === 'gaming') reasoning += `excellent gaming performance with ${best.spec}.`;
+                else if (usage === 'productivity') reasoning += `outstanding productivity features and battery life for work.`;
+                else if (usage === 'coding') reasoning += `perfect development specs with great RAM and storage.`;
+                else reasoning += `the best overall value for your use case.`;
+                
+                document.getElementById('build-reasoning').innerText = reasoning;
                 renderResults();
                 return;
             }
@@ -989,21 +1063,112 @@
                 }
                 if (budget > 400000) gpuBudget = 200000;
 
-                // Initial Selections
-                let cpuList = db.cpus.filter(c => c.price <= cpuBudget * 1.5 && !c.integrated && !c.name.includes('Athlon')); 
-                if(cpuList.length === 0) cpuList = db.cpus.filter(c => !c.integrated && !c.name.includes('Athlon'));
+                // Smart CPU selection with workload optimization
+                let cpuList = db.cpus.filter(c => {
+                    const inBudget = c.price <= cpuBudget * 1.5 && c.price >= cpuBudget * 0.4;
+                    const notApu = !c.integrated && !c.name.includes('Athlon');
+                    return inBudget && notApu;
+                });
+                
+                if(cpuList.length === 0) {
+                    cpuList = db.cpus.filter(c => !c.integrated && !c.name.includes('Athlon'));
+                }
+                
+                // Apply brand preference
                 if(prefs.cpu !== 'Any') {
                     let filtered = cpuList.filter(c => c.brand === prefs.cpu);
                     if(filtered.length > 0) cpuList = filtered;
                 }
-                cpu = cpuList.sort((a,b) => b.price - a.price)[0] || db.cpus[2];
+                
+                // Score CPUs based on usage
+                let scoredCPUs = cpuList.map(c => {
+                    let score = 0;
+                    const cores = parseInt(c.cores || 0);
+                    const price = c.price;
+                    
+                    // Core count scoring for different workloads
+                    if (usage === 'content' || usage === 'productivity') {
+                        if (cores >= 16) score += 35;
+                        else if (cores >= 12) score += 30;
+                        else if (cores >= 8) score += 20;
+                        else if (cores >= 6) score += 10;
+                    } else if (usage === 'gaming') {
+                        if (cores >= 8) score += 30;
+                        else if (cores >= 6) score += 25;
+                        else if (cores >= 4) score += 15;
+                    } else if (usage === 'coding') {
+                        if (cores >= 12) score += 30;
+                        else if (cores >= 8) score += 25;
+                        else if (cores >= 6) score += 15;
+                    }
+                    
+                    // Budget utilization score
+                    const budgetRatio = price / cpuBudget;
+                    if (budgetRatio >= 0.85 && budgetRatio <= 1.2) score += 25;
+                    else if (budgetRatio >= 0.7 && budgetRatio < 0.85) score += 15;
+                    else if (budgetRatio >= 0.5 && budgetRatio < 0.7) score += 10;
+                    
+                    return { ...c, cpuScore: score };
+                });
+                
+                cpu = scoredCPUs.sort((a,b) => {
+                    if (Math.abs(a.cpuScore - b.cpuScore) > 5) return b.cpuScore - a.cpuScore;
+                    return b.price - a.price;
+                })[0] || db.cpus[2];
 
-                let gpuList = db.gpus.filter(g => g.price <= gpuBudget * 1.3 && g.price > 0);
+                let gpuList = db.gpus.filter(g => {
+                    const inBudget = g.price <= gpuBudget * 1.3 && g.price >= gpuBudget * 0.5 && g.price > 0;
+                    return inBudget;
+                });
+                
+                if(gpuList.length === 0) {
+                    gpuList = db.gpus.filter(g => g.price > 0 && g.price <= gpuBudget * 1.5);
+                }
+                if(gpuList.length === 0) gpuList = db.gpus.filter(g => g.price > 0);
+                
+                // Apply brand preference
                 if(prefs.gpu !== 'Any') {
                     let filtered = gpuList.filter(g => g.brand === prefs.gpu);
                     if(filtered.length > 0) gpuList = filtered;
                 }
-                gpu = gpuList.sort((a,b) => b.price - a.price)[0] || db.gpus[1];
+                
+                // Score GPUs for optimal selection
+                let scoredGPUs = gpuList.map(g => {
+                    let score = 0;
+                    const vram = parseInt(g.vram?.match(/\d+/)?.[0] || 0);
+                    const price = g.price;
+                    
+                    // VRAM scoring based on usage
+                    if (usage === 'gaming') {
+                        if (vram >= 16) score += 35;
+                        else if (vram >= 12) score += 30;
+                        else if (vram >= 8) score += 20;
+                        else if (vram >= 6) score += 15;
+                        else if (vram >= 4) score += 10;
+                    } else if (usage === 'content') {
+                        if (vram >= 24) score += 40;
+                        else if (vram >= 16) score += 35;
+                        else if (vram >= 12) score += 25;
+                        else if (vram >= 8) score += 15;
+                    } else {
+                        if (vram >= 8) score += 25;
+                        else if (vram >= 6) score += 20;
+                        else if (vram >= 4) score += 15;
+                    }
+                    
+                    // Budget efficiency
+                    const budgetRatio = price / gpuBudget;
+                    if (budgetRatio >= 0.85 && budgetRatio <= 1.15) score += 30;
+                    else if (budgetRatio >= 0.7 && budgetRatio < 0.85) score += 20;
+                    else if (budgetRatio >= 0.5 && budgetRatio < 0.7) score += 10;
+                    
+                    return { ...g, gpuScore: score };
+                });
+                
+                gpu = scoredGPUs.sort((a,b) => {
+                    if (Math.abs(a.gpuScore - b.gpuScore) > 5) return b.gpuScore - a.gpuScore;
+                    return b.price - a.price;
+                })[0] || db.gpus[1];
 
                 let validMobos = db.mobos.filter(m => m.socket === cpu.socket);
                 validMobos.sort((a,b) => a.price - b.price); // Sort by price ascending
@@ -1026,26 +1191,119 @@
                     mobo = lowBudget[Math.floor(lowBudget.length / 2)] || validMobos[0];
                 }
 
-                let validRam = db.ram.filter(r => r.type === mobo.type);
-                if (validRam.length === 0) validRam = [db.ram[1]]; 
+                // Smart RAM selection based on motherboard and usage
+                let validRam = db.ram.filter(r => {
+                    // Check DDR generation compatibility
+                    if (mobo.name.includes('DDR5')) return r.name.includes('DDR5');
+                    if (mobo.name.includes('DDR4')) return r.name.includes('DDR4');
+                    return true;
+                });
+                if (validRam.length === 0) validRam = db.ram;
                 
-                if (budget > 400000) ram = validRam[validRam.length - 1];
-                else if (budget > 200000) ram = validRam.find(r => r.name.includes('64GB')) || validRam[validRam.length-1];
-                else if (budget > 100000) ram = validRam.find(r => r.name.includes('32GB')) || validRam[0];
-                else ram = validRam[0];
+                // Determine optimal RAM based on usage
+                let targetRamSize = '16GB';
+                if (usage === 'content' || usage === 'productivity') {
+                    if (budget > 250000) targetRamSize = '64GB';
+                    else if (budget > 120000) targetRamSize = '32GB';
+                    else targetRamSize = '16GB';
+                } else if (usage === 'gaming') {
+                    if (budget > 200000) targetRamSize = '32GB';
+                    else targetRamSize = '16GB';
+                } else {
+                    if (budget > 300000) targetRamSize = '32GB';
+                    else targetRamSize = '16GB';
+                }
+                
+                // Find RAM matching target size with good speed
+                let targetRam = validRam.filter(r => r.name.includes(targetRamSize));
+                if (targetRam.length > 0) {
+                    // Prefer higher speed RAM for gaming
+                    if (usage === 'gaming') {
+                        ram = targetRam.sort((a, b) => {
+                            const speedA = parseInt(a.name.match(/\d{4,5}MHz/)?.[0] || 3200);
+                            const speedB = parseInt(b.name.match(/\d{4,5}MHz/)?.[0] || 3200);
+                            return speedB - speedA;
+                        })[0];
+                    } else {
+                        // For other uses, balance speed and price
+                        ram = targetRam.sort((a, b) => a.price - b.price)[Math.floor(targetRam.length / 2)];
+                    }
+                } else {
+                    ram = validRam.sort((a, b) => b.price - a.price)[0];
+                }
                 if (ram.price < 1500) ram = validRam[1] || validRam[0];
 
-                if (budget > 400000) storage = db.storage[6];
-                else if (budget > 250000) storage = db.storage[5];
-                else if (budget > 150000) storage = db.storage[3];
-                else if (budget > 80000) storage = db.storage[2];
-                else storage = db.storage[1];
+                // Intelligent storage selection
+                let targetCapacity = '500GB';
+                let needSpeed = usage === 'gaming' || usage === 'content' || usage === 'coding';
+                
+                if (budget > 300000) targetCapacity = '2TB';
+                else if (budget > 150000) targetCapacity = '1TB';
+                else if (budget > 80000) targetCapacity = '500GB';
+                else targetCapacity = '256GB';
+                
+                // Prioritize NVMe Gen4 for high-end, Gen3 for mid-range
+                let storageOptions = db.storage.filter(s => {
+                    const hasTargetCapacity = s.name.includes(targetCapacity);
+                    if (needSpeed) {
+                        if (budget > 200000) return hasTargetCapacity && s.name.includes('Gen4');
+                        else if (budget > 80000) return hasTargetCapacity && s.name.includes('NVMe');
+                        else return hasTargetCapacity && s.name.includes('SSD');
+                    }
+                    return hasTargetCapacity;
+                });
+                
+                if (storageOptions.length === 0) {
+                    storageOptions = db.storage.filter(s => s.name.includes(targetCapacity));
+                }
+                
+                if (storageOptions.length > 0) {
+                    // Choose mid-range option for best value
+                    storage = storageOptions.sort((a, b) => a.price - b.price)[Math.floor(storageOptions.length / 2)] || storageOptions[0];
+                } else {
+                    storage = db.storage[2];
+                }
 
-                if (budget > 400000) psu = db.psu[8];
-                else if (budget > 300000) psu = db.psu[7];
-                else if (budget > 200000) psu = db.psu[5];
-                else if (budget > 100000) psu = db.psu[4];
-                else psu = db.psu[3];
+                // Intelligent PSU selection based on component power draw
+                let estimatedWattage = 100; // Base system
+                
+                // Add CPU TDP
+                if (cpu.tdp) {
+                    const cpuWatts = parseInt(cpu.tdp.match(/\d+/)?.[0] || 65);
+                    estimatedWattage += cpuWatts;
+                }
+                
+                // Add GPU TDP
+                if (gpu.tdp) {
+                    const gpuWatts = parseInt(gpu.tdp.match(/\d+/)?.[0] || 150);
+                    estimatedWattage += gpuWatts;
+                } else if (gpu.price > 80000) {
+                    estimatedWattage += 400; // High-end GPU estimate
+                } else if (gpu.price > 40000) {
+                    estimatedWattage += 250;
+                } else if (gpu.price > 20000) {
+                    estimatedWattage += 150;
+                }
+                
+                // Add 20% headroom for efficiency and future upgrades
+                const recommendedWattage = Math.ceil(estimatedWattage * 1.2);
+                
+                // Select PSU with appropriate wattage
+                let validPSUs = db.psu.filter(p => {
+                    const psuWattage = parseInt(p.name.match(/\d+W/)?.[0] || 500);
+                    return psuWattage >= recommendedWattage;
+                });
+                
+                if (validPSUs.length === 0) validPSUs = db.psu;
+                
+                // Choose PSU based on budget and efficiency
+                if (budget > 300000) {
+                    psu = validPSUs.filter(p => p.name.includes('Platinum') || p.name.includes('Titanium')).sort((a,b) => b.price - a.price)[0] || validPSUs[Math.floor(validPSUs.length * 0.7)];
+                } else if (budget > 150000) {
+                    psu = validPSUs.filter(p => p.name.includes('Gold')).sort((a,b) => a.price - b.price)[Math.floor(validPSUs.filter(p => p.name.includes('Gold')).length / 2)] || validPSUs[Math.floor(validPSUs.length / 2)];
+                } else {
+                    psu = validPSUs.sort((a,b) => a.price - b.price)[Math.floor(validPSUs.length / 3)] || validPSUs[0];
+                }
 
                 if (budget > 350000) userCase = db.case[7];
                 else if (budget > 200000) userCase = db.case[6];
@@ -1090,9 +1348,69 @@
                     break; 
                 }
 
-                buildReason = "Based on your budget, we prioritized balanced performance with a discrete Graphics Card for optimal gaming and productivity.";
-                if(budget > 400000) buildReason = "Welcome to the 1%. This configuration uses the absolute pinnacle of consumer hardware, including the RTX 4090 and flagship CPU.";
-                else if(budget > 200000) buildReason = "This is an enthusiast-class build. We've paired a top-tier GPU with a high-end motherboard and fast DDR5 RAM to ensure zero bottlenecks at 4K resolution.";
+                // Generate intelligent build reasoning with validation
+                let warnings = [];
+                let highlights = [];
+                
+                // CPU-GPU balance check
+                if (usage === 'gaming') {
+                    const cpuGpuRatio = cpu.price / gpu.price;
+                    if (cpuGpuRatio > 1.8) warnings.push('CPU is significantly more expensive than GPU - may not be optimal for gaming');
+                    if (cpuGpuRatio < 0.25) warnings.push('GPU may experience bottleneck with this CPU at high resolutions');
+                }
+                
+                // Power supply validation
+                const psuWattage = parseInt(psu.name.match(/\d+W/)?.[0] || 500);
+                const cpuTdp = parseInt(cpu.tdp?.match(/\d+/)?.[0] || 65);
+                const gpuTdp = parseInt(gpu.tdp?.match(/\d+/)?.[0] || 150);
+                const totalTdp = cpuTdp + gpuTdp + 100;
+                if (psuWattage < totalTdp * 1.1) warnings.push('PSU may be close to limit under full load');
+                
+                // Highlight key features
+                if (gpu.vram && parseInt(gpu.vram) >= 12) highlights.push(`${gpu.vram} VRAM for excellent gaming at high resolutions`);
+                if (cpu.cores && parseInt(cpu.cores) >= 12) highlights.push(`${cpu.cores} cores for exceptional multitasking`);
+                if (ram.name.includes('32GB') || ram.name.includes('64GB')) highlights.push(`${ram.name.match(/\d+GB/)?.[0]} RAM for professional workloads`);
+                if (storage.name.includes('Gen4')) highlights.push('PCIe Gen4 NVMe for blazing fast storage');
+                
+                // Build comprehensive reasoning
+                buildReason = `🎯 ${usage.charAt(0).toUpperCase() + usage.slice(1)} Build Complete!\n\n`;
+                buildReason += `💻 Core Components:\n`;
+                buildReason += `• CPU: ${cpu.name} (${cpu.cores || 'Multi'}-core${cpu.threads ? ', ' + cpu.threads + ' threads' : ''})\n`;
+                buildReason += `• GPU: ${gpu.name} (${gpu.vram || 'Dedicated graphics'})\n`;
+                buildReason += `• Motherboard: ${mobo.socket} socket with ${mobo.name.includes('DDR5') ? 'DDR5' : 'DDR4'} support\n\n`;
+                
+                if (usage === 'gaming') {
+                    buildReason += `🎮 Gaming Performance:\n`;
+                    if (gpu.vram) {
+                        const vram = parseInt(gpu.vram);
+                        if (vram >= 16) buildReason += `• Excellent 4K gaming with ray tracing\n`;
+                        else if (vram >= 12) buildReason += `• Smooth 1440p-4K gaming experience\n`;
+                        else if (vram >= 8) buildReason += `• Great 1080p-1440p gaming\n`;
+                        else buildReason += `• Solid 1080p gaming performance\n`;
+                    }
+                } else if (usage === 'content') {
+                    buildReason += `🎨 Content Creation:\n`;
+                    buildReason += `• GPU-accelerated rendering and editing\n`;
+                    buildReason += `• Multi-core CPU for fast exports\n`;
+                } else if (usage === 'coding') {
+                    buildReason += `👨‍💻 Development:\n`;
+                    buildReason += `• Fast compilation with ${cpu.cores}+ cores\n`;
+                    buildReason += `• Plenty of RAM for VMs and containers\n`;
+                }
+                
+                if (highlights.length > 0) {
+                    buildReason += `\n✨ Key Features:\n`;
+                    highlights.forEach(h => buildReason += `• ${h}\n`);
+                }
+                
+                buildReason += `\n⚡ Power: ${psu.name} (${psuWattage}W) provides ${Math.round((psuWattage/totalTdp - 1) * 100)}% power headroom\n`;
+                buildReason += `💾 Storage: ${storage.name} for fast boot and load times\n`;
+                buildReason += `\n💰 Total: ₹${totalCost.toLocaleString('en-IN')} (${((totalCost/budget)*100).toFixed(1)}% of budget)`;
+                
+                if (warnings.length > 0) {
+                    buildReason += `\n\n⚠️ Notes:\n`;
+                    warnings.forEach(w => buildReason += `• ${w}\n`);
+                }
             }
 
             state.currentBuild = { type: 'desktop', data: { cpu, gpu, mobo, ram, storage, psu, userCase } };
