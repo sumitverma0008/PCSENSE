@@ -1207,24 +1207,40 @@
             
             // Load component database if not already loaded
             if (!dbLoaded) {
-                await loadDatabase();
+                try {
+                    await loadDatabase();
+                    console.log('Database loaded:', db);
+                } catch (error) {
+                    console.error('Failed to load database:', error);
+                    alert('Failed to load components. Please refresh the page.');
+                    return;
+                }
             }
             
-            // Wait a moment to ensure DB is loaded, then populate
-            setTimeout(() => {
+            // Populate dropdowns after ensuring DB is loaded
+            if (db && db.cpus && db.cpus.length > 0) {
                 populateComponentDropdowns();
-            }, 100);
+            } else {
+                console.error('Database loaded but empty or invalid:', db);
+                alert('Component database is empty. Please check data/components.json');
+            }
         }
 
         function populateComponentDropdowns() {
             // Check if database is loaded
             if (!db || !db.cpus) {
-                console.error('Database not loaded yet');
+                console.error('Database not loaded yet. DB object:', db);
                 return;
             }
             
+            console.log('Populating dropdowns with', db.cpus.length, 'CPUs and', db.gpus.length, 'GPUs');
+            
             // CPUs
             const cpuSelect = document.getElementById('select-cpu');
+            if (!cpuSelect) {
+                console.error('CPU select element not found');
+                return;
+            }
             cpuSelect.innerHTML = '<option value="">Choose a CPU...</option>';
             db.cpus.forEach((cpu, idx) => {
                 const option = document.createElement('option');
