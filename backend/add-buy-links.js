@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 
 // Read the components database
-const data = JSON.parse(fs.readFileSync('data/components.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'shared', 'data', 'components.json'), 'utf8'));
 
 function generateAmazonLink(name, category = '') {
     // Clean up the name for better search results

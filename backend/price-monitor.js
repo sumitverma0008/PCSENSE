@@ -6,8 +6,8 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-    dataPath: path.join(__dirname, 'data', 'components.json'),
-    logPath: path.join(__dirname, 'logs', 'price-updates.log'),
+    dataPath: path.join(__dirname, '..', 'shared', 'data', 'components.json'),
+    logPath: path.join(__dirname, '..', 'shared', 'logs', 'price-updates.log'),
     checkInterval: 24 * 60 * 60 * 1000, // 24 hours
     priceVariation: {
         min: 0.95,  // -5% minimum

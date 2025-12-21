@@ -1064,7 +1064,7 @@
             if (dbLoaded && db) return db;
             
             try {
-                const response = await fetch('data/components.json', {
+                const response = await fetch('../shared/data/components.json', {
                     headers: { 'Cache-Control': 'no-cache' }
                 });
                 if (!response.ok) throw new Error('Failed to load components database');
@@ -1276,7 +1276,7 @@
                 populateComponentDropdowns();
             } else {
                 console.error('Database loaded but empty or invalid:', db);
-                alert('Component database is empty. Please check data/components.json');
+                alert('Component database is empty. Please check shared/data/components.json');
             }
         }
 

@@ -63,20 +63,29 @@ git clone https://github.com/sumitverma0008/PCSENSE.git
 cd PCSENSE
 ```
 
-2. **Start the web server**
+2. **Start the frontend**
 
 **Using Python:**
 ```bash
+cd frontend
 python -m http.server 8000
 ```
 
 **Or using Node.js:**
 ```bash
 npm install -g http-server
+cd frontend
 http-server -p 8000
 ```
 
-3. **Open in browser**
+3. **Start the backend (optional - for price monitoring)**
+```bash
+cd backend
+npm install
+node api-server.js
+```
+
+4. **Open in browser**
 ```
 http://localhost:8000/main.html
 ```
@@ -96,19 +105,33 @@ http://localhost:8000/main.html
 
 ```
 PCSensei/
-├── main.html                    # Main user-facing application
-├── admin.html                   # Admin panel for component management
-├── price-dashboard.html         # Price update visualization dashboard
-├── price-monitor.js            # AI price monitoring system (Node.js)
-├── package.json                # Node.js dependencies
-├── start-monitor.bat           # Windows: Start continuous monitoring
-├── check-prices-once.bat       # Windows: One-time price check
-├── data/
-│   └── components.json         # Component database (800+ items)
-├── logs/                       # Auto-generated price update logs
-│   ├── price-updates.log       # JSON format logs
-│   └── price-summary.txt       # Human-readable summary
-└── README.md                   # This file
+├── frontend/                    # User interface (HTML/JS/CSS)
+│   ├── index.html              # Landing page
+│   ├── main.html               # Recommendation wizard
+│   ├── admin.html              # Admin panel
+│   └── price-dashboard.html    # Price tracking UI
+│
+├── backend/                     # Node.js services
+│   ├── api-server.js           # HTTP API server (port 3001)
+│   ├── price-monitor.js        # Price checking engine
+│   ├── add-buy-links.js        # Shopping link generator
+│   ├── update-multi-store-links.js
+│   └── package.json            # Dependencies
+│
+├── shared/                      # Shared resources
+│   ├── data/
+│   │   └── components.json     # Component database (800+ items)
+│   └── logs/
+│       ├── price-updates.log   # JSON format logs
+│       └── price-summary.txt   # Human-readable summary
+│
+├── android/                     # Mobile app (planned)
+│   └── README.md
+│
+└── docs/                        # Documentation
+    ├── AI-IMPROVEMENTS.md
+    ├── README-PRICE-MONITOR.md
+    └── VERCEL-DEPLOY.md
 ```
 
 ---
@@ -154,9 +177,9 @@ PCSensei/
 
 1. Start the API server:
 ```bash
+cd backend
 node api-server.js
 ```
-Or double-click: `start-api-server.bat`
 
 2. Open Admin Panel: `http://localhost:8000/admin.html`
 3. Click the **"Update Prices"** button in the header
@@ -165,15 +188,15 @@ Or double-click: `start-api-server.bat`
 
 One-time check:
 ```bash
+cd backend
 node price-monitor.js --once
 ```
-Or double-click: `check-prices-once.bat`
 
 Continuous monitoring:
 ```bash
+cd backend
 node price-monitor.js
 ```
-Or double-click: `start-monitor.bat`
 
 ### How It Works
 
@@ -186,10 +209,11 @@ Or double-click: `start-monitor.bat`
 
 ### Configuration
 
-Edit `price-monitor.js`:
+Edit `backend/price-monitor.js`:
 
 ```javascript
 const CONFIG = {
+    dataPath: path.join(__dirname, '..', 'shared', 'data', 'components.json'),
     checkInterval: 24 * 60 * 60 * 1000,  // 24 hours (adjust as needed)
     priceVariation: {
         min: 0.95,   // -5% minimum change
@@ -259,8 +283,7 @@ async fetchMarketPrice(item, category) {
 4. Fill in component details
 5. Save
 
-**Via JSON:**
-Edit `data/components.json`:
+**Via shared/data/components.json`:
 
 ```json
 {
@@ -279,6 +302,7 @@ Edit `data/components.json`:
 
 ### Modifying UI
 
+**Colors**: Edit CSS variables in `frontend/main.html` and `frontend/
 **Colors**: Edit CSS variables in `main.html` and `admin.html`
 
 ```css
@@ -287,7 +311,7 @@ Edit `data/components.json`:
     --accent-color: #764ba2;
 }
 ```
-
+frontend/
 **Budget Range**: Edit in `main.html`:
 
 ```javascript
@@ -350,7 +374,7 @@ python -m http.server 8000
 ### Adding New Features
 
 **Example: New Component Type**
-
+shared/
 1. Add to `data/components.json`:
 ```json
 {
@@ -363,8 +387,8 @@ python -m http.server 8000
   ]
 }
 ```
-
-2. Update admin panel tabs in `admin.html`
+frontend/admin.html`
+3. Update recommendation engine in `frontend/.html`
 3. Update recommendation engine in `main.html`
 
 ---
@@ -374,8 +398,8 @@ python -m http.server 8000
 ### Common Issues
 
 **Issue: "Failed to load database"**
-- **Solution**: Ensure `data/components.json` exists and is valid JSON
-- Test: `python -m json.tool data/components.json`
+- **Solution**: Ensure `shared/data/components.json` exists and is valid JSON
+- Test: `python -m json.tool shared/data/components.json`
 
 **Issue: Admin panel won't login**
 - **Solution**: Check browser console for errors
@@ -390,7 +414,7 @@ python -m http.server 8000
 **Issue: Components not displaying**
 - **Solution**: Check browser console (F12)
 - Verify HTTP server is running
-- Check `data/components.json` format
+- Check `shared/data/components.json` format
 
 ### Debug Mode
 
