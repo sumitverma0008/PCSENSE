@@ -146,6 +146,25 @@
             font-variant-numeric: tabular-nums;
         }
         
+        /* Filter button styles */
+        .filter-btn-active {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            color: white;
+            border: 2px solid transparent;
+        }
+        
+        .filter-btn-inactive {
+            background: #f1f5f9;
+            color: #64748b;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .filter-btn-inactive:hover {
+            background: #e2e8f0;
+            color: #475569;
+            border-color: #cbd5e1;
+        }
+        
         /* Improved responsive design */
         @media (max-width: 640px) {
             #ai-chat-panel {
@@ -448,6 +467,11 @@
                                 </h3>
                                 <span class="text-xs text-slate-500" id="cpu-count">0 options</span>
                             </div>
+                            <div class="flex gap-2 mb-3">
+                                <button onclick="filterComponents('cpu', 'All')" id="filter-cpu-all" class="filter-btn-active px-3 py-1 rounded-lg text-sm font-medium transition">All</button>
+                                <button onclick="filterComponents('cpu', 'Intel')" id="filter-cpu-intel" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">Intel</button>
+                                <button onclick="filterComponents('cpu', 'AMD')" id="filter-cpu-amd" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">AMD</button>
+                            </div>
                             <select id="select-cpu" onchange="selectComponent('cpu', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="">Choose a CPU...</option>
                             </select>
@@ -461,6 +485,11 @@
                                     <i class="fa-solid fa-display text-purple-600"></i> Graphics Card (GPU)
                                 </h3>
                                 <span class="text-xs text-slate-500" id="gpu-count">0 options</span>
+                            </div>
+                            <div class="flex gap-2 mb-3">
+                                <button onclick="filterComponents('gpu', 'All')" id="filter-gpu-all" class="filter-btn-active px-3 py-1 rounded-lg text-sm font-medium transition">All</button>
+                                <button onclick="filterComponents('gpu', 'NVIDIA')" id="filter-gpu-nvidia" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">NVIDIA</button>
+                                <button onclick="filterComponents('gpu', 'AMD')" id="filter-gpu-amd" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">AMD</button>
                             </div>
                             <select id="select-gpu" onchange="selectComponent('gpu', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                                 <option value="">Choose a GPU...</option>
@@ -490,6 +519,11 @@
                                 </h3>
                                 <span class="text-xs text-slate-500" id="ram-count">0 options</span>
                             </div>
+                            <div class="flex gap-2 mb-3">
+                                <button onclick="filterComponents('ram', 'All')" id="filter-ram-all" class="filter-btn-active px-3 py-1 rounded-lg text-sm font-medium transition">All</button>
+                                <button onclick="filterComponents('ram', 'DDR4')" id="filter-ram-ddr4" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">DDR4</button>
+                                <button onclick="filterComponents('ram', 'DDR5')" id="filter-ram-ddr5" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">DDR5</button>
+                            </div>
                             <select id="select-ram" onchange="selectComponent('ram', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                                 <option value="">Choose RAM...</option>
                             </select>
@@ -503,6 +537,11 @@
                                     <i class="fa-solid fa-hard-drive text-indigo-600"></i> Storage (SSD/HDD)
                                 </h3>
                                 <span class="text-xs text-slate-500" id="storage-count">0 options</span>
+                            </div>
+                            <div class="flex gap-2 mb-3">
+                                <button onclick="filterComponents('storage', 'All')" id="filter-storage-all" class="filter-btn-active px-3 py-1 rounded-lg text-sm font-medium transition">All</button>
+                                <button onclick="filterComponents('storage', 'SSD')" id="filter-storage-ssd" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">SSD</button>
+                                <button onclick="filterComponents('storage', 'HDD')" id="filter-storage-hdd" class="filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition">HDD</button>
                             </div>
                             <select id="select-storage" onchange="selectComponent('storage', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                                 <option value="">Choose Storage...</option>
@@ -1637,6 +1676,81 @@
                         <div class="text-2xl font-black ${metric.color}">${metric.value}</div>
                     </div>`;
             });
+        }
+
+        // Component filtering function
+        let componentFilters = {
+            cpu: 'All',
+            gpu: 'All',
+            ram: 'All',
+            storage: 'All'
+        };
+
+        function filterComponents(type, filter) {
+            // Update filter state
+            componentFilters[type] = filter;
+            
+            // Update button styles
+            const buttons = document.querySelectorAll(`[id^="filter-${type}-"]`);
+            buttons.forEach(btn => {
+                if (btn.id === `filter-${type}-${filter.toLowerCase()}`) {
+                    btn.className = 'filter-btn-active px-3 py-1 rounded-lg text-sm font-medium transition';
+                } else {
+                    btn.className = 'filter-btn-inactive px-3 py-1 rounded-lg text-sm font-medium transition';
+                }
+            });
+            
+            // Re-populate the dropdown with filtered data
+            const select = document.getElementById(`select-${type}`);
+            select.innerHTML = `<option value="">Choose a ${type.toUpperCase()}...</option>`;
+            
+            let items = [];
+            let dbKey = type;
+            
+            // Map to correct database key
+            if (type === 'cpu') dbKey = 'cpus';
+            else if (type === 'gpu') dbKey = 'gpus';
+            else if (type === 'ram') dbKey = 'ram';
+            else if (type === 'storage') dbKey = 'storage';
+            
+            // Filter items based on selection
+            if (filter === 'All') {
+                items = db[dbKey];
+            } else {
+                items = db[dbKey].filter(item => {
+                    const name = item.name || '';
+                    const brand = item.brand || '';
+                    const spec = item.spec || '';
+                    const searchText = (name + ' ' + brand + ' ' + spec).toUpperCase();
+                    
+                    if (type === 'cpu') {
+                        return searchText.includes(filter.toUpperCase());
+                    } else if (type === 'gpu') {
+                        if (filter === 'NVIDIA') {
+                            return searchText.includes('RTX') || searchText.includes('GTX') || searchText.includes('NVIDIA');
+                        } else if (filter === 'AMD') {
+                            return searchText.includes('RADEON') || searchText.includes('RX ') || (searchText.includes('AMD') && !searchText.includes('NVIDIA'));
+                        }
+                    } else if (type === 'ram') {
+                        return searchText.includes(filter.toUpperCase());
+                    } else if (type === 'storage') {
+                        return searchText.includes(filter.toUpperCase());
+                    }
+                    return true;
+                });
+            }
+            
+            // Populate dropdown
+            items.forEach(item => {
+                const idx = db[dbKey].indexOf(item);
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${item.name} - ₹${item.price.toLocaleString('en-IN')}`;
+                select.appendChild(option);
+            });
+            
+            // Update count
+            document.getElementById(`${type}-count`).textContent = `${items.length} ${filter === 'All' ? 'options' : filter + ' options'}`;
         }
 
         // Shopping Modal Functions
