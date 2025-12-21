@@ -1208,7 +1208,7 @@
             // Load component database if not already loaded
             if (!dbLoaded) {
                 try {
-                    await loadDatabase();
+                    await loadDb();
                     console.log('Database loaded:', db);
                 } catch (error) {
                     console.error('Failed to load database:', error);
