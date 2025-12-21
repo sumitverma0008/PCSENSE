@@ -229,10 +229,10 @@
                         <i class="fa-solid fa-indian-rupee-sign"></i> Builds from ₹15,000 to ₹5,00,000+ • <i class="fa-solid fa-shop"></i> Compare prices across Amazon, Flipkart, Croma & more • <i class="fa-solid fa-clock"></i> Updated daily
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button onclick="startWizard()" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold text-lg transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
-                            Find My Perfect PC <i class="fa-solid fa-arrow-right"></i>
+                        <button onclick="showModeSelection()" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-xl font-bold text-lg transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transform hover:scale-105">
+                            <i class="fa-solid fa-rocket"></i> Get Started
                         </button>
-                        <button onclick="toggleAI()" class="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-bold text-lg transition backdrop-blur-sm flex items-center justify-center gap-2">
+                        <button onclick="toggleAI()" class="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-bold text-lg transition backdrop-blur-sm flex items-center justify-center gap-2 transform hover:scale-105">
                             <i class="fa-solid fa-comments"></i> Chat with Expert
                         </button>
                     </div>
@@ -357,6 +357,237 @@
                         <div>
                             <div class="text-4xl font-bold text-blue-600 mb-1">₹15K-5L</div>
                             <div class="text-sm text-slate-500">Budget Range Supported</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View: Mode Selection -->
+        <div id="view-mode-selection" class="hidden min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex items-center justify-center py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Choose Your Path</h2>
+                    <p class="text-xl text-slate-300">How would you like to build your PC today?</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- AI Wizard Mode -->
+                    <div class="group relative bg-white/10 backdrop-blur-lg border-2 border-white/20 rounded-3xl p-8 hover:border-blue-400 hover:bg-white/15 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" onclick="startWizard()">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-star"></i> Recommended
+                        </div>
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-4xl text-white mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">AI Wizard</h3>
+                        <p class="text-slate-300 mb-6">Answer 4 quick questions and let our AI recommend the perfect build for you. Best for beginners and those who want expert guidance.</p>
+                        <ul class="space-y-2 text-sm text-slate-200 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Budget-optimized recommendations</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> AI-powered component matching</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Performance estimates included</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Takes ~30 seconds</li>
+                        </ul>
+                        <div class="bg-blue-600 group-hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-center transition flex items-center justify-center gap-2">
+                            Start Wizard <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Custom Builder Mode -->
+                    <div class="group relative bg-white/10 backdrop-blur-lg border-2 border-white/20 rounded-3xl p-8 hover:border-purple-400 hover:bg-white/15 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" onclick="startCustomBuilder()">
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-hammer"></i> Advanced
+                        </div>
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-4xl text-white mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Custom Builder</h3>
+                        <p class="text-slate-300 mb-6">Handpick every component yourself. Perfect for enthusiasts who know exactly what they want or want to experiment.</p>
+                        <ul class="space-y-2 text-sm text-slate-200 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Full control over components</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Browse 800+ parts catalog</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Real-time price tracking</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Compatibility validation</li>
+                        </ul>
+                        <div class="bg-purple-600 group-hover:bg-purple-500 text-white px-6 py-3 rounded-xl font-bold text-center transition flex items-center justify-center gap-2">
+                            Build Custom PC <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <button onclick="goHome()" class="text-white/70 hover:text-white transition flex items-center justify-center gap-2 mx-auto">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- View: Custom Builder -->
+        <div id="view-custom-builder" class="hidden min-h-screen bg-slate-100 py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="mb-8 flex justify-between items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 mb-2">Custom PC Builder</h2>
+                        <p class="text-slate-600">Select each component manually to build your dream PC</p>
+                    </div>
+                    <button onclick="goHome()" class="text-slate-600 hover:text-slate-800 transition flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-lg hover:bg-white">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </button>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Component Selection Panel -->
+                    <div class="lg:col-span-2 space-y-6">
+                        
+                        <!-- CPU Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-microchip text-blue-600"></i> Processor (CPU)
+                                </h3>
+                                <span class="text-xs text-slate-500" id="cpu-count">0 options</span>
+                            </div>
+                            <select id="select-cpu" onchange="selectComponent('cpu', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Choose a CPU...</option>
+                            </select>
+                            <div id="cpu-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                        <!-- GPU Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-display text-purple-600"></i> Graphics Card (GPU)
+                                </h3>
+                                <span class="text-xs text-slate-500" id="gpu-count">0 options</span>
+                            </div>
+                            <select id="select-gpu" onchange="selectComponent('gpu', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                                <option value="">Choose a GPU...</option>
+                            </select>
+                            <div id="gpu-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                        <!-- Motherboard Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-memory text-green-600"></i> Motherboard
+                                </h3>
+                                <span class="text-xs text-slate-500" id="mobo-count">0 options</span>
+                            </div>
+                            <select id="select-mobo" onchange="selectComponent('mobo', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                <option value="">Choose a Motherboard...</option>
+                            </select>
+                            <div id="mobo-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                        <!-- RAM Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-memory text-orange-600"></i> RAM Memory
+                                </h3>
+                                <span class="text-xs text-slate-500" id="ram-count">0 options</span>
+                            </div>
+                            <select id="select-ram" onchange="selectComponent('ram', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                <option value="">Choose RAM...</option>
+                            </select>
+                            <div id="ram-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                        <!-- Storage Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-hard-drive text-indigo-600"></i> Storage (SSD/HDD)
+                                </h3>
+                                <span class="text-xs text-slate-500" id="storage-count">0 options</span>
+                            </div>
+                            <select id="select-storage" onchange="selectComponent('storage', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="">Choose Storage...</option>
+                            </select>
+                            <div id="storage-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                        <!-- PSU Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-bolt text-yellow-600"></i> Power Supply (PSU)
+                                </h3>
+                                <span class="text-xs text-slate-500" id="psu-count">0 options</span>
+                            </div>
+                            <select id="select-psu" onchange="selectComponent('psu', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500">
+                                <option value="">Choose PSU...</option>
+                            </select>
+                            <div id="psu-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                        <!-- Case Selection -->
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-box text-slate-600"></i> PC Case
+                                </h3>
+                                <span class="text-xs text-slate-500" id="case-count">0 options</span>
+                            </div>
+                            <select id="select-case" onchange="selectComponent('case', this.value)" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-slate-500 focus:border-slate-500">
+                                <option value="">Choose Case...</option>
+                            </select>
+                            <div id="case-details" class="mt-3 text-sm text-slate-600 hidden"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- Build Summary Sidebar -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-24">
+                            <div class="bg-white rounded-xl border border-slate-200 shadow-lg p-6">
+                                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-clipboard-check text-blue-600"></i> Your Build
+                                </h3>
+                                
+                                <div class="space-y-3 mb-6" id="custom-build-list">
+                                    <div class="text-sm text-slate-500 text-center py-8 border-2 border-dashed border-slate-200 rounded-lg">
+                                        <i class="fa-solid fa-cube text-3xl text-slate-300 mb-2"></i>
+                                        <p>Start selecting components</p>
+                                    </div>
+                                </div>
+
+                                <div class="border-t border-slate-200 pt-4 mb-4">
+                                    <div class="flex justify-between items-center text-lg font-bold">
+                                        <span class="text-slate-700">Total Price</span>
+                                        <span class="text-blue-600 price-value" id="custom-total-price">₹0</span>
+                                    </div>
+                                </div>
+
+                                <div id="compatibility-warnings" class="mb-4 hidden">
+                                    <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700">
+                                        <i class="fa-solid fa-exclamation-triangle"></i> <span id="warning-text"></span>
+                                    </div>
+                                </div>
+
+                                <button onclick="viewCustomBuildSummary()" id="btn-view-custom-build" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-6 py-3 rounded-xl font-bold transition transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" disabled>
+                                    <i class="fa-solid fa-eye"></i> View Build Summary
+                                </button>
+                                
+                                <button onclick="clearCustomBuild()" class="w-full mt-3 bg-slate-100 hover:bg-slate-200 text-slate-700 px-6 py-2 rounded-lg font-medium transition">
+                                    <i class="fa-solid fa-trash"></i> Clear All
+                                </button>
+                            </div>
+
+                            <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                                <div class="font-bold mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-lightbulb"></i> Pro Tips
+                                </div>
+                                <ul class="space-y-1 text-xs">
+                                    <li>• Match CPU socket with motherboard</li>
+                                    <li>• PSU wattage = (CPU TDP + GPU TDP) × 1.5</li>
+                                    <li>• 16GB RAM minimum for gaming</li>
+                                    <li>• SSD for OS, HDD for storage</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -943,6 +1174,318 @@
             document.getElementById('view-landing').classList.remove('hidden');
             document.getElementById('view-wizard').classList.add('hidden');
             document.getElementById('view-results').classList.add('hidden');
+            document.getElementById('view-mode-selection').classList.add('hidden');
+            document.getElementById('view-custom-builder').classList.add('hidden');
+        }
+
+        function showModeSelection() {
+            document.getElementById('view-landing').classList.add('hidden');
+            document.getElementById('view-wizard').classList.add('hidden');
+            document.getElementById('view-results').classList.add('hidden');
+            document.getElementById('view-mode-selection').classList.remove('hidden');
+            document.getElementById('view-custom-builder').classList.add('hidden');
+        }
+
+        // Custom Builder State
+        let customBuild = {
+            cpu: null,
+            gpu: null,
+            mobo: null,
+            ram: null,
+            storage: null,
+            psu: null,
+            case: null
+        };
+
+        async function startCustomBuilder() {
+            document.getElementById('view-landing').classList.add('hidden');
+            document.getElementById('view-wizard').classList.add('hidden');
+            document.getElementById('view-results').classList.add('hidden');
+            document.getElementById('view-mode-selection').classList.add('hidden');
+            document.getElementById('view-custom-builder').classList.remove('hidden');
+            
+            // Load component database if not already loaded
+            if (!dbLoaded) {
+                await loadDatabase();
+            }
+            
+            // Populate dropdowns
+            populateComponentDropdowns();
+        }
+
+        function populateComponentDropdowns() {
+            // CPUs
+            const cpuSelect = document.getElementById('select-cpu');
+            cpuSelect.innerHTML = '<option value="">Choose a CPU...</option>';
+            db.cpus.forEach((cpu, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${cpu.name} - ₹${cpu.price.toLocaleString('en-IN')}`;
+                cpuSelect.appendChild(option);
+            });
+            document.getElementById('cpu-count').textContent = `${db.cpus.length} options`;
+
+            // GPUs
+            const gpuSelect = document.getElementById('select-gpu');
+            gpuSelect.innerHTML = '<option value="">Choose a GPU...</option>';
+            db.gpus.forEach((gpu, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${gpu.name} - ₹${gpu.price.toLocaleString('en-IN')}`;
+                gpuSelect.appendChild(option);
+            });
+            document.getElementById('gpu-count').textContent = `${db.gpus.length} options`;
+
+            // Motherboards
+            const moboSelect = document.getElementById('select-mobo');
+            moboSelect.innerHTML = '<option value="">Choose a Motherboard...</option>';
+            db.mobos.forEach((mobo, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${mobo.name} - ₹${mobo.price.toLocaleString('en-IN')}`;
+                moboSelect.appendChild(option);
+            });
+            document.getElementById('mobo-count').textContent = `${db.mobos.length} options`;
+
+            // RAM
+            const ramSelect = document.getElementById('select-ram');
+            ramSelect.innerHTML = '<option value="">Choose RAM...</option>';
+            db.ram.forEach((ram, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${ram.name} - ₹${ram.price.toLocaleString('en-IN')}`;
+                ramSelect.appendChild(option);
+            });
+            document.getElementById('ram-count').textContent = `${db.ram.length} options`;
+
+            // Storage
+            const storageSelect = document.getElementById('select-storage');
+            storageSelect.innerHTML = '<option value="">Choose Storage...</option>';
+            db.storage.forEach((storage, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${storage.name} - ₹${storage.price.toLocaleString('en-IN')}`;
+                storageSelect.appendChild(option);
+            });
+            document.getElementById('storage-count').textContent = `${db.storage.length} options`;
+
+            // PSU
+            const psuSelect = document.getElementById('select-psu');
+            psuSelect.innerHTML = '<option value="">Choose PSU...</option>';
+            db.psu.forEach((psu, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${psu.name} - ₹${psu.price.toLocaleString('en-IN')}`;
+                psuSelect.appendChild(option);
+            });
+            document.getElementById('psu-count').textContent = `${db.psu.length} options`;
+
+            // Case
+            const caseSelect = document.getElementById('select-case');
+            caseSelect.innerHTML = '<option value="">Choose Case...</option>';
+            db.case.forEach((c, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${c.name} - ₹${c.price.toLocaleString('en-IN')}`;
+                caseSelect.appendChild(option);
+            });
+            document.getElementById('case-count').textContent = `${db.case.length} options`;
+        }
+
+        function selectComponent(type, index) {
+            if (index === '') {
+                customBuild[type] = null;
+                document.getElementById(`${type}-details`).classList.add('hidden');
+            } else {
+                const component = db[type === 'mobo' ? 'mobos' : type === 'case' ? 'case' : type + 's'][index];
+                customBuild[type] = component;
+                
+                // Show component details
+                const detailsEl = document.getElementById(`${type}-details`);
+                detailsEl.innerHTML = `<strong>${component.name}</strong><br>${component.spec || ''}`;
+                detailsEl.classList.remove('hidden');
+            }
+            
+            updateCustomBuildSummary();
+            validateCompatibility();
+        }
+
+        function updateCustomBuildSummary() {
+            const listEl = document.getElementById('custom-build-list');
+            const totalEl = document.getElementById('custom-total-price');
+            const viewBtn = document.getElementById('btn-view-custom-build');
+            
+            let html = '';
+            let total = 0;
+            let componentCount = 0;
+            
+            const components = [
+                { key: 'cpu', label: 'CPU', icon: 'fa-microchip' },
+                { key: 'gpu', label: 'GPU', icon: 'fa-display' },
+                { key: 'mobo', label: 'Motherboard', icon: 'fa-memory' },
+                { key: 'ram', label: 'RAM', icon: 'fa-memory' },
+                { key: 'storage', label: 'Storage', icon: 'fa-hard-drive' },
+                { key: 'psu', label: 'PSU', icon: 'fa-bolt' },
+                { key: 'case', label: 'Case', icon: 'fa-box' }
+            ];
+            
+            components.forEach(comp => {
+                if (customBuild[comp.key]) {
+                    const item = customBuild[comp.key];
+                    total += item.price;
+                    componentCount++;
+                    html += `
+                        <div class="flex items-center justify-between text-sm border-b border-slate-200 pb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid ${comp.icon} text-blue-600"></i>
+                                <span class="font-medium text-slate-700">${comp.label}</span>
+                            </div>
+                            <span class="text-slate-900 font-bold">₹${item.price.toLocaleString('en-IN')}</span>
+                        </div>
+                    `;
+                }
+            });
+            
+            if (componentCount === 0) {
+                html = `<div class="text-sm text-slate-500 text-center py-8 border-2 border-dashed border-slate-200 rounded-lg">
+                    <i class="fa-solid fa-cube text-3xl text-slate-300 mb-2"></i>
+                    <p>Start selecting components</p>
+                </div>`;
+            }
+            
+            listEl.innerHTML = html;
+            totalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+            
+            // Enable view button only if all components selected
+            viewBtn.disabled = componentCount < 7;
+        }
+
+        function validateCompatibility() {
+            const warningEl = document.getElementById('compatibility-warnings');
+            const warningText = document.getElementById('warning-text');
+            
+            // Check CPU-Motherboard socket compatibility
+            if (customBuild.cpu && customBuild.mobo) {
+                if (customBuild.cpu.socket !== customBuild.mobo.socket) {
+                    warningEl.classList.remove('hidden');
+                    warningText.textContent = `Socket mismatch! CPU uses ${customBuild.cpu.socket} but motherboard uses ${customBuild.mobo.socket}`;
+                    return;
+                }
+            }
+            
+            // Check PSU wattage
+            if (customBuild.cpu && customBuild.gpu && customBuild.psu) {
+                const cpuTdp = parseInt(customBuild.cpu.tdp?.match(/\d+/)?.[0] || 65);
+                const gpuTdp = parseInt(customBuild.gpu.tdp?.match(/\d+/)?.[0] || 150);
+                const psuWattage = parseInt(customBuild.psu.wattage?.match(/\d+/)?.[0] || 0);
+                const recommendedWattage = Math.ceil((cpuTdp + gpuTdp + 100) * 1.2);
+                
+                if (psuWattage < recommendedWattage) {
+                    warningEl.classList.remove('hidden');
+                    warningText.textContent = `PSU may be underpowered! Recommended: ${recommendedWattage}W, Selected: ${psuWattage}W`;
+                    return;
+                }
+            }
+            
+            warningEl.classList.add('hidden');
+        }
+
+        function clearCustomBuild() {
+            if (confirm('Clear all selected components?')) {
+                customBuild = {
+                    cpu: null,
+                    gpu: null,
+                    mobo: null,
+                    ram: null,
+                    storage: null,
+                    psu: null,
+                    case: null
+                };
+                
+                // Reset all dropdowns
+                document.getElementById('select-cpu').selectedIndex = 0;
+                document.getElementById('select-gpu').selectedIndex = 0;
+                document.getElementById('select-mobo').selectedIndex = 0;
+                document.getElementById('select-ram').selectedIndex = 0;
+                document.getElementById('select-storage').selectedIndex = 0;
+                document.getElementById('select-psu').selectedIndex = 0;
+                document.getElementById('select-case').selectedIndex = 0;
+                
+                // Hide all details
+                ['cpu', 'gpu', 'mobo', 'ram', 'storage', 'psu', 'case'].forEach(type => {
+                    document.getElementById(`${type}-details`).classList.add('hidden');
+                });
+                
+                updateCustomBuildSummary();
+            }
+        }
+
+        function viewCustomBuildSummary() {
+            // Convert custom build to results format
+            state.currentBuild = {
+                type: 'desktop',
+                data: {
+                    cpu: customBuild.cpu,
+                    gpu: customBuild.gpu,
+                    mobo: customBuild.mobo,
+                    ram: customBuild.ram,
+                    storage: customBuild.storage,
+                    psu: customBuild.psu,
+                    userCase: customBuild.case
+                }
+            };
+            
+            // Show results view
+            document.getElementById('view-custom-builder').classList.add('hidden');
+            document.getElementById('view-results').classList.remove('hidden');
+            
+            // Update results view
+            document.getElementById('res-usage').innerText = 'Custom Build';
+            const total = Object.values(customBuild).reduce((sum, item) => sum + (item?.price || 0), 0);
+            document.getElementById('res-budget').innerText = '₹' + total.toLocaleString('en-IN');
+            
+            renderParts({ type: 'desktop', data: state.currentBuild.data });
+            
+            // Show custom build message
+            document.getElementById('build-reasoning').innerHTML = `
+                This is your custom-selected build. All components have been manually chosen by you.<br><br>
+                <strong>Total Cost:</strong> ₹${total.toLocaleString('en-IN')}<br>
+                ${customBuild.cpu && customBuild.mobo && customBuild.cpu.socket === customBuild.mobo.socket ? 
+                    '<span class="text-green-600"><i class="fa-solid fa-check-circle"></i> CPU and Motherboard are compatible</span>' : 
+                    '<span class="text-red-600"><i class="fa-solid fa-exclamation-triangle"></i> Please verify socket compatibility</span>'}
+            `;
+            
+            // Determine GPU tier for performance metrics
+            let gpuTier = 'integrated';
+            if (customBuild.gpu) {
+                const gpuPrice = customBuild.gpu.price;
+                if (gpuPrice > 100000) gpuTier = 'ultra';
+                else if (gpuPrice > 65000) gpuTier = 'high';
+                else if (gpuPrice > 40000) gpuTier = 'mid';
+                else if (gpuPrice > 25000) gpuTier = 'entry';
+            }
+            
+            // Render performance benchmarks
+            renderCustomBenchmarks(gpuTier);
+        }
+
+        function renderCustomBenchmarks(tier) {
+            const categoryData = PERFORMANCE_METRICS.gaming;
+            const metricsList = categoryData.metrics[tier] || categoryData.metrics.integrated;
+
+            document.getElementById('perf-icon').innerHTML = categoryData.icon;
+            document.getElementById('perf-title').innerHTML = 'Estimated Gaming Performance <i class="fa-solid fa-chart-line ml-2 text-sm"></i>';
+
+            const container = document.getElementById('benchmark-cards');
+            container.innerHTML = '';
+
+            metricsList.forEach(metric => {
+                container.innerHTML += `
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                        <div class="font-bold text-slate-800 mb-1">${metric.name}</div>
+                        <div class="text-2xl font-black ${metric.color}">${metric.value}</div>
+                    </div>`;
+            });
         }
 
         // Shopping Modal Functions
