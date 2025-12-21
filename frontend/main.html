@@ -1064,7 +1064,7 @@
             if (dbLoaded && db) return db;
             
             try {
-                const response = await fetch('data/components.json', {
+                const response = await fetch(`data/components.json?v=${Date.now()}`, {
                     headers: { 'Cache-Control': 'no-cache' }
                 });
                 if (!response.ok) throw new Error('Failed to load components database');

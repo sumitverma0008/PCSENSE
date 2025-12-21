@@ -1645,7 +1645,7 @@
             }
             
             try {
-                const response = await fetch('data/components.json', {
+                const response = await fetch(`data/components.json?v=${Date.now()}`, {
                     headers: {
                         'Cache-Control': 'no-cache'
                     }
