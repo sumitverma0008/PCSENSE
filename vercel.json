@@ -2,7 +2,19 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index.html"
+      "destination": "/frontend/index.html"
+    },
+    {
+      "source": "/main.html",
+      "destination": "/frontend/main.html"
+    },
+    {
+      "source": "/admin.html",
+      "destination": "/frontend/admin.html"
+    },
+    {
+      "source": "/price-dashboard.html",
+      "destination": "/frontend/price-dashboard.html"
     }
   ],
   "headers": [
