@@ -792,7 +792,7 @@
 
                     <!-- Actions -->
                     <div class="p-6 bg-slate-50 border-t border-slate-200 flex flex-wrap justify-end gap-4">
-                        <button onclick="startWizard()" class="px-6 py-2 border border-slate-300 rounded-lg hover:bg-white text-slate-600 transition-all hover:shadow-md flex items-center gap-2"><i class="fa-solid fa-edit"></i> Edit Preferences</button>
+                        <button onclick="goBackToBuilder()" class="px-6 py-2 border border-slate-300 rounded-lg hover:bg-white text-slate-600 transition-all hover:shadow-md flex items-center gap-2"><i class="fa-solid fa-edit"></i> Edit Build</button>
                         <button onclick="window.print()" class="px-6 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all hover:shadow-lg flex items-center gap-2"><i class="fa-solid fa-print"></i> Save Details</button>
                     </div>
                 </div>
@@ -1217,6 +1217,21 @@
             document.getElementById('view-custom-builder').classList.add('hidden');
         }
 
+        function goBackToBuilder() {
+            // Check if this was from custom builder or wizard
+            const isCustomBuild = document.getElementById('res-usage').innerText === 'Custom Build';
+            
+            if (isCustomBuild) {
+                // Go back to custom builder
+                document.getElementById('view-results').classList.add('hidden');
+                document.getElementById('view-custom-builder').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Go back to wizard
+                startWizard();
+            }
+        }
+
         function showModeSelection() {
             document.getElementById('view-landing').classList.add('hidden');
             document.getElementById('view-wizard').classList.add('hidden');
@@ -1627,7 +1642,13 @@
             
             // Show results view
             document.getElementById('view-custom-builder').classList.add('hidden');
+            document.getElementById('view-wizard').classList.add('hidden');
+            document.getElementById('view-landing').classList.add('hidden');
+            document.getElementById('view-mode-selection').classList.add('hidden');
             document.getElementById('view-results').classList.remove('hidden');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             
             // Update results view
             document.getElementById('res-usage').innerText = 'Custom Build';
