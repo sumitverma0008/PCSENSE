@@ -1198,6 +1198,7 @@
         };
 
         async function startCustomBuilder() {
+            // Hide all views
             document.getElementById('view-landing').classList.add('hidden');
             document.getElementById('view-wizard').classList.add('hidden');
             document.getElementById('view-results').classList.add('hidden');
@@ -1209,11 +1210,19 @@
                 await loadDatabase();
             }
             
-            // Populate dropdowns
-            populateComponentDropdowns();
+            // Wait a moment to ensure DB is loaded, then populate
+            setTimeout(() => {
+                populateComponentDropdowns();
+            }, 100);
         }
 
         function populateComponentDropdowns() {
+            // Check if database is loaded
+            if (!db || !db.cpus) {
+                console.error('Database not loaded yet');
+                return;
+            }
+            
             // CPUs
             const cpuSelect = document.getElementById('select-cpu');
             cpuSelect.innerHTML = '<option value="">Choose a CPU...</option>';
@@ -1539,6 +1548,8 @@
         function startWizard() {
             document.getElementById('view-landing').classList.add('hidden');
             document.getElementById('view-results').classList.add('hidden');
+            document.getElementById('view-mode-selection').classList.add('hidden');
+            document.getElementById('view-custom-builder').classList.add('hidden');
             document.getElementById('view-wizard').classList.remove('hidden');
             navWizard(1);
         }
